@@ -34,7 +34,7 @@ export default function Techinfo() {
     <motion.div
       ref={containerRef}
       style={{ opacity, scale }}
-      className="min-h-screen w-full bg-gradient-to-b from-blue-100 to-blue-200 py-20 px-4"
+      className="min-h-screen w-full font-sans bg-gradient-to-b from-blue-100 to-blue-200 py-20 px-4"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
