@@ -39,7 +39,7 @@ export default function UpdatedFloatingNavbar() {
     <AnimatePresence>
       {showHeader && (
         <motion.header
-          className="fixed top-4 bg-transparent backdrop-blur-xl shadow-lg rounded-full z-50 w-[90%] mx-[5%]"
+          className="fixed top-4 bg-white/60 backdrop-blur-lg shadow-lg rounded-full z-50 w-[90%] mx-[5%]"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
