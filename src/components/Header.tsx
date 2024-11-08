@@ -60,7 +60,7 @@ export default function UpdatedFloatingNavbar() {
             <nav className="hidden md:flex space-x-8 mx-auto">
               {navItems.map((item) => (
                 <NavLink key={item.name} href={item.path} isActive={pathname === item.path}>
-                  {item.name}
+                  {item.name} 
                 </NavLink>
               ))}
             </nav>
@@ -68,7 +68,7 @@ export default function UpdatedFloatingNavbar() {
             {/* Right: Contact Us Button */}
             <Link href="/contact" className="hidden md:block">
               <motion.div
-                className="bg-[#005ce6] text-white px-6 py-2 rounded-full text-sm font-medium"
+                className="bg-[#005ce6] text-white px-6 font-sans py-2 rounded-full text-sm font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -91,7 +91,7 @@ export default function UpdatedFloatingNavbar() {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.nav
-                className="md:hidden bg-white fixed top-16 left-0 w-full h-auto flex flex-col items-center rounded-b-3xl shadow-lg"
+                className="md:hidden bg-white fixed top-24 left-0 h-auto flex flex-col items-center rounded-b-3xl shadow-lg rounded-3xl z-50 w-[90%] mx-[5%]"
                 initial={{ y: '-100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: '-100%', opacity: 0 }}
@@ -103,7 +103,7 @@ export default function UpdatedFloatingNavbar() {
                       {item.name}
                     </NavLink>
                   ))}
-                  <Link href="/contact" className="text-center bg-[#005ce6] text-white mx-4 my-2 px-6 py-3 rounded-full hover:bg-[#f5ff68ad] transition-colors">
+                  <Link href="/contact" className="text-center bg-[#005ce6] text-white mx-4 my-2 px-6 py-3 rounded-full hover:bg-[#005ce6]/90 font-sans transition-colors">
                     Contact Us
                   </Link>
                 </div>
