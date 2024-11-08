@@ -1,10 +1,9 @@
-// import Button from "@/components/microcomps/Button";
+import Hersosection from "@/components/Hersosection";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center w-full h-screen">
-      <h1>space things web under development</h1>
-      {/* <Button text="hello i am button "/> */}
-    </div>
+      <>
+        <Hersosection/>
+      </>
   );
 }
