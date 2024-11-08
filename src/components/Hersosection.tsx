@@ -3,11 +3,14 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { FlipWords } from './ui/flip-words'
 
 export default function Hersosection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
 
+  const words = ["innovative", "empowering", "transformative", "visionary"];
+  
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
@@ -94,7 +97,8 @@ export default function Hersosection() {
             className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           >
             <span className="block">당신의 성장을 위한 선택</span>{' '}
-            <span className="mt-2 block text-blue-600 font-sans">GROWTH</span>
+            {/* <span className="mt-2 block text-blue-600 font-sans">GROWTH</span> */}
+            <FlipWords words={words} /> <br />
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
