@@ -56,7 +56,7 @@ export default function Wassusection() {
   }
 
   return (
-    <section className="py-20 px-4 font-sans">
+    <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function Wassusection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            혁신적인 편리함 <span className="text-blue-600">WATSSUE</span>
+            혁신적인 편리함 <span className="text-blue-600 font-sans">WATSSUE</span>
           </h2>
           <p className="text-gray-600">쉽고 간편한 수상물건의 업무환경 개선 솔루션</p>
         </motion.div>
