@@ -56,10 +56,10 @@ export default function Appdownload() {
                   repeatDelay: 2
                 }}
                 className={`absolute w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-blue-500
-                  ${index === 0 ? 'top-10 left-10' : ''}
-                  ${index === 1 ? 'top-1/4 right-10' : ''}
-                  ${index === 2 ? 'bottom-1/4 left-10' : ''}
-                  ${index === 3 ? 'bottom-10 right-10' : ''}
+                  ${index === 0 ? 'top-10 left-7' : ''}
+                  ${index === 1 ? 'top-1/4 right-7' : ''}
+                  ${index === 2 ? 'bottom-1/4 left-7' : ''}
+                  ${index === 3 ? 'bottom-10 right-7' : ''}
                 `}
               >
                 <Icon className="w-6 h-6" />
