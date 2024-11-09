@@ -52,8 +52,8 @@ export default function Caresection() {
   }
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 bg-white w-full overflow-x-hidden">
+      <div className="mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
