@@ -1,3 +1,4 @@
+import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
 import Techinfo from "@/components/Techinfo";
 import Wassusection from "@/components/Wassu-section";
@@ -11,6 +12,7 @@ export default function Home() {
           here is WATSSUE / DEJANGBU page links added soon
         </div>
         <Wassusection/>
+        <Caresection/>
         <div className="h-screen w-full"></div>
       </>
   );
