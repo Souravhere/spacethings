@@ -16,8 +16,8 @@ export default function Appshowcomp() {
           className="text-center mb-16 space-y-4"
         >
           <h1 className="text-2xl md:text-4xl font-bold">
-            매장 경영의{" "}
-            <span className="text-blue-500"><span className="font-sans">NEW</span> 패러다임</span>
+          매장 경영의{" "}
+            <span className="text-blue-500"><span className="font-sans">NEW</span> 패러다임 </span> <span className="font-sans">DEJANGBU</span>
           </h1>
           <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
             혁신적인 솔루션으로 운영 효율성을 극대화하는 대항부는 고객 경험을 향상시켜 비즈니스 성장을 지원
