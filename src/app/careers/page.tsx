@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLaptopCode, FaPeopleCarry, FaMoneyBillWave, FaUserGraduate } from "react-icons/fa";
-import { MdOutlineAccessTime, MdOutlineLocationOn, MdOutlineHealthAndSafety } from "react-icons/md";
+import { FaPeopleCarry, FaMoneyBillWave} from "react-icons/fa";
+import { MdOutlineAccessTime, MdOutlineHealthAndSafety } from "react-icons/md";
 
 type Benefit = {
   icon: JSX.Element;
