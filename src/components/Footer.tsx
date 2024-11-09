@@ -56,7 +56,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/dejangbu" className="hover:text-blue-600 transition-colors font-sans">DEJANGBU</Link></li>
               <li><Link href="/watssue" className="hover:text-blue-600 transition-colors font-sans">WATSSUE</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-600 transition-colors">연락하다</Link></li>
             </ul>
           </motion.div>
 
