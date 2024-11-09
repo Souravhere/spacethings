@@ -1,6 +1,7 @@
 import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
+import Storemanagement from "@/components/Storemanagement";
 import Techinfo from "@/components/Techinfo";
 import Wassusection from "@/components/Wassu-section";
 
@@ -15,7 +16,7 @@ export default function Home() {
         <Wassusection/>
         <Caresection/>
         <Appshowcomp/>
-        <div className="h-screen w-full"></div>
+        <Storemanagement/>
       </>
   );
 }
