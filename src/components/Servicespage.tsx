@@ -32,7 +32,6 @@ const itemVariants = {
 interface ServiceCardProps {
   title: string;
   description: string;
-  imageSrc: string;
   link: string;
   icon: JSX.Element;
 }
@@ -76,14 +75,12 @@ export default function ServicesPage() {
           <ServiceCard
             title="와츠수"
             description="작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요."
-            imageSrc="/placeholder.svg?height=300&width=400"
             link="/watssue"
             icon={<FaClipboardList className="text-blue-500 text-4xl mb-4" />}
           />
           <ServiceCard
             title="데장부"
             description="최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요."
-            imageSrc="/placeholder.svg?height=300&width=400"
             link="/dejangbu"
             icon={<FaChartBar className="text-green-500 text-4xl mb-4" />}
           />
@@ -126,7 +123,7 @@ export default function ServicesPage() {
   );
 }
 
-function ServiceCard({ title, description, imageSrc, link, icon }: ServiceCardProps) {
+function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
   return (
     <motion.div
       className="bg-white rounded-lg shadow-lg overflow-hidden"
