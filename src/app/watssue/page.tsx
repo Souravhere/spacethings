@@ -1,7 +1,10 @@
 'use client'
 
+import Appdownload from '@/components/Appdownload'
+import Slider from '@/components/Slider'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { 
   FiClock, 
   FiBell, 
@@ -68,24 +71,26 @@ export default function Component() {
                 업무를 쉽고 편하게<br />
                 <span className="text-blue-600 font-sans">WATSSUE</span>
               </h1>
-              <div className="flex gap-4 mb-8">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  도입문의
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    <FiDownload /> 다운로드
-                  </span>
-                </motion.button>
-              </div>
+              <div className="flex justify-start gap-4 mb-12">
+              <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              >
+                도입문의
+              </motion.button>
+              </Link>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              >
+                <span className="flex items-center gap-2">
+                  <FiDownload /> 다운로드
+                </span>
+              </motion.button>
+            </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -231,6 +236,8 @@ export default function Component() {
           </div>
         </div>
       </section>
+      <Slider/>
+      <Appdownload/>
     </div>
   )
 }
