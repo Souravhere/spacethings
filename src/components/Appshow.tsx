@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Appshowcomp() {
   return (
-    <section className="relative w-full min-h-screen bg-white overflow-hidden px-4 py-12 md:py-24">
+    <section className="relative w-full sm:min-h-screen h-fit bg-white overflow-hidden px-4 py-12 md:py-24">
       <div className="container mx-auto max-w-6xl">
         {/* Text Content */}
         <motion.div
