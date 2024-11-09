@@ -73,13 +73,13 @@ export default function ServicesPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ServiceCard
-            title="와츠수"
+            title="WATSSUE"
             description="작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요."
             link="/watssue"
             icon={<FaClipboardList className="text-blue-500 text-4xl mb-4" />}
           />
           <ServiceCard
-            title="데장부"
+            title="DEJANGBU"
             description="최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요."
             link="/dejangbu"
             icon={<FaChartBar className="text-green-500 text-4xl mb-4" />}
@@ -131,11 +131,11 @@ function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
     >
       <div className="p-6">
         <div className="flex items-center justify-center">{icon}</div>
-        <h3 className="text-2xl font-semibold text-gray-900 text-center mb-2">{title}</h3>
+        <h3 className="text-2xl font-semibold text-gray-900 text-center mb-2 font-sans">{title}</h3>
         <p className="text-gray-600 text-center mb-4">{description}</p>
         <Link
           href={link}
-          className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+          className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 font-sans"
         >
           {title} 더 알아보기
         </Link>
