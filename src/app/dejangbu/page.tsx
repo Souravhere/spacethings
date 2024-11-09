@@ -103,8 +103,8 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">DEJANGBU 주요 기능</h2>
-            <p className="text-gray-600">DEJANGBU 주요 기능 알아보기</p>
+            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>DEJANGBU</span> 주요 기능</h2>
+            <p className="text-gray-600"><span className='font-sans'>DEJANGBU</span> 주요 기능 알아보기</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
