@@ -9,7 +9,7 @@ export default function Hersosection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
 
-  const words = ["innovative", "empowering", "transformative", "visionary"];
+  const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"];
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
