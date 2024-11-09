@@ -74,7 +74,7 @@ export default function Caresection() {
             whileInView="visible"
             className="space-y-12"
           >
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.number}
                 variants={itemVariants}
