@@ -56,10 +56,10 @@ export default function Appdownload() {
                   repeatDelay: 2
                 }}
                 className={`absolute w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-blue-500
-                  ${index === 0 ? 'top-10 -left-6' : ''}
-                  ${index === 1 ? 'top-1/4 -right-6' : ''}
-                  ${index === 2 ? 'bottom-1/4 -left-6' : ''}
-                  ${index === 3 ? 'bottom-10 -right-6' : ''}
+                  ${index === 0 ? 'top-10 left-10' : ''}
+                  ${index === 1 ? 'top-1/4 right-10' : ''}
+                  ${index === 2 ? 'bottom-1/4 left-10' : ''}
+                  ${index === 3 ? 'bottom-10 right-10' : ''}
                 `}
               >
                 <Icon className="w-6 h-6" />
@@ -97,12 +97,12 @@ export default function Appdownload() {
           className="text-center"
         >
           <p className="text-xl font-semibold text-gray-800 mb-6">지금 다운로드하세요</p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-row justify-center items-center gap-4">
             <motion.a
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-48"
+              className="sm:w-48 w-40"
             >
               <Image
                 src="/assets/appstorebadges.png"
@@ -116,7 +116,7 @@ export default function Appdownload() {
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-48"
+              className="sm:w-48 w-40"
             >
               <Image
                 src="/assets/googleplaybadge.png"
