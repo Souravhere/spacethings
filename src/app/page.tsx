@@ -1,3 +1,4 @@
+import Appdownload from "@/components/Appdownload";
 import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
@@ -17,6 +18,7 @@ export default function Home() {
         <Caresection/>
         <Appshowcomp/>
         <Storemanagement/>
+        <Appdownload/>
       </>
   );
 }
