@@ -91,7 +91,8 @@ export default function Wassusection() {
                 className="rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/assets/Wassusectionimg.png"
+                //   src="/assets/Wassusectionimg.png"
+                  src="/assets/dataimage.jpg"
                   alt="Wassu App Interface"
                   className="w-full h-auto"
                   width={100}
