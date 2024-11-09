@@ -74,8 +74,9 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-lg font-semibold text-blue-600">고객센터</h3>
             <ul className="space-y-2">
-              <li><Link href="/contact" className="hover:text-blue-600 transition-colors">사업문의</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-600 transition-colors">일반문의</Link></li>
+              <li><Link href="/service" className="hover:text-blue-600 transition-colors">서비스</Link></li>
+              <li><Link href="/customersupport" className="hover:text-blue-600 transition-colors">고객 지원</Link></li>
+              <li><Link href="/introduction" className="hover:text-blue-600 transition-colors">소개</Link></li>
             </ul>
           </motion.div>
         </div>
