@@ -61,7 +61,7 @@ export default function Caresection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            SMB용 모바일 <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
+            <span className='font-sans'>SMB</span>용 모바일 <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
           </h2>
           <p className="text-gray-600">손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션</p>
         </motion.div>
