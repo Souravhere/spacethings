@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function IntroductionPage() {
   return (
-    <div className="bg-white min-h-screen py-24 px-6 sm:px-12 lg:px-24">
+    <div className="bg-white min-h-screen py-24 px-6 sm:px-12 lg:px-24 font-sans">
       {/* Hero Section */}
       <motion.div
         className="text-center mb-12"
@@ -48,7 +48,7 @@ export default function IntroductionPage() {
         variants={sectionVariants}
       >
         <p className="text-xl text-gray-700">
-          "Space Things는 최첨단 기술과 사용하기 쉬운 솔루션으로 비지니스 운영의 새로운 패러다임을 제시합니다."
+        &#34;Space Things는 최첨단 기술과 사용하기 쉬운 솔루션으로 비지니스 운영의 새로운 패러다임을 제시합니다.&#34;
         </p>
       </motion.div>
 
@@ -102,7 +102,7 @@ export default function IntroductionPage() {
       >
         <h2 className="text-3xl font-semibold text-gray-900">고객 경험</h2>
         <p className="text-gray-700 mt-4">
-          "Space Things 솔루션을 통해 고객과의 연결이 더욱 강화되었습니다."
+        &#34;Space Things 솔루션을 통해 고객과의 연결이 더욱 강화되었습니다.&#34;
         </p>
       </motion.div>
 
