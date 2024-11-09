@@ -178,7 +178,7 @@ export default function Techinfo() {
           className="text-center mt-16 text-blue-600"
         >
           <p className="mb-8">공간 정보 분석이 가능하여 회원 정보, 주문 정보 등과 연계한 다양한 CRM 데이터 측적 가능</p>
-          <div className="flex justify-center gap-12">
+          <div className="flex justify-center sm:gap-28 gap-16">
             {['진입', '체류', '이탈'].map((text, index) => (
               <motion.div
                 key={text}
