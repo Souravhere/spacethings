@@ -61,7 +61,7 @@ export default function Caresection() {
 
   return (
     <section ref={sectionRef} className="py-16 md:py-20 px-4 bg-white w-full overflow-x-hidden">
-      <div className="w-full overflow-x-hidden mx-auto">
+      <div className="w-full max-w-7xl overflow-hidden mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -141,7 +141,7 @@ export default function Caresection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="rounded-[3rem] overflow-hidden shadow-2xl"
+                className="rounded-[3rem] overflow-hidden shadow-xl"
               >
                 <Image
                   src="/assets/careimage.png"
