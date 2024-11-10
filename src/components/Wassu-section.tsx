@@ -60,7 +60,7 @@ export default function Wassusection() {
   }
 
   return (
-    <section className="py-16 px-4 overflow-x-hidden">
+    <section className="py-16 overflow-y-hidden px-4 overflow-x-hidden">
       <div className="w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
