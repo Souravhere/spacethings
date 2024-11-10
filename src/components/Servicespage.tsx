@@ -58,7 +58,6 @@ export default function ServicesPage() {
     threshold: 0.2,
   });
 
-  const [activeService, setActiveService] = useState<string | null>(null);
 
   useEffect(() => {
     if (inView) {
