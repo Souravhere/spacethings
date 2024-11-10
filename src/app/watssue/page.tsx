@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay, Navigation } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 import { 
   FiClock, 
   FiBell, 
@@ -18,6 +18,7 @@ import {
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import Appdownload from '@/components/Appdownload'
 
 export default function Component() {
   const features = [
@@ -47,7 +48,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-24 px-4">
+      <section className="relative pt-24 pb-24 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <motion.div
@@ -123,7 +124,7 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">ALL IN ONE</h2>
+            <h2 className="text-3xl font-bold mb-4 font-sans">ALL IN ONE</h2>
             <p className="text-xl text-gray-600">업무 환경 개선 어플</p>
           </motion.div>
 
@@ -209,17 +210,16 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">WATSSUE 도입 후기</h2>
-            <p className="text-xl text-gray-600">WATSSUE를 먼저 사용해본 사람들의 리뷰를 모아모아!</p>
+            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>WATSSUE</span> 도입 후기</h2>
+            <p className="text-xl text-gray-600"><span className='font-sans'>WATSSUE</span>를 먼저 사용해본 사람들의 리뷰를 모아모아!</p>
           </motion.div>
 
           <Swiper
-            modules={[Pagination, Autoplay, Navigation]}
+            modules={[Pagination, Autoplay]}
             spaceBetween={30}
             slidesPerView={1}
             pagination={{ clickable: true }}
             autoplay={{ delay: 5000 }}
-            navigation
             loop
             className="pb-12"
             breakpoints={{
@@ -243,6 +243,7 @@ export default function Component() {
           </Swiper>
         </div>
       </section>
+      <Appdownload/>
     </div>
   )
 }
