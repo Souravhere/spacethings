@@ -78,8 +78,8 @@ export default function ServicesPage() {
           className="text-center mb-16"
           variants={itemVariants}
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            우리의 <span className="text-blue-600">서비스</span>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4 font-sans">
+          SPACE THINGS
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             혁신적인 솔루션으로 당신의 비즈니스를 한 단계 발전시키세요
