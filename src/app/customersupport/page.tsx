@@ -88,7 +88,7 @@ export default function CustomerSupportPage() {
       >
         <h2 className="text-3xl font-semibold text-gray-900">고객의 목소리</h2>
         <p className="text-gray-700 mt-4">
-          "Space Things의 고객 지원은 언제나 친절하고, 빠르게 응답하여 문제가 해결됩니다."
+        &#34;Space Things의 고객 지원은 언제나 친절하고, 빠르게 응답하여 문제가 해결됩니다.&#34;
         </p>
       </motion.div>
 
