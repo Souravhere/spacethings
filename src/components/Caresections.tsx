@@ -82,7 +82,7 @@ export default function Caresection() {
             animate={isInView ? "visible" : "hidden"}
             className="space-y-8 md:space-y-16 order-2 lg:order-1"
           >
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.number}
                 variants={itemVariants}
