@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaCheckCircle, FaClock, FaCalendarAlt, FaMoneyBillWave, FaBuilding } from "react-icons/fa";
+import { FaClock, FaCalendarAlt, FaMoneyBillWave } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { opacity: 0 },
