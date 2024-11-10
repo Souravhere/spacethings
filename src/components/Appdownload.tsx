@@ -39,7 +39,7 @@ export default function Appdownload() {
         {/* Text Content */}
         <motion.div variants={itemVariants} className="text-center sm:mb-10 mb-3 h-fit">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            <span className="font-sans">혁신의 기회, </span> <span className="text-blue-600">지금 바로 사용해보세요</span>
+            혁신의 기회, <span className="text-blue-600">지금 바로 사용해보세요</span>
           </h2>
           <p className="text-center font-semibold mt-2 text-gray-600">관리 프로세스를 간소화하고 고객 경험을 향상시켜 효율성을 높여보세요</p>
         </motion.div>
