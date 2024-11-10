@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { FaChartBar, FaClipboardList, FaMobileAlt, FaUsers } from "react-icons/fa";
+import { FaChartBar, FaClipboardList, FaMobileAlt, FaUsers, FaArrowRight } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,12 +28,21 @@ const itemVariants = {
   },
 };
 
-// Define types for service and feature card props
+const cardHoverVariants = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
 interface ServiceCardProps {
   title: string;
   description: string;
   link: string;
   icon: JSX.Element;
+  imageSrc: string;
 }
 
 interface FeatureCardProps {
@@ -49,6 +58,8 @@ export default function ServicesPage() {
     threshold: 0.2,
   });
 
+  const [activeService, setActiveService] = useState<string | null>(null);
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -56,7 +67,7 @@ export default function ServicesPage() {
   }, [controls, inView]);
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         ref={ref}
         className="max-w-7xl mx-auto"
@@ -64,37 +75,44 @@ export default function ServicesPage() {
         initial="hidden"
         animate={controls}
       >
-        <motion.h1
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
+        <motion.div 
+          className="text-center mb-16"
           variants={itemVariants}
         >
-          우리의 <span className="text-blue-600">서비스</span>
-        </motion.h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            우리의 <span className="text-blue-600">서비스</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            혁신적인 솔루션으로 당신의 비즈니스를 한 단계 발전시키세요
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           <ServiceCard
             title="WATSSUE"
-            description="작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요."
+            description="작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요. 실시간 협업, 작업 추적, 자동화된 워크플로우를 통해 팀의 효율성을 극대화하세요."
             link="/watssue"
             icon={<FaClipboardList className="text-blue-500 text-4xl mb-4" />}
+            imageSrc="/assets/worklife.png"
           />
           <ServiceCard
             title="DEJANGBU"
-            description="최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요."
+            description="최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요. 실시간 재무 추적, 예산 계획, 지출 분석을 통해 재무 의사 결정을 최적화하세요."
             link="/dejangbu"
             icon={<FaChartBar className="text-green-500 text-4xl mb-4" />}
+            imageSrc="/assets/cal.png"
           />
         </div>
 
         <motion.h2
-          className="text-3xl font-semibold text-center text-gray-800 mt-16 mb-8"
+          className="text-3xl font-semibold text-center text-gray-800 mb-12"
           variants={itemVariants}
         >
           왜 우리 서비스를 선택해야 할까요?
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
         >
           <FeatureCard
@@ -123,21 +141,35 @@ export default function ServicesPage() {
   );
 }
 
-function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
+function ServiceCard({ title, description, link, icon, imageSrc }: ServiceCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-lg overflow-hidden"
+      className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300"
       variants={itemVariants}
+      whileHover={cardHoverVariants.hover}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <div className="p-6">
-        <div className="flex items-center justify-center">{icon}</div>
-        <h3 className="text-2xl font-semibold text-gray-900 text-center mb-2 font-sans">{title}</h3>
-        <p className="text-gray-600 text-center mb-4">{description}</p>
+      <div className="relative">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-48 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+      <div className="p-8">
+        <div className="flex items-center justify-center mb-4">{icon}</div>
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 font-sans">{title}</h3>
+        <p className="text-gray-600 text-center mb-6">{description}</p>
         <Link
           href={link}
-          className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 font-sans"
+          className="group flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
         >
-          {title} 더 알아보기
+          <span className="mr-2 font-sans">{title} 더 알아보기</span>
+          <FaArrowRight className={`transform transition-transform duration-300 ${isHovered ? 'translate-x-2' : ''}`} />
         </Link>
       </div>
     </motion.div>
@@ -147,11 +179,14 @@ function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <motion.div
-      className="bg-white rounded-lg shadow p-6 text-center"
+      className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
       variants={itemVariants}
+      whileHover={{ y: -5 }}
     >
-      <div className="flex justify-center mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <div className="flex justify-center mb-6">
+        <div className="p-4 bg-blue-50 rounded-full">{icon}</div>
+      </div>
+      <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </motion.div>
   );
