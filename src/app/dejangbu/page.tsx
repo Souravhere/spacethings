@@ -44,7 +44,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 px-4">
+      <section className="relative pt-24 pb-32 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -105,8 +105,8 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">DEJANGBU 주요 기능</h2>
-            <p className="text-gray-600">DEJANGBU의 주요 기능을 알아보세요</p>
+            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>DEJANGBU</span> 주요 기능</h2>
+            <p className="text-gray-600"><span className='font-sans'>DEJANGBU</span>의 주요 기능을 알아보세요</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -198,7 +198,7 @@ export default function Component() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-blue-50">
+      <section className="py-24 px-4 bg-blue-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -206,8 +206,8 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">DEJANGBU 도입 후기</h2>
-            <p className="text-gray-600">DEJANGBU를 쓰고 계신 대표님들의 후기</p>
+            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>DEJANGBU</span> 도입 후기</h2>
+            <p className="text-gray-600"><span className='font-sans'>DEJANGBU</span>를 쓰고 계신 대표님들의 후기</p>
           </motion.div>
 
           <Swiper
