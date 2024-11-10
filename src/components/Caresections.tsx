@@ -1,10 +1,14 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { FiCalendar, FiDollarSign, FiClock, FiPieChart } from 'react-icons/fi'
 import Image from 'next/image'
+import { useRef } from 'react'
 
 export default function Caresection() {
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true })
+
   const features = [
     {
       number: "1",
@@ -35,69 +39,81 @@ export default function Caresection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.4,
+        delayChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -50, scale: 0.95 },
     visible: {
       opacity: 1,
       x: 0,
+      scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.7,
+        type: "spring",
+        stiffness: 100,
       },
     },
   }
 
   return (
-    <section className="py-20 px-4 bg-white w-full overflow-x-hidden">
-      <div className="mx-auto">
+    <section ref={sectionRef} className="py-16 md:py-20 px-4 bg-white w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             <span className='font-sans'>SMB</span>용 모바일 <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
           </h2>
-          <p className="text-gray-600">손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션</p>
+          <p className="text-gray-600 text-sm sm:text-base">손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Features List */}
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          {/* Features List - Hidden on mobile initially */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            whileInView="visible"
-            className="space-y-12"
+            animate={isInView ? "visible" : "hidden"}
+            className="space-y-8 md:space-y-16 order-2 lg:order-1"
           >
-            {features.map((feature) => (
+            {features.map((feature, index) => (
               <motion.div
                 key={feature.number}
                 variants={itemVariants}
                 className="relative"
               >
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex gap-6 p-6 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 p-6 md:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600">
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mx-auto sm:mx-0"
+                  >
                     {feature.icon}
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold flex items-center gap-2">
-                      <span className="text-2xl text-amber-500">{feature.number}</span>
-                      {feature.title}
-                      <span className="text-blue-600">{feature.titleHighlight}</span>
+                  </motion.div>
+                  <div className="space-y-3 md:space-y-4">
+                    <h3 className="text-lg md:text-xl font-bold flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+                      <span className="text-xl md:text-2xl text-amber-500">{feature.number}</span>
+                      <span className="break-keep">{feature.title}</span>
+                      <span className="text-blue-600 break-keep">{feature.titleHighlight}</span>
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 md:space-y-3">
                       {feature.points.map((point, i) => (
-                        <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
-                          <span className="text-amber-500 mt-1">-</span>
-                          {point}
+                        <li
+                          key={i}
+                          className="text-gray-600 text-sm flex items-start gap-2 md:gap-3"
+                        >
+                          <span className="text-amber-500 mt-1 flex-shrink-0">-</span>
+                          <span className="break-keep">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -107,19 +123,19 @@ export default function Caresection() {
             ))}
           </motion.div>
 
-          {/* Phone Mockup */}
+          {/* Phone Mockup - Show first on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            className="relative order-1 lg:order-2 mb-8 lg:mb-0"
           >
-            <div className="relative w-[300px] md:w-[380px] mx-auto">
+            <div className="relative w-[240px] sm:w-[260px] md:w-[320px] mx-auto">
               <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 1, 0],
-                }}
+                animate={isInView ? {
+                  y: [0, -12, 0],
+                  rotate: [0, 1, 0, -1, 0],
+                } : {}}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
@@ -135,37 +151,51 @@ export default function Caresection() {
                   height={100}
                 />
               </motion.div>
-              {/* Decorative elements */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-amber-100 rounded-full opacity-20 blur-3xl" />
               
-              {/* Floating icons */}
+              {/* Decorative elements */}
               <motion.div
-                animate={{
-                  y: [-20, 0, -20],
-                  x: [-10, 10, -10],
-                }}
+                animate={isInView ? {
+                  scale: [1, 1.1, 1],
+                  opacity: [0.2, 0.3, 0.2],
+                } : {}}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-20 -right-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-amber-500"
+                className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-amber-100 rounded-full blur-3xl"
+              />
+              
+              {/* Floating icons - Hide on mobile */}
+              <motion.div
+                animate={isInView ? {
+                  y: [-20, 0, -20],
+                  x: [-10, 10, -10],
+                  rotate: [0, 10, -10, 0],
+                } : {}}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="hidden md:flex absolute top-20 -right-8 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-lg items-center justify-center text-amber-500"
               >
                 <FiCalendar className="w-6 h-6" />
               </motion.div>
               
               <motion.div
-                animate={{
+                animate={isInView ? {
                   y: [0, -20, 0],
                   x: [10, -10, 10],
-                }}
+                  rotate: [0, -10, 10, 0],
+                } : {}}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute bottom-20 -left-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-amber-500"
+                className="hidden md:flex absolute bottom-20 -left-8 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-lg items-center justify-center text-amber-500"
               >
                 <FiPieChart className="w-6 h-6" />
               </motion.div>
