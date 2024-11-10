@@ -1,13 +1,12 @@
 'use client'
 
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
 import { FlipWords } from './ui/flip-words'
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const controls = useAnimation()
 
   const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
 
@@ -20,21 +19,10 @@ export default function HeroSection() {
       delay: Math.random() * 5,
       brightness: Math.random() * 0.7 + 0.3,
     }))
-  }, [])
-
-  const floatingParticles = useMemo(() => {
-    return Array.from({ length: 40 }).map(() => ({
-      x: 50 + Math.random() * 50,
-      y: Math.random() * 100,
-      size: Math.random() * 6 + 3,
-      duration: Math.random() * 4 + 3,
-      delay: Math.random() * 2,
-      color: `hsl(${Math.random() * 40 + 200}, 80%, ${Math.random() * 30 + 60}%)`,
-    }))
-  }, [])
+  }, [])  
 
   useEffect(() => {
-    const handleMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY })
+    const handleMouseMove = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY })
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
@@ -48,6 +36,33 @@ export default function HeroSection() {
           background: 'linear-gradient(135deg, rgba(147, 197, 253, 0.3) 0%, rgba(191, 219, 254, 0.4) 50%, rgba(239, 246, 255, 0.3) 100%)'
         }}
       />
+      {/* Falling Particles */}
+      <div className="absolute inset-0 pointer-events-none z-10">
+        {fallingParticles.map((particle, index) => (
+          <motion.div
+            key={index}
+            initial={{ y: particle.startY }}
+            animate={{ y: '100vh' }}
+            transition={{
+              duration: particle.duration,
+              delay: particle.delay,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: `${particle.x}vw`,
+              width: particle.size,
+              height: particle.size,
+              backgroundColor: `rgba(255, 255, 255, ${particle.brightness})`,
+              borderRadius: '50%',
+              opacity: 0.7,
+              filter: `brightness(${particle.brightness})`,
+            }}
+          />
+        ))}
+      </div>
 
       <motion.div className="absolute right-0 w-3/4 h-full z-0">
         <motion.div
@@ -119,7 +134,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
             <motion.span className="block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
               당신의 성장을 위한 선택
             </motion.span>
