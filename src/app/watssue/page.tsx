@@ -204,8 +204,8 @@ export default function Component() {
       transition={{ duration: 0.8 }}
       className="text-center mb-16"
     >
-      <h2 className="text-3xl font-bold mb-4">WATSSUE 주요 기능</h2>
-      <p className="text-xl text-gray-600">WATSSUE의 주요 기능을 미리 체험해보세요</p>
+      <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>WATSSUE</span> 주요 기능</h2>
+      <p className="text-xl text-gray-600"><span className='font-sans'>WATSSUE</span>의 주요 기능을 미리 체험해보세요</p>
     </motion.div>
 
     <motion.div
