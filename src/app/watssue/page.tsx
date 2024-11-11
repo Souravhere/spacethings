@@ -149,7 +149,7 @@ export default function Component() {
         </div>
       </section>
             {/* New Top Section */}
-            <section className="py-12 px-4 bg-gradient-to-b from-orange-50/50 to-white">
+            <section className="py-12 px-4 bg-white h-fit">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <motion.div
@@ -159,7 +159,7 @@ export default function Component() {
               className="md:w-1/2"
             >
               <Image
-                src="/assets/satisfaction.png"
+                src="/assets/2.png"
                 width={400}
                 height={400}
                 alt="Work Satisfaction"
