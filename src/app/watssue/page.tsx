@@ -22,12 +22,12 @@ import Appdownload from '@/components/Appdownload'
 
 export default function Component() {
   const features = [
-    { icon: <FiClock className="w-8 h-8" />, title: "근태관리", description: "근태&근무 시간 확인" },
-    { icon: <FiBell className="w-8 h-8" />, title: "공지사항", description: "자동화된 회사 건물 공지사항 전달" },
-    { icon: <FiFileText className="w-8 h-8" />, title: "전자계약", description: "보관 및 관리가 용이한 전자계약" },
-    { icon: <FiCheckSquare className="w-8 h-8" />, title: "체크리스트", description: "항복별 진행상황 체크 및 공유" },
-    { icon: <FiDollarSign className="w-8 h-8" />, title: "급여정산", description: "자동화된 근태 및 급여 확인" },
-    { icon: <FiCalendar className="w-8 h-8" />, title: "스케줄 관리", description: "외부/연장 근무 등 스케줄 관리" }
+    { icon: <FiClock className="w-12 h-12" />, title: "근태관리", description: "근태&근무 시간 확인", bg:"bg-[#00a4e6]" },
+    { icon: <FiBell className="w-12 h-12" />, title: "공지사항", description: "자동화된 회사 건물 공지사항 전달", bg:"bg-[#45caff]"  },
+    { icon: <FiFileText className="w-12 h-12" />, title: "전자계약", description: "보관 및 관리가 용이한 전자계약", bg:"bg-[#00e6de]"  },
+    { icon: <FiCheckSquare className="w-12 h-12" />, title: "체크리스트", description: "항복별 진행상황 체크 및 공유", bg:"bg-[#4c8ae6]"  },
+    { icon: <FiDollarSign className="w-12 h-12" />, title: "급여정산", description: "자동화된 근태 및 급여 확인", bg:"bg-[#7eacf1]"  },
+    { icon: <FiCalendar className="w-12 h-12" />, title: "스케줄 관리", description: "외부/연장 근무 등 스케줄 관리", bg:"bg-[#b0c3ff]"  }
   ]
 
   const testimonials = [
@@ -136,13 +136,13 @@ export default function Component() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="p-8 bg-gradient-to-br from-[#E3F2FD] to-white rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                className={`${feature.bg} text-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all`}
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                <div className="w-16 h-16 bg-transparent rounded-xl flex items-center justify-center text-white mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
+                <p className="text-sm">{feature.description}</p>
               </motion.div>
             ))}
           </div>
