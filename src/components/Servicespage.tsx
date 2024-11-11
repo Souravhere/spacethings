@@ -157,7 +157,8 @@ function ServiceCard({ title, description, link, icon, imageSrc }: ServiceCardPr
           src={imageSrc}
           alt={title}
           className="w-full h-48 object-cover"
-          
+          width={100}
+          height={100}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
