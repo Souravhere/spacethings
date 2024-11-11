@@ -1,17 +1,36 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { FlipWords } from './ui/flip-words'
 
+// Define types
+interface Particle {
+  x: number
+  startY: number
+  size: number
+  duration: number
+  delay: number
+  brightness: number
+}
+
+interface MousePosition {
+  x: number
+  y: number
+}
+
 export default function HeroSection() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mounted, setMounted] = useState(false)
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
+  const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
 
   const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
 
-  const fallingParticles = useMemo(() => {
-    return Array.from({ length: 80 }).map(() => ({
+  useEffect(() => {
+    setMounted(true)
+    // Generate particles only after component is mounted on client
+    const particles: Particle[] = Array.from({ length: 80 }).map(() => ({
       x: 50 + Math.random() * 50,
       startY: -10,
       size: Math.random() * 4 + 1,
@@ -19,14 +38,21 @@ export default function HeroSection() {
       delay: Math.random() * 5,
       brightness: Math.random() * 0.7 + 0.3,
     }))
-  }, [])  
+    setFallingParticles(particles)
+  }, [])
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY })
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
+
+  if (!mounted) {
+    return null // Return null on server-side and initial client-side render
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50">
