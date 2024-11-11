@@ -149,58 +149,107 @@ export default function Component() {
         </div>
       </section>
 
-      {/* Main Features Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>WATSSUE</span> 주요 기능</h2>
-            <p className="text-xl text-gray-600"><span className='font-sans'>WATSSUE</span>의 주요 기능을 미리 체험해보세요</p>
-          </motion.div>
+      {/* Solutions Section */}
+<section className="py-20 px-4">
+  <div className="max-w-6xl mx-auto space-y-24">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-3xl font-bold mb-4">WATSSUE 주요 기능</h2>
+      <p className="text-xl text-gray-600">WATSSUE의 주요 기능을 미리 체험해보세요</p>
+    </motion.div>
 
-          <div className="space-y-12">
-            {[
-              { image: "/assets/cal.png", title: "급여 정산", description: "모든 직장에서 가장 중요한 급여 관리를 더욱 똑똑하게!", tags: ["#급여확인", "#급여내역", "#급여 명세서"] },
-              { image: "/assets/time.png", title: "근태 관리", description: "자동화된 근태관리로 더욱 빠르고 철저하게!", tags: ["#근태확인", "#야근확인", "#지각확인"] },
-              { image: "/assets/worklife.png", title: "스케줄 관리", description: "외부 출장, 연장 근무, 휴가 등 알아보기 쉽게!", tags: ["#출장확인", "#연장내역", "#휴가확인"] }
-            ].map((feature) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col md:flex-row gap-8 items-center"
-              >
-                <div className="md:w-1/2">
-                  <Image
-                    src={feature.image}
-                    width={600}
-                    height={400}
-                    alt={feature.title}
-                    className="rounded-2xl shadow-lg"
-                  />
-                </div>
-                <div className="md:w-1/2 space-y-4">
-                  <h3 className="text-2xl font-bold">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                  <div className="flex gap-2 flex-wrap">
-                    {feature.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="flex flex-col md:flex-row items-center gap-12"
+    >
+      <div className="md:w-1/2">
+        <Image
+          src="/assets/cal.png"
+          width={500}
+          height={300}
+          alt="급여 정산"
+          className="rounded-2xl shadow-lg"
+        />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">급여 정산</h3>
+        <p className="text-gray-800 font-medium">모든 직장에서 가장 중요한 급여 관리를 더욱 똑똑하게!</p>
+        <p className="text-gray-600">급여 명세서도 직접 발급할 수 있어 편리해요</p>
+        <div className="flex gap-2 flex-wrap">
+          {["#급여확인", "#입금내역", "#급여 명세서"].map(tag => (
+            <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
         </div>
-      </section>
+      </div>
+    </motion.div>
 
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="flex flex-col md:flex-row-reverse items-center gap-12"
+    >
+      <div className="md:w-1/2">
+        <Image
+          src="/assets/time.png"
+          width={500}
+          height={300}
+          alt="근태 관리"
+          className="rounded-2xl shadow-lg"
+        />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">근태 관리</h3>
+        <p className="text-gray-800 font-medium">자동화된 근태관리로 더욱 빠르고 철저하게!</p>
+        <p className="text-gray-600">직원별 근무시간 / 근태확인이 쉬워 관리하기 쉬워요</p>
+        <div className="flex gap-2 flex-wrap">
+          {["#근태확인", "#야근확인", "#지각확인"].map(tag => (
+            <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="flex flex-col md:flex-row items-center gap-12"
+    >
+      <div className="md:w-1/2">
+        <Image
+          src="/assets/worklife.png"
+          width={500}
+          height={300}
+          alt="스케줄 관리"
+          className="rounded-2xl shadow-lg"
+        />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">스케줄 관리</h3>
+        <p className="text-gray-800 font-medium">외부 출장, 연장 근무, 휴가 등 알아보기 쉽게!</p>
+        <p className="text-gray-600">팀별, 직원별 스케줄 확인이 용이해 헷갈리지 않아요</p>
+        <div className="flex gap-2 flex-wrap">
+          {["#출장확인", "#연장내역", "#휴가확인"].map(tag => (
+            <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
       {/* Testimonials Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
