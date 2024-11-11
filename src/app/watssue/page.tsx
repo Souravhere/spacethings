@@ -148,7 +148,53 @@ export default function Component() {
           </div>
         </div>
       </section>
-
+            {/* New Top Section */}
+            <section className="py-12 px-4 bg-gradient-to-b from-orange-50/50 to-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="md:w-1/2"
+            >
+              <Image
+                src="/assets/satisfaction.png"
+                width={400}
+                height={400}
+                alt="Work Satisfaction"
+                className="w-full"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="md:w-1/2"
+            >
+              <h2 className="text-2xl font-bold mb-6">모두가 만족하는 업무 자동화!</h2>
+              <div className="space-y-3">
+                <p className="flex items-center gap-2">
+                  <span className="text-blue-500">✓</span>
+                  직업 만족도 향상으로 인한 매출 증대 효과
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-blue-500">✓</span>
+                  업무 및 조직에 대한 만족감 강화 효과
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-blue-500">✓</span>
+                  조직 분위기 단합 효과
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-blue-500">✓</span>
+                  현명한 근무 환경 조성 효과
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       {/* Solutions Section */}
 <section className="py-20 px-4">
   <div className="max-w-6xl mx-auto space-y-24">
