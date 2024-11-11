@@ -1,9 +1,11 @@
-"use client"
+"use client";
+
 import { useState, useEffect } from "react";
 import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import Image from "next/image";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -29,86 +31,72 @@ export default function RootLayout({
     const timer = setTimeout(() => {
       setLoading(false);
     }, 4000);
-
-    // Google Tag Manager setup
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    function gtag(...args: any[]) {
-      (window as any).dataLayer.push(args);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-KZ26P8G7KV");
-
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-KZ26P8G7KV";
-    script.async = true;
-    document.head.appendChild(script);
-
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <html lang="en">
       <head>
-        <title>EAGLES - Let&#39;s Make Eagles Great Again</title>
+        <title>Space Things - Innovative Tech Solutions for Businesses</title>
         <meta
           name="description"
-          content="Join the EAGLES revolution! Soar high with the meme coin that combines community, fun, and financial freedom on Solana. Let&#39;s Make Eagles Great Again."
+          content="Space Things는 비콘 기술, BLE, GPS 및 데이터 분석과 같은 첨단 기술 솔루션을 제공하여 비즈니스 환경을 최적화하고 고객 경험을 향상시킵니다."
         />
-        <meta name="application-name" content="EAGLES" />
+        <meta name="application-name" content="Space Things" />
         <link
           rel="icon"
-          href="https://eagles-fawn.vercel.app/assets/seologo.png"
+          href="https://spacethings.vercel.app/assets/headerlogo2.png"
         />
         <link
           rel="apple-touch-icon"
-          href="https://eagles-fawn.vercel.app/assets/seologo.png"
+          href="https://spacethings.vercel.app/assets/headerlogo2.png"
         />
         <meta
           name="keywords"
-          content="EAGLES, meme coin, Solana, cryptocurrency, financial freedom, crypto community"
+          content="Space Things, 기술 솔루션, 비콘 기술, BLE, GPS, 데이터 분석, 비즈니스 최적화"
         />
 
         {/* Open Graph Metadata */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.eagles.wtf" />
+        <meta property="og:url" content="https://spacethings.co.kr" />
         <meta
           property="og:title"
-          content="EAGLES - Let&#39;s Make Eagles Great Again"
+          content="Space Things - Innovative Tech Solutions for Businesses"
         />
         <meta
           property="og:description"
-          content="Join the EAGLES revolution! Soar high with the meme coin that combines community, fun, and financial freedom on Solana."
+          content="Space Things의 지능형 기술 솔루션을 통해 자동화를 위한 WATSSUE 및 최적화된 매장 관리를 위한 DEJANGBU를 경험하고 비즈니스 환경에 새로운 패러다임을 제공합니다."
         />
-        <meta property="og:site_name" content="EAGLES" />
+        <meta property="og:site_name" content="Space Things" />
         <meta
           property="og:image"
-          content="https://eagles-fawn.vercel.app/assets/seoimg.png"
+          content="https://spacethings.vercel.app/assets/sepimage.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="EAGLES Meme Coin Banner" />
+        <meta property="og:image:alt" content="Space Things Tech Solutions" />
 
         {/* Twitter Metadata */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@EaglesSolana" />
+        <meta name="twitter:site" content="@SpaceThings" />
         <meta
           name="twitter:title"
-          content="EAGLES - Let&#39;s Make Eagles Great Again"
+          content="Space Things - Innovative Tech Solutions for Businesses"
         />
         <meta
           name="twitter:description"
-          content="Join the EAGLES revolution! Soar high with the meme coin that combines community, fun, and financial freedom on Solana."
+          content="Space Things의 지능형 기술 솔루션 WATSSUE 및 DEJANGBU를 통해 비즈니스 환경을 최적화하고 고객 경험을 강화하세요."
         />
         <meta
           name="twitter:image"
-          content="https://eagles-fawn.vercel.app/assets/seoimg.png"
+          content="https://spacethings.vercel.app/assets/sepimage.png"
         />
 
         {/* Robots Meta Tags */}
         <meta name="robots" content="index, follow" />
 
-        {/* Alternates */}
-        <link rel="canonical" href="https://www.eagles.wtf" />
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://spacethings.co.kr" />
 
         {/* Structured Data with JSON-LD for SEO */}
         <script
@@ -117,20 +105,20 @@ export default function RootLayout({
             __html: `{
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "EAGLES",
-              "url": "https://www.eagles.wtf",
-              "logo": "https://eagles-fawn.vercel.app/assets/seologo.png",
+              "name": "Space Things",
+              "url": "https://spacethings.co.kr",
+              "logo": "https://spacethings.vercel.app/assets/headerlogo2.png",
               "sameAs": [
-                "https://t.me/eaglesportal",
-                "https://x.com/EaglesSolana"
+                "https://twitter.com/SpaceThings",
+                "https://linkedin.com/company/spacethings"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "email": "team@eagles.wtf",
-                "contactType": "Customer Support"
+                "email": "info@spacethings.co.kr",
+                "contactType": "고객 지원"
               },
-              "description": "Join the EAGLES revolution! Soar high with the meme coin that combines community, fun, and financial freedom on Solana.",
-              "image": "https://eagles-fawn.vercel.app/assets/seoimg.png"
+              "description": "Space Things는 비즈니스 최적화 및 고객 경험 강화를 위해 비콘 기술, GPS, BLE 및 데이터 분석을 활용한 첨단 기술 솔루션을 제공합니다.",
+              "image": "https://spacethings.vercel.app/assets/sepimage.png"
             }`,
           }}
         />
