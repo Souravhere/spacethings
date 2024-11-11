@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { FaChartBar, FaClipboardList, FaMobileAlt, FaUsers, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -152,10 +153,11 @@ function ServiceCard({ title, description, link, icon, imageSrc }: ServiceCardPr
       onHoverEnd={() => setIsHovered(false)}
     >
       <div className="relative">
-        <img
+        <Image
           src={imageSrc}
           alt={title}
           className="w-full h-48 object-cover"
+          
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
