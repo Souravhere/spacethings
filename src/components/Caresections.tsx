@@ -147,8 +147,9 @@ export default function Caresection() {
                   src="/assets/careimage.png"
                   alt="All-Care App Interface"
                   className="w-full h-auto"
-                  width={100}
-                  height={100}
+                  width={640}
+                  height={1280}
+                  quality={100}
                 />
               </motion.div>
               
