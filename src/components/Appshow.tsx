@@ -80,6 +80,7 @@ export default function Appshowcomp() {
               fill
               className="object-contain"
               priority
+              quality={100}
             />
           </motion.div>
 
