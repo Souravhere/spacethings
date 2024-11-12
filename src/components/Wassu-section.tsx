@@ -10,7 +10,7 @@ import {
 import { FaHandshake } from 'react-icons/fa'
 import Image from 'next/image'
 
-export default function Wassusection() {
+const Wassusection: React.FC = () => {
   const features = [
     {
       icon: <FiClock className="w-8 h-8" />,
@@ -98,9 +98,10 @@ export default function Wassusection() {
                 <Image
                   src="/assets/dataimage.png"
                   alt="Wassu App Interface"
+                  width={640}
+                  height={1280}
+                  quality={100}
                   className="w-full h-auto"
-                  width={100}
-                  height={100}
                 />
               </motion.div>
               {/* Enhanced decorative elements */}
@@ -173,3 +174,5 @@ export default function Wassusection() {
     </section>
   )
 }
+
+export default Wassusection
