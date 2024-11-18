@@ -26,7 +26,7 @@ export default function Caresection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length)
-    }, 5000) // Change image every 5 seconds
+    }, 3500) // Change image every 3.5 seconds
 
     return () => clearInterval(timer)
   }, [])
@@ -96,7 +96,7 @@ export default function Caresection() {
           <p className="text-gray-600 text-sm sm:text-base">손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center py-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
