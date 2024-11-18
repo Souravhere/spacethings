@@ -13,11 +13,14 @@ export default function Home() {
         <Hersosection/>
         {/* <Techinfo/>  this comp is removed due new ui */}
         <ServicesPage/>
-        <Wassusection/>
+        {/* <Wassusection/>  this comp is removed due to new ui update*/}
+
+        {/* here is two new section added from the figma file */}
+
         <Caresection/>
-        <Appshowcomp/>
-        <Storemanagement/>
-        <Appdownload/>
+        {/* <Appshowcomp/>  this comp is removed due to new ui update*/}
+        {/* <Storemanagement/>  this comp is removed due to new ui update*/}
+        {/* <Appdownload/> this comp will update soon  */}
       </>
   );
 }
