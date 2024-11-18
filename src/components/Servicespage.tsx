@@ -80,11 +80,8 @@ export default function ServicesPage() {
           variants={itemVariants}
         >
           <h1 className="text-5xl font-bold text-gray-900 mb-4 font-sans">
-          SPACE THINGS
+          Our Service
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            혁신적인 솔루션으로 당신의 비즈니스를 한 단계 발전시키세요
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
