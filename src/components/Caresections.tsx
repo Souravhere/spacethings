@@ -1,13 +1,35 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useAnimation } from 'framer-motion'
 import { FiCalendar, FiDollarSign, FiClock, FiPieChart } from 'react-icons/fi'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 export default function Caresection() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true })
+  const controls = useAnimation()
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const images = [
+    "/assets/careimage.png",
+    "/assets/Appdownload.jpg",
+    "/assets/dataimage.png"
+  ]
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible")
+    }
+  }, [isInView, controls])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(timer)
+  }, [])
 
   const features = [
     {
@@ -75,11 +97,10 @@ export default function Caresection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Features List - Hidden on mobile initially */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate={controls}
             className="space-y-8 md:space-y-16 order-2 lg:order-1"
           >
             {features.map((feature) => (
@@ -123,7 +144,6 @@ export default function Caresection() {
             ))}
           </motion.div>
 
-          {/* Phone Mockup - Show first on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -143,17 +163,23 @@ export default function Caresection() {
                 }}
                 className="rounded-[3rem] overflow-hidden shadow-xl"
               >
-                <Image
-                  src="/assets/careimage.png"
-                  alt="All-Care App Interface"
-                  className="w-full h-auto"
-                  width={640}
-                  height={1280}
-                  quality={100}
-                />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  key={currentImage}
+                >
+                  <Image
+                    src={images[currentImage]}
+                    alt={`All-Care App Interface ${currentImage + 1}`}
+                    className="w-full h-auto"
+                    width={640}
+                    height={1280}
+                    quality={100}
+                  />
+                </motion.div>
               </motion.div>
               
-              {/* Decorative elements */}
               <motion.div
                 animate={isInView ? {
                   scale: [1, 1.1, 1],
@@ -167,7 +193,6 @@ export default function Caresection() {
                 className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-amber-100 rounded-full blur-3xl"
               />
               
-              {/* Floating icons - Hide on mobile */}
               <motion.div
                 animate={isInView ? {
                   y: [-20, 0, -20],
@@ -200,7 +225,7 @@ export default function Caresection() {
               >
                 <FiPieChart className="w-6 h-6" />
               </motion.div>
-            </div>
+            </div> 
           </motion.div>
         </div>
       </div>
