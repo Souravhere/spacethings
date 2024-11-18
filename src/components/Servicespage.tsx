@@ -102,10 +102,10 @@ export default function ServicesPage() {
         </div>
 
         <motion.h2
-          className="text-3xl font-semibold text-center text-gray-800 mb-12"
+          className="text-4xl font-bold text-center text-blue-600 mb-12 font-sans"
           variants={itemVariants}
         >
-          왜 우리 서비스를 선택해야 할까요?
+          <span className="text-black">Why</span> Space Things
         </motion.h2>
 
         <motion.div
@@ -114,22 +114,22 @@ export default function ServicesPage() {
         >
           <FeatureCard
             icon={<FaMobileAlt className="text-purple-500 text-3xl" />}
-            title="모바일 우선"
+            title="사용자 편의성"
             description="어디서나 언제든지 데이터 및 도구에 액세스하세요."
           />
           <FeatureCard
             icon={<FaUsers className="text-indigo-500 text-3xl" />}
-            title="협업 지원"
+            title="합리적 비용"
             description="실시간으로 팀과 원활하게 작업하세요."
           />
           <FeatureCard
             icon={<FaChartBar className="text-red-500 text-3xl" />}
-            title="데이터 기반"
+            title="유연한 기능"
             description="강력한 분석을 통해 정보에 입각한 결정을 내리세요."
           />
           <FeatureCard
             icon={<FaClipboardList className="text-yellow-500 text-3xl" />}
-            title="맞춤형"
+            title="높은 효율성"
             description="귀사의 고유한 요구에 맞게 도구를 조정하세요."
           />
         </motion.div>

@@ -11,7 +11,7 @@ export default function Home() {
   return (
       <>
         <Hersosection/>
-        {/* <Techinfo/> */} this comp is removed due new ui
+        {/* <Techinfo/>  this comp is removed due new ui */}
         <ServicesPage/>
         <Wassusection/>
         <Caresection/>
