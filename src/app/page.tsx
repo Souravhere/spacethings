@@ -1,5 +1,5 @@
 import ALLCARE from "@/components/ALL-CARE";
-// import Appdownload from "@/components/Appdownload";
+import Appdownload from "@/components/Appdownload";
 // import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
@@ -22,7 +22,7 @@ export default function Home() {
         <ALLCARE/>
         {/* <Appshowcomp/>  this comp is removed due to new ui update*/}
         {/* <Storemanagement/>  this comp is removed due to new ui update*/}
-        {/* <Appdownload/> this comp will update soon  */}
+        <Appdownload/>
       </>
   );
 }

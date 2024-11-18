@@ -1,113 +1,112 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
-export default function Appdownload() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  };
-
+export default function AppDownload() {
   return (
-    <section className="py-10 px-4 bg-white overflow-hidden relative">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-blue-100/20" />
-
-      <motion.div
-        className="max-w-6xl mx-auto relative"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Text Content */}
-        <motion.div variants={itemVariants} className="text-center sm:mb-10 mb-3 h-fit">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            혁신의 기회, <span className="text-blue-600">지금 바로 사용해보세요</span>
-          </h2>
-          <p className="text-center font-semibold mt-2 text-gray-600">관리 프로세스를 간소화하고 고객 경험을 향상시켜 효율성을 높여보세요</p>
-        </motion.div>
-
-        {/* Phone Mockups Container */}
-        <motion.div
-          variants={itemVariants}
-          className="relative w-full max-w-2xl mx-auto"
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
+      {/* Grid Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <svg
+          className="absolute w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="xMidYMid slice"
         >
-          {/* White overlay/shadow effect */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md h-40 bg-gradient-to-t from-white via-white to-transparent" />
-
-          {/* Phone mockups */}
-          <motion.div 
-            className="relative z-10 flex justify-center items-center"
-            initial={{ y: 40 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1, type: "spring", bounce: 0.3 }}
+          <motion.g
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.1 }}
+            transition={{ duration: 1 }}
+            stroke="currentColor"
+            className="text-white"
           >
-            <div className="relative w-full h-[400px] md:h-[500px] sm:-mb-20 -mb-28">
-              <Image
-                src="/assets/ctasection.png"
-                alt="WHATSSUE App Mockup"
-                fill
-                className="object-contain"
-                priority
+            {/* Horizontal lines */}
+            {[...Array(20)].map((_, i) => (
+              <line
+                key={`h-${i}`}
+                x1="0"
+                y1={i * 50}
+                x2="1000"
+                y2={i * 50}
+                strokeWidth="0.5"
               />
-            </div>
+            ))}
+            {/* Vertical lines */}
+            {[...Array(20)].map((_, i) => (
+              <line
+                key={`v-${i}`}
+                x1={i * 50}
+                y1="0"
+                x2={i * 50}
+                y2="1000"
+                strokeWidth="0.5"
+              />
+            ))}
+            {/* Diagonal lines */}
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              {[...Array(40)].map((_, i) => (
+                <line
+                  key={`d-${i}`}
+                  x1={i * 25}
+                  y1="0"
+                  x2={(i * 25) + 1000}
+                  y2="1000"
+                  strokeWidth="0.25"
+                />
+              ))}
+            </motion.g>
+          </motion.g>
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+          >
+            혁신의 기회, 지금 바로 사용해보세요
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+          >
+            관리 프로세스를 간소화하고 고객 경험을 향상시켜 효율성을 높여보세요
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 px-8 py-3 bg-white text-blue-600 rounded-full text-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
+                문의하기
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
-
-        {/* App Store Badges */}
-        <motion.div 
-          variants={itemVariants}
-          className="text-center mt-8 relative z-20"
-        >
-          <div className="flex flex-row justify-center items-center gap-4">
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-36 md:w-40"
-            >
-              <Image
-                src="/assets/appstorebadges.png"
-                width={160}
-                height={48}
-                alt="Download on the App Store"
-                className="rounded-lg"
-              />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-36 md:w-40"
-            >
-              <Image
-                src="/assets/googleplaybadge.png"
-                width={160}
-                height={48}
-                alt="Get it on Google Play"
-                className="rounded-lg"
-              />
-            </motion.a>
-          </div>
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
-  );
+  )
 }
