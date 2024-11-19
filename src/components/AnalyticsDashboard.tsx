@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { BarChart3, PieChart, Store, Bike, Calendar, Clock, ArrowRight, Wallet, TrendingUp } from 'lucide-react'
+import { PieChart, Store, Bike, Calendar, Clock, ArrowRight, Wallet } from 'lucide-react'
 
 export default function AnalyticsDashboard() {
   const [leftRef, leftInView] = useInView({ threshold: 0.2, triggerOnce: true })
