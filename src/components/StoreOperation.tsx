@@ -27,8 +27,8 @@ const sections = [
       '채널 매출 내역',
       '배달 앱 정산 내역',
       '수수료',
-      '배달 비',
-      '기간 매출 내역'
+    //   '배달 비',
+    //   '기간 매출 내역'
     ]
   },
   {
@@ -41,7 +41,7 @@ const sections = [
       '카드 매출 내역',
       '배달 앱 매출 내역',
       '기타 매출 내역',
-      '상품 판매 내역'
+    //   '상품 판매 내역'
     ]
   },
   {
@@ -117,9 +117,9 @@ export default function StoreOperation() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-6 gap-2"
         >
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <motion.div
               key={section.subtitle}
               variants={itemVariants}
