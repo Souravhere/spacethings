@@ -1,4 +1,5 @@
 import ALLCARE from "@/components/ALL-CARE";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import Appdownload from "@/components/Appdownload";
 // import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
@@ -16,8 +17,7 @@ export default function Home() {
         {/* <Techinfo/>  this comp is removed due new ui */}
         <ServicesPage/>
         {/* <Wassusection/>  this comp is removed due to new ui update*/}
-
-        {/* here is two new section added from the figma file */}
+        <AnalyticsDashboard/>
         <StoreOperation/>
         <Caresection/>
         <ALLCARE/>

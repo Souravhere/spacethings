@@ -10,7 +10,7 @@ export default function AnalyticsDashboard() {
   const [rightRef, rightInView] = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
-    <section className="relative min-h-screen bg-[#1a237e] py-20 px-4 md:px-8">
+    <section className="relative min-h-screen bg-blue-400 py-20 px-4 md:px-8">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
