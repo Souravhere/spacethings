@@ -32,7 +32,7 @@ export default function AnalyticsDashboard() {
             효율적인 매장 운영을 위한 매장관리 Platform
           </h2>
           <p className="text-blue-200 text-lg">통합정산 솔루션</p>
-          <p className="text-white text-2xl mt-2 font-bold">'대장부'</p>
+          <p className="text-white text-2xl mt-2 font-bold">&#39;대장부&#39;</p>
         </motion.div>
 
         {/* Dashboard Cards Container */}
