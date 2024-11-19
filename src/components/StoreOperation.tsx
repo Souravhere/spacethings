@@ -28,7 +28,7 @@ const sections = [
       '배달 앱 정산 내역',
       '수수료',
     //   '배달 비',
-    //   '기간 매출 내역'
+    //   '기간 매출 내역' this will commented because of long content lenght 
     ]
   },
   {
