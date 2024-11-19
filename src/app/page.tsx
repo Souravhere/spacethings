@@ -4,6 +4,7 @@ import Appdownload from "@/components/Appdownload";
 import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
 import ServicesPage from "@/components/Servicespage";
+import StoreOperation from "@/components/StoreOperation";
 // import Storemanagement from "@/components/Storemanagement";
 // import Techinfo from "@/components/Techinfo";
 // import Wassusection from "@/components/Wassu-section";
@@ -17,7 +18,7 @@ export default function Home() {
         {/* <Wassusection/>  this comp is removed due to new ui update*/}
 
         {/* here is two new section added from the figma file */}
-
+        <StoreOperation/>
         <Caresection/>
         <ALLCARE/>
         {/* <Appshowcomp/>  this comp is removed due to new ui update*/}
