@@ -115,8 +115,8 @@ export default function Component() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4 font-sans">ALL IN ONE</h2>
-            <p className="text-xl text-gray-600">업무 환경 개선 어플</p>
+            <h2 className="text-4xl font-bold mb-4 font-sans">ALL-CARE <span className='text-blue-600'>WATSSUE</span></h2>
+            {/* <p className="text-xl text-gray-600">업무 환경 개선 어플</p> */}
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
