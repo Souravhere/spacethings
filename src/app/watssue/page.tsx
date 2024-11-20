@@ -57,9 +57,10 @@ export default function Component() {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2 text-center lg:text-left"
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                업무를 쉽고 편하게<br />
-                <span className="text-blue-600 font-sans">WATSSUE</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8">
+              손 쉬운 방법의 근태, 급여 관리
+              <span className='font-sans text-blue-600'>ALL CARE</span>솔루션<br />
+                <span className="text-blue-600 font-sans py-4 ">WATSSUE</span>
               </h1>
               <div className="flex justify-center lg:justify-start gap-4">
                 <Link href="/contact">
