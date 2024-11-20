@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 import 'swiper/css'
@@ -15,26 +15,38 @@ const testimonials = [
   {
     title: "매장운영에만 집중할 수 있어요!",
     content: "일반서 데이터를 점검해주고 효율화 수 있게 해줘서 매장운영에 시간을 더 쓸 수 있어서 좋아요!",
-    image: "/placeholder.svg?height=80&width=80",
-    author: "카페 대표님"
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "김지원 - 카페 대표님"
   },
   {
     title: "데이터 관리가 편해졌어요",
     content: "매출, 재고, 직원 관리까지 한 번에 볼 수 있어서 매장 운영이 한결 수월해졌습니다.",
-    image: "/placeholder.svg?height=80&width=80",
-    author: "레스토랑 대표님"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "이서연 - 레스토랑 대표님"
   },
   {
     title: "효율적인 매장 관리",
     content: "실시간으로 매장 상황을 파악할 수 있어서 신속한 의사결정이 가능해졌어요.",
-    image: "/placeholder.svg?height=80&width=80",
-    author: "베이커리 대표님"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "박준호 - 베이커리 대표님"
   },
   {
     title: "직원 관리가 쉬워졌어요",
     content: "근태관리부터 급여계산까지 자동화되어서 인력 관리가 한결 수월해졌습니다.",
-    image: "/placeholder.svg?height=80&width=80",
-    author: "프랜차이즈 점장님"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "최민지 - 프랜차이즈 점장님"
+  },
+  {
+    title: "고객 서비스 품질이 향상됐어요",
+    content: "데이터 기반의 의사결정으로 고객 니즈를 더 잘 파악하고 대응할 수 있게 되었습니다.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "정현우 - 소매점 운영자"
+  },
+  {
+    title: "시간과 비용을 절약했어요",
+    content: "자동화된 프로세스 덕분에 관리 업무에 들이는 시간과 비용을 크게 줄일 수 있었습니다.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=faces&auto=format&q=80",
+    author: "강서영 - 온라인 쇼핑몰 대표"
   }
 ]
 
@@ -74,18 +86,19 @@ export default function TestimonialsSection() {
               rotate: 0,
               stretch: 0,
               depth: 100,
-              modifier: 1,
+              modifier: 2,
               slideShadows: false,
             }}
-            pagination={{
-              clickable: true,
-              bulletActiveClass: 'swiper-pagination-bullet-active !bg-blue-600',
-            }}
+            // pagination={{
+            //   clickable: true,
+            //   bulletActiveClass: 'swiper-pagination-bullet-active !bg-blue-600',
+            // }}
             autoplay={{
-              delay: 5000,
+              delay: 3000,
               disableOnInteraction: false,
             }}
             loop={true}
+            centeredSlides={true}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -99,32 +112,40 @@ export default function TestimonialsSection() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg h-full flex flex-col"
-                >
-                  <div className="mb-6 flex items-center justify-center">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden">
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.author}
-                        fill
-                        className="object-cover"
-                      />
+                {({ isActive }) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`p-8 rounded-2xl shadow-lg h-full flex flex-col transition-all duration-300 ${
+                      isActive ? 'bg-blue-500 text-white scale-105' : 'bg-white text-gray-800'
+                    }`}
+                  >
+                    <div className="mb-6 flex items-center justify-center">
+                      <motion.div
+                        className="relative w-20 h-20 rounded-full overflow-hidden"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                        //   fill
+                          className="object-cover"
+                        />
+                      </motion.div>
                     </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-center">
-                    {testimonial.title}
-                  </h3>
-                  <p className="text-gray-600 text-center flex-grow">
-                    {testimonial.content}
-                  </p>
-                  <p className="text-blue-600 font-medium text-center mt-4">
-                    {testimonial.author}
-                  </p>
-                </motion.div>
+                    <h3 className="text-xl font-bold mb-4 text-center">
+                      {testimonial.title}
+                    </h3>
+                    <p className={`text-center flex-grow ${isActive ? 'text-blue-100' : 'text-gray-600'}`}>
+                      {testimonial.content}
+                    </p>
+                    <p className={`font-medium text-center mt-4 ${isActive ? 'text-blue-200' : 'text-blue-600'}`}>
+                      {testimonial.author}
+                    </p>
+                  </motion.div>
+                )}
               </SwiperSlide>
             ))}
           </Swiper>
