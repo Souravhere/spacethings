@@ -3,42 +3,42 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
-import { 
-  FiBarChart2, 
-  FiTruck, 
-  FiDollarSign, 
-  FiPieChart,
-  FiArrowRight
-} from 'react-icons/fi'
+// import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Pagination, Autoplay } from 'swiper/modules'
+// import { 
+//   FiBarChart2, 
+//   FiTruck, 
+//   FiDollarSign, 
+//   FiPieChart,
+//   FiArrowRight
+// } from 'react-icons/fi'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Appdownload from '@/components/Appdownload'
 
 export default function Component() {
-  const features = [
-    { icon: <FiBarChart2 className="w-8 h-8" />, title: "운영관리" },
-    { icon: <FiTruck className="w-8 h-8" />, title: "배달관리" },
-    { icon: <FiDollarSign className="w-8 h-8" />, title: "매출관리" },
-    { icon: <FiPieChart className="w-8 h-8" />, title: "정산관리" },
-  ]
+  // const features = [
+  //   { icon: <FiBarChart2 className="w-8 h-8" />, title: "운영관리" },
+  //   { icon: <FiTruck className="w-8 h-8" />, title: "배달관리" },
+  //   { icon: <FiDollarSign className="w-8 h-8" />, title: "매출관리" },
+  //   { icon: <FiPieChart className="w-8 h-8" />, title: "정산관리" },
+  // ]
 
-  const testimonials = [
-    {
-      title: "매장운영에만 집중할 수 있어요!",
-      content: "알아서 데이터를 정리해주고 응용할 수 있게 해줘서 매장운영에 시간을 더 쏟을 수 있어서 좋아요!"
-    },
-    {
-      title: "급여관리가 편해졌어요",
-      content: "직원들의 급여 관리와 정산이 자동으로 되어서 시간이 많이 절약됩니다."
-    },
-    {
-      title: "효율적인 매장 관리",
-      content: "한눈에 모든 데이터를 확인할 수 있어 매장 운영이 훨씬 수월해졌어요."
-    }
-  ]
+  // const testimonials = [
+  //   {
+  //     title: "매장운영에만 집중할 수 있어요!",
+  //     content: "알아서 데이터를 정리해주고 응용할 수 있게 해줘서 매장운영에 시간을 더 쏟을 수 있어서 좋아요!"
+  //   },
+  //   {
+  //     title: "급여관리가 편해졌어요",
+  //     content: "직원들의 급여 관리와 정산이 자동으로 되어서 시간이 많이 절약됩니다."
+  //   },
+  //   {
+  //     title: "효율적인 매장 관리",
+  //     content: "한눈에 모든 데이터를 확인할 수 있어 매장 운영이 훨씬 수월해졌어요."
+  //   }
+  // ]
 
   return (
     <div className="min-h-screen bg-white">
