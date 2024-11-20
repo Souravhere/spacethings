@@ -53,7 +53,7 @@ export default function Component() {
           >
             <div className="lg:w-1/2">
               <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans'>Platform</span> 
+              효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans uppercase'>Platform </span> 
               통합정산 솔루션<br />
                 <span className="text-blue-600 font-sans">대장부</span>
               </h1>
@@ -231,34 +231,6 @@ export default function Component() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              매장 경영의 NEW 패러다임
-            </h2>
-            <p className="text-xl mb-8">
-              주문, 예약, 결제, 웨이팅, 단골 관리를 모두 장부 하나로 해결!<br />
-              IT 기술을 활용해 더욱 효율적이고 간편한 매장 운영을 지원합니다.
-            </p>
-            <Link href="/introduction">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors"
-              >
-                도입하러 가기 <FiArrowRight className="inline ml-2" />
-              </motion.button>
-            </Link>
-          </motion.div>
         </div>
       </section>
       <Appdownload/>
