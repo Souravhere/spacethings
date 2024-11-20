@@ -16,6 +16,7 @@ import Link from 'next/link'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Appdownload from '@/components/Appdownload'
+import TestimonialsSection from '@/components/TestimonialsSection'
 
 export default function Component() {
   // const features = [
@@ -233,6 +234,7 @@ export default function Component() {
           </Swiper>
         </div>
       </section> */}
+      <TestimonialsSection/>
       <Appdownload/>
     </div>
   )
