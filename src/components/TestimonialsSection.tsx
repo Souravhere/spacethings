@@ -21,31 +21,31 @@ const testimonials = [
   {
     title: "데이터 관리가 편해졌어요",
     content: "매출, 재고, 직원 관리까지 한 번에 볼 수 있어서 매장 운영이 한결 수월해졌습니다.",
-    image: "/Testimonials/profile1.avif",
+    image: "/Testimonials/profile2.avif",
     author: "이서연 - 레스토랑 대표님"
   },
   {
     title: "효율적인 매장 관리",
     content: "실시간으로 매장 상황을 파악할 수 있어서 신속한 의사결정이 가능해졌어요.",
-    image: "/Testimonials/profile1.avif",
+    image: "/Testimonials/profile3.avif",
     author: "박준호 - 베이커리 대표님"
   },
   {
     title: "직원 관리가 쉬워졌어요",
     content: "근태관리부터 급여계산까지 자동화되어서 인력 관리가 한결 수월해졌습니다.",
-    image: "/Testimonials/profile1.avif",
+    image: "/Testimonials/profile4.avif",
     author: "최민지 - 프랜차이즈 점장님"
   },
   {
     title: "고객 서비스 품질이 향상됐어요",
     content: "데이터 기반의 의사결정으로 고객 니즈를 더 잘 파악하고 대응할 수 있게 되었습니다.",
-    image: "/Testimonials/profile1.avif",
+    image: "/Testimonials/profile5.avif",
     author: "정현우 - 소매점 운영자"
   },
   {
     title: "시간과 비용을 절약했어요",
     content: "자동화된 프로세스 덕분에 관리 업무에 들이는 시간과 비용을 크게 줄일 수 있었습니다.",
-    image: "/Testimonials/profile1.avif",
+    image: "/Testimonials/profile6.avif",
     author: "강서영 - 온라인 쇼핑몰 대표"
   }
 ]
