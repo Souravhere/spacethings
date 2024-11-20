@@ -10,7 +10,6 @@ import {
   FiTruck, 
   FiDollarSign, 
   FiPieChart,
-  FiDownload,
   FiArrowRight
 } from 'react-icons/fi'
 
@@ -53,9 +52,10 @@ export default function Component() {
             className="flex flex-col lg:flex-row items-center gap-12"
           >
             <div className="lg:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-bold mb-8">
-                더 똑똑한 매장 경영!<br />
-                <span className="text-blue-600 font-sans">DEJANGBU</span>
+              <h1 className="text-3xl md:text-4xl font-bold mb-8">
+              효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans'>Platform</span> 
+              통합정산 솔루션<br />
+                <span className="text-blue-600 font-sans">대장부</span>
               </h1>
               <div className="flex gap-4">
                 <Link href="/contact">
@@ -67,15 +67,6 @@ export default function Component() {
                     도입문의
                   </motion.button>
                 </Link>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    <FiDownload /> 다운로드
-                  </span>
-                </motion.button>
               </div>
             </div>
             <motion.div
