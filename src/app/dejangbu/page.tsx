@@ -88,7 +88,7 @@ export default function Component() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-blue-50">
+      {/* <section className="py-20 px-4 bg-blue-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -118,7 +118,7 @@ export default function Component() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Solutions Section */}
       <section className="py-20 px-4">
@@ -132,8 +132,8 @@ export default function Component() {
             <div className="md:w-1/2">
               <Image
                 src="/assets/data.png"
-                width={500}
-                height={300}
+                width={1000}
+                height={1000}
                 alt="Data Analysis"
                 className="rounded-2xl shadow-lg"
               />
