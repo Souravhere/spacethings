@@ -120,7 +120,7 @@ export default function Component() {
         </div>
       </section> */}
 
-      {/* Solutions Section */}
+      {/* Solutions Section
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto space-y-24">
           <motion.div
@@ -186,7 +186,7 @@ export default function Component() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
       <section className="py-24 px-4 bg-blue-50">
