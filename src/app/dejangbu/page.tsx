@@ -188,7 +188,7 @@ export default function Component() {
         </div>
       </section> */}
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section
       <section className="py-24 px-4 bg-blue-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -232,7 +232,7 @@ export default function Component() {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
       <Appdownload/>
     </div>
   )
