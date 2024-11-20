@@ -12,7 +12,6 @@ import {
   FiCheckSquare, 
   FiDollarSign, 
   FiCalendar,
-  FiDownload,
 } from 'react-icons/fi'
 
 import 'swiper/css'
@@ -72,15 +71,6 @@ export default function Component() {
                     도입문의
                   </motion.button>
                 </Link>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    <FiDownload /> 다운로드
-                  </span>
-                </motion.button>
               </div>
             </motion.div>
             <motion.div
