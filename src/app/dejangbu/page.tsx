@@ -18,6 +18,7 @@ import 'swiper/css/pagination'
 import Appdownload from '@/components/Appdownload'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import StoreOperation from '@/components/StoreOperation'
+import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 
 export default function Component() {
   // const features = [
@@ -235,6 +236,7 @@ export default function Component() {
           </Swiper>
         </div>
       </section> */}
+      <StoreOperationsDEJANGBU/>
       <StoreOperation/>
       {/* this is the Testimonial Section */}
       <div className='w-full bg-gradient-to-b from-blue-50 to-white py-10'>

@@ -102,17 +102,17 @@ export default function StoreOperationsDEJANGBU() {
         </motion.p>
 
         <motion.div 
-          className="relative w-full max-w-lg mx-auto mb-16"
+          className="relative w-full max-w-7xl mx-auto mb-16"
           ref={ref}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5 }}
         >
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-EDm8rTJwVn94URdZpOaiA60XCoRBRb.png"
+            src="/assets/DEJANGBU.png"
             alt="Store Operations"
-            width={800}
-            height={400}
+            width={2000}
+            height={2000}
             className="rounded-lg shadow-xl"
           />
         </motion.div>
