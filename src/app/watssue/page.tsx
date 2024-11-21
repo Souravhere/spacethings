@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
 import { 
   FiClock, 
   FiBell, 
@@ -28,21 +26,6 @@ export default function Component() {
     { icon: <FiCheckSquare className="w-12 h-12" />, title: "체크리스트", description: "항복별 진행상황 체크 및 공유", bg:"bg-[#4c8ae6]"  },
     { icon: <FiDollarSign className="w-12 h-12" />, title: "급여정산", description: "자동화된 근태 및 급여 확인", bg:"bg-[#7eacf1]"  },
     { icon: <FiCalendar className="w-12 h-12" />, title: "스케줄 관리", description: "외부/연장 근무 등 스케줄 관리", bg:"bg-[#b0c3ff]"  }
-  ]
-
-  const testimonials = [
-    {
-      title: "급여관리가 너무 편해요!",
-      content: "WATSSUE를 사용하고 나서는 월급이 적게 들어온 건 아닌지 걱정하지 않아도 된다는게 제일 좋아요! 급여 명세서도 빠르게 받아볼 수 있어서 답답하지 않아요."
-    },
-    {
-      title: "근태관리가 쉬워졌어요",
-      content: "직원들의 근태를 한눈에 확인할 수 있어서 관리가 훨씬 수월해졌어요. 자동화된 시스템 덕분에 실수도 줄었답니다."
-    },
-    {
-      title: "업무 효율이 높아졌어요",
-      content: "스케줄 관리부터 급여정산까지 한 번에 처리할 수 있어서 업무 시간이 많이 단축되었어요. 정말 추천합니다!"
-    }
   ]
 
   return (
