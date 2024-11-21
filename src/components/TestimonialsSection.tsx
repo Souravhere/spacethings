@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import type { Swiper as SwiperType } from 'swiper'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -51,7 +52,7 @@ const testimonials = [
 ]
 
 export default function TestimonialsSection() {
-  const [swiper, setSwiper] = useState<any>(null)
+  const [swiper, setSwiper] = useState<SwiperType | null>(null)
   const controls = useAnimation()
 
   useEffect(() => {
@@ -89,10 +90,6 @@ export default function TestimonialsSection() {
               modifier: 2,
               slideShadows: false,
             }}
-            // pagination={{
-            //   clickable: true,
-            //   bulletActiveClass: 'swiper-pagination-bullet-active !bg-blue-600',
-            // }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,  
