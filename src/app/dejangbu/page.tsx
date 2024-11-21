@@ -234,7 +234,15 @@ export default function Component() {
           </Swiper>
         </div>
       </section> */}
+      <div className='w-full bg-gradient-to-b from-blue-50 to-white py-10'>
+      <h2 className="text-3xl md:text-4xl font-bold text-center">
+            <span className="font-sans text-blue-600">DEJANGBU</span> 도입 후기
+          </h2>
+          <p className="text-gray-600 text-lg text-center">
+            <span className="font-sans">DEJANGBU</span>를 쓰고 계신 대표님들의 후기
+          </p>
       <TestimonialsSection/>
+      </div>
       <Appdownload/>
     </div>
   )

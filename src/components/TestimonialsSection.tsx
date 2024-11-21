@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
   }, [controls])
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+    <section className="pb-16 pt-5 px-4 bg-transparent relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5" />
       
       <div className="max-w-6xl mx-auto relative">
@@ -69,12 +69,6 @@ export default function TestimonialsSection() {
           animate={controls}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="font-sans text-blue-600">DEJANGBU</span> 도입 후기
-          </h2>
-          <p className="text-gray-600 text-lg">
-            <span className="font-sans">DEJANGBU</span>를 쓰고 계신 대표님들의 후기
-          </p>
         </motion.div>
 
         <div className="relative">
