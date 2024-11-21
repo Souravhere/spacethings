@@ -4,7 +4,7 @@ import Appdownload from "@/components/Appdownload";
 // import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
 import { HeroScroll } from "@/components/HeroScroll";
-import Hersosection from "@/components/Hersosection";
+// import Hersosection from "@/components/Hersosection";
 import ServicesPage from "@/components/Servicespage";
 import StoreOperation from "@/components/StoreOperation";
 // import Storemanagement from "@/components/Storemanagement";
