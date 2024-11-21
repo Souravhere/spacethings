@@ -10,7 +10,7 @@ export default function AnalyticsDashboard() {
   const [rightRef, rightInView] = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
-    <section className="relative min-h-screen bg-blue-400 py-20 px-4 md:px-8">
+    <section className="relative min-h-screen bg-blue-400 py-20 px-4 md:px-8 overflow-x-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -29,7 +29,7 @@ export default function AnalyticsDashboard() {
           className="text-center mb-16"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-            효율적인 매장 운영을 위한 매장관리 Platform
+            효율적인 매장 운영을 위한 매장관리 <span className='uppercase font-sans'>Platform</span>
           </h2>
           <p className="text-blue-200 text-lg">통합정산 솔루션</p>
           <p className="text-white text-2xl mt-2 font-bold">&#39;대장부&#39;</p>
