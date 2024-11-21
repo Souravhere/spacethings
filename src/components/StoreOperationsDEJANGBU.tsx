@@ -53,7 +53,7 @@ const categories = [
   }
 ]
 
-export default function StoreOperations() {
+export default function StoreOperationsDEJANGBU() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
