@@ -3,16 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-// import { Swiper, SwiperSlide } from 'swiper/react'
-// import { Pagination, Autoplay } from 'swiper/modules'
-// import { 
-//   FiBarChart2, 
-//   FiTruck, 
-//   FiDollarSign, 
-//   FiPieChart,
-//   FiArrowRight
-// } from 'react-icons/fi'
-
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Appdownload from '@/components/Appdownload'
@@ -26,7 +16,7 @@ export default function dejangbupage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 px-4">
+      <section className="relative py-24 pb-32 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
