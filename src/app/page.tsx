@@ -3,6 +3,7 @@ import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import Appdownload from "@/components/Appdownload";
 // import Appshowcomp from "@/components/Appshow";
 import Caresection from "@/components/Caresections";
+import { HeroScroll } from "@/components/HeroScroll";
 import Hersosection from "@/components/Hersosection";
 import ServicesPage from "@/components/Servicespage";
 import StoreOperation from "@/components/StoreOperation";
@@ -13,7 +14,9 @@ import StoreOperation from "@/components/StoreOperation";
 export default function Home() {
   return (
       <>
-        <Hersosection/>
+        {/* <Hersosection/> */}
+        <HeroScroll/>
+
         {/* <Techinfo/>  this comp is removed due new ui */}
         <ServicesPage/>
         {/* <Wassusection/>  this comp is removed due to new ui update*/}
