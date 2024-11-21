@@ -123,7 +123,7 @@ export default function StoreOperations() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <motion.div
               key={category.title}
               className="bg-white p-6 rounded-lg shadow-lg border border-blue-200"
