@@ -18,6 +18,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import Appdownload from '@/components/Appdownload'
+import TestimonialsSection from '@/components/TestimonialsSection'
 
 export default function Component() {
   const features = [
@@ -288,47 +289,16 @@ export default function Component() {
   </div>
 </section>
       {/* Testimonials Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4"><span className='font-sans'>WATSSUE</span> 도입 후기</h2>
-            <p className="text-xl text-gray-600"><span className='font-sans'>WATSSUE</span>를 먼저 사용해본 사람들의 리뷰를 모아모아!</p>
-          </motion.div>
-
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000 }}
-            loop
-            className="pb-12"
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg h-full"
-                >
-                  <h3 className="text-xl font-bold mb-4">{testimonial.title}</h3>
-                  <p className="text-gray-600">{testimonial.content}</p>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+          {/* this is the Testimonial Section */}
+      <div className='w-full bg-gradient-to-b from-blue-50 to-white py-10'>
+      <h2 className="text-3xl md:text-4xl font-bold text-center">
+            <span className="font-sans text-blue-600">WATSSUE</span> 도입 후기
+          </h2>
+          <p className="text-gray-600 text-lg text-center">
+            를 먼저 사용해본 사람들의 리뷰를 모아모아!
+          </p>
+      <TestimonialsSection/>
+      </div>
       <Appdownload/>
     </div>
   )
