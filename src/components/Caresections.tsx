@@ -3,33 +3,18 @@
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { FiCalendar, FiDollarSign, FiClock, FiPieChart } from 'react-icons/fi'
 import Image from 'next/image'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
-export default function Caresection() {
+export default function CareSection() {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true })
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   const controls = useAnimation()
-  const [currentImage, setCurrentImage] = useState(0)
-
-  const images = [
-    "/assets/careimage.png",
-    "/assets/Appdownload.jpg",
-    "/assets/dataimage.png"
-  ]
 
   useEffect(() => {
     if (isInView) {
       controls.start("visible")
     }
   }, [isInView, controls])
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length)
-    }, 3500) // Change image every 3.5 seconds
-
-    return () => clearInterval(timer)
-  }, [])
 
   const features = [
     {
@@ -68,167 +53,109 @@ export default function Caresection() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50, scale: 0.95 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      scale: 1,
+      y: 0,
       transition: {
-        duration: 0.7,
-        type: "spring",
-        stiffness: 100,
+        duration: 0.5,
       },
     },
   }
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-20 px-4 bg-white w-full overflow-x-hidden">
-      <div className="w-full max-w-7xl overflow-hidden mx-auto">
+    <section ref={sectionRef} className="py-16 md:py-24 px-4 bg-white w-full">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, type: "spring" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-            <span className='font-sans'>SMB</span>용 모바일 <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className='font-sans'>SMB</span>용 모바일{" "}
+            <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base">손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션</p>
+          <p className="text-gray-600 text-base md:text-lg">
+            손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center py-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-            className="space-y-8 md:space-y-16 order-2 lg:order-1"
-          >
-            {features.map((feature) => (
-              <motion.div
-                key={feature.number}
-                variants={itemVariants}
-                className="relative"
-              >
-                <motion.div
-                  whileHover={{ 
-                    scale: 1.02,
-                    transition: { duration: 0.3 }
-                  }}
-                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 p-6 md:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <motion.div 
-                    className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mx-auto sm:mx-0"
-                  >
-                    {feature.icon}
-                  </motion.div>
-                  <div className="space-y-3 md:space-y-4">
-                    <h3 className="text-lg md:text-xl font-bold flex flex-wrap items-center gap-2 justify-center sm:justify-start">
-                      <span className="text-xl md:text-2xl text-amber-500">{feature.number}</span>
-                      <span className="break-keep">{feature.title}</span>
-                      <span className="text-blue-600 break-keep">{feature.titleHighlight}</span>
-                    </h3>
-                    <ul className="space-y-2 md:space-y-3">
-                      {feature.points.map((point, i) => (
-                        <li
-                          key={i}
-                          className="text-gray-600 text-sm flex items-start gap-2 md:gap-3"
-                        >
-                          <span className="text-amber-500 mt-1 flex-shrink-0">-</span>
-                          <span className="break-keep">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+          className="flex flex-col md:flex-row justify-center items-center gap-6 mb-16"
+        >
+          <motion.div variants={itemVariants} className="w-full md:w-1/4">
+            <Image
+              src='/assets/dataimage.png'
+              alt="Care Image 1"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-md object-cover w-full h-fit"
+            />
           </motion.div>
+          <motion.div variants={itemVariants} className="w-full md:w-1/4">
+            <Image
+              src='/assets/Appdownload.jpg'
+              alt="Care Image 2"
+              width={400}
+              height={500}
+              className="rounded-lg shadow-md object-cover sm:scale-105 scale-100 w-full h-fit"
+            />
+          </motion.div>
+          <motion.div variants={itemVariants} className="w-full md:w-1/4">
+            <Image
+              src='/assets/careimage.png'
+              alt="Care Image 3"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-md object-cover w-full h-fit"
+            />
+          </motion.div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, type: "spring" }}
-            className="relative order-1 lg:order-2 mb-8 lg:mb-0"
-          >
-            <div className="relative w-[240px] sm:w-[260px] md:w-[320px] mx-auto">
-              <motion.div
-                animate={isInView ? {
-                  y: [0, -12, 0],
-                  rotate: [0, 1, 0, -1, 0],
-                } : {}}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="rounded-[3rem] overflow-hidden shadow-xl"
-              >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  key={currentImage}
-                >
-                  <Image
-                    src={images[currentImage]}
-                    alt={`All-Care App Interface ${currentImage + 1}`}
-                    className="w-full h-auto"
-                    width={640}
-                    height={1280}
-                    quality={100}
-                  />
-                </motion.div>
-              </motion.div>
-              
-              <motion.div
-                animate={isInView ? {
-                  scale: [1, 1.1, 1],
-                  opacity: [0.2, 0.3, 0.2],
-                } : {}}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-amber-100 rounded-full blur-3xl"
-              />
-              
-              <motion.div
-                animate={isInView ? {
-                  y: [-20, 0, -20],
-                  x: [-10, 10, -10],
-                  rotate: [0, 10, -10, 0],
-                } : {}}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="hidden md:flex absolute top-20 -right-8 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-lg items-center justify-center text-amber-500"
-              >
-                <FiCalendar className="w-6 h-6" />
-              </motion.div>
-              
-              <motion.div
-                animate={isInView ? {
-                  y: [0, -20, 0],
-                  x: [10, -10, 10],
-                  rotate: [0, -10, 10, 0],
-                } : {}}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className="hidden md:flex absolute bottom-20 -left-8 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-lg items-center justify-center text-amber-500"
-              >
-                <FiPieChart className="w-6 h-6" />
-              </motion.div>
-            </div> 
-          </motion.div>
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          {features.map((feature) => (
+            <motion.div
+              key={feature.number}
+              variants={itemVariants}
+              className="bg-white shadow-md rounded-lg p-6"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    <span className="text-amber-500 mr-2">{feature.number}</span>
+                    <span className="break-keep">{feature.title}</span>
+                    <span className="text-blue-600 break-keep">{feature.titleHighlight}</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    {feature.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="text-gray-600 text-sm flex items-start gap-2"
+                      >
+                        <span className="text-amber-500 mt-1 flex-shrink-0">-</span>
+                        <span className="break-keep">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
 }
+
