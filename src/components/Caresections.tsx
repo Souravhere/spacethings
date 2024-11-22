@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { FiCalendar, FiDollarSign, FiClock, FiPieChart } from 'react-icons/fi'
+import { FiDollarSign, FiClock } from 'react-icons/fi'
 import Image from 'next/image'
 import { useRef, useEffect } from 'react'
 
