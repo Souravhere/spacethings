@@ -14,11 +14,6 @@ interface Particle {
   brightness: number
 }
 
-interface MousePosition {
-  x: number
-  y: number
-}
-
 interface HexagonProps {
   icon: React.ReactNode
   label: string
@@ -52,7 +47,6 @@ const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay 
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
-  // const [ setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
   const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
 
   const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
@@ -72,7 +66,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // setMousePosition({ x: e.clientX, y: e.clientY })
+      // Mouse position logic (if needed in the future)
     }
 
     window.addEventListener('mousemove', handleMouseMove)
@@ -259,4 +253,3 @@ export default function HeroSection() {
     </section>
   )
 }
-
