@@ -6,7 +6,6 @@ import Caresection from "@/components/Caresections";
 import Hersosection from "@/components/Hersosection";
 import ServicesPage from "@/components/Servicespage";
 import StoreOperation from "@/components/StoreOperation";
-// import Storemanagement from "@/components/Storemanagement";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
         <Caresection/>
         <ALLCARE/>
         {/* <Appshowcomp/>  this comp is removed due to new ui update*/}
-        {/* <Storemanagement/>  this comp is removed due to new ui update*/}
         <Appdownload/>
       </>
   );
