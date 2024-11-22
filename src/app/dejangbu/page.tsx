@@ -25,17 +25,17 @@ export default function dejangbupage() {
             className="flex flex-col lg:flex-row items-center gap-12"
           >
             <div className="lg:w-1/2">
-              <h1 className="text-3xl md:text-4xl font-bold mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold mb-8 sm:text-left text-center">
               효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans uppercase'>Platform </span> 
               통합정산 솔루션<br />
                 <span className="text-blue-600 font-sans">대장부</span>
               </h1>
-              <div className="flex gap-4">
+              <div className="flex gap-4 sm:justify-start justify-center">
                 <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+                    className="w-full px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
                   >
                     도입문의
                   </motion.button>
