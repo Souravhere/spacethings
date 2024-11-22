@@ -52,7 +52,7 @@ const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay 
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
-  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
+  const [ setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
   const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
 
   const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      // setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
     window.addEventListener('mousemove', handleMouseMove)
