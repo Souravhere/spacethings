@@ -64,14 +64,14 @@ export default function HeroSection() {
     setFallingParticles(particles)
   }, [])
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      // Mouse position logic (if needed in the future)
-    }
+  // useEffect(() => {
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     // Mouse position logic (if needed in the future)
+  //   }
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+  //   window.addEventListener('mousemove', handleMouseMove)
+  //   return () => window.removeEventListener('mousemove', handleMouseMove)
+  // }, [])
 
   if (!mounted) return null
 
