@@ -52,7 +52,7 @@ const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay 
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
-  const [ setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
+  // const [ setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
   const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
 
   const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
