@@ -7,15 +7,12 @@ import Hersosection from "@/components/Hersosection";
 import ServicesPage from "@/components/Servicespage";
 import StoreOperation from "@/components/StoreOperation";
 // import Storemanagement from "@/components/Storemanagement";
-// import Techinfo from "@/components/Techinfo";
 // import Wassusection from "@/components/Wassu-section";
 
 export default function Home() {
   return (
       <>
         <Hersosection/>
-
-        {/* <Techinfo/>  this comp is removed due new ui */}
         <ServicesPage/>
         {/* <Wassusection/>  this comp is removed due to new ui update*/}
         <AnalyticsDashboard/>
