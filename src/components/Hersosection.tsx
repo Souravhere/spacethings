@@ -3,7 +3,8 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { FlipWords } from './ui/flip-words'
-import { Wifi, MapPin, MessageCircle, Radio, Bluetooth } from 'lucide-react'
+import Link from 'next/link'
+import { Wifi, MapPin, MessageCircle, Radio, Bluetooth, ChevronRight } from 'lucide-react'
 
 interface Particle {
   x: number
@@ -157,6 +158,30 @@ export default function HeroSection() {
               B2C 모델의 모바일 오더에서 부터 B2B 모델의 시스템 공급까지  
               다양하고 혁신적인 서비스를 고객에게 제공하고 있습니다.
             </motion.p>
+            {/* Animated Contact Us Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              <Link href="/contact" passHref>
+                <motion.span
+                  className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  문의하기
+                  <motion.span
+                    className="ml-2"
+                    initial={{ x: 0 }}
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </motion.span>
+                </motion.span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right Content - Hexagonal Grid */}
