@@ -112,13 +112,13 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 sm:gap-12 gap-8 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 text-left"
+            className="space-y-6 sm:text-left text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
               <motion.span 
