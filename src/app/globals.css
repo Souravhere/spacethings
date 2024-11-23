@@ -93,6 +93,10 @@ body {
   .honeycomb {
     transform: scale(0.6);
   }
+  .hexagon {
+    width: 130px;
+    height: 130px;
+  }
 }
 
 @keyframes float {

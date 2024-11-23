@@ -167,7 +167,7 @@ export default function HeroSection() {
             className="relative sm:mt-0 -mt-20"
           >
             <div className="honeycomb font-sans">
-              <div className="honeycomb-center absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2">
+              <div className="honeycomb-center absolute top-1/2 sm:left-[35%] left-[30%] transform -translate-x-1/2 -translate-y-1/2">
                 <Hexagon
                   icon={<div className="text-white font-bold text-center">YAP<br/>BEACON</div>}
                   label=""
