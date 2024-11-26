@@ -133,9 +133,9 @@ export default function SalesAnalysis() {
                     className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 relative cursor-pointer"
                     variants={itemVariants}
                   >
-                    <div className="absolute top-2 left-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                    {/* <div className="absolute top-2 left-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
                       {card.id}
-                    </div>
+                    </div> */}
                     <div className="flex items-center justify-center mb-4">
                       {card.icon || <span className="text-3xl font-bold text-blue-600">{card.title}</span>}
                     </div>
