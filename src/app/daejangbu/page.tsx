@@ -72,8 +72,8 @@ export default function dejangbupage() {
         </div>
       </section>
       <StoreOperationsDEJANGBU/>
-      <SalesAnalysis/>
       <StoreOperation/>
+      <SalesAnalysis/>
       {/* this is the Testimonial Section */}
       <div className='w-full bg-gradient-to-b from-blue-50 to-white py-10'>
       <h2 className="text-3xl md:text-4xl font-bold text-center">
