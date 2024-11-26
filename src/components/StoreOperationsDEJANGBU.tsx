@@ -38,7 +38,7 @@ const categories = [
   {
     title: '주방운영',
     icon: FaUtensils,
-    items: ['영수증 : 주방 영수증', <span><span className='font-sans'>KDS</span> : 주방 운영 시스템</span>],
+    items: ['영수증 : 주방 영수증', <span key="kds"><span className='font-sans'>KDS</span> : 주방 운영 시스템</span>],
   },
   {
     title: '식자재',
@@ -48,7 +48,11 @@ const categories = [
   {
     title: '주문',
     icon: FaClipboardList,
-    items: [<span className='font-sans'>Table Order</span>, <span className='font-sans'>Mobile Order</span>, <span className='font-sans'>Kiosk Order</span>],
+    items: [
+      <span key="table-order" className='font-sans'>Table Order</span>,
+      <span key="mobile-order" className='font-sans'>Mobile Order</span>,
+      <span key="kiosk-order" className='font-sans'>Kiosk Order</span>,
+    ],
   },
 ]
 
