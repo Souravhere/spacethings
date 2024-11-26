@@ -11,13 +11,13 @@ export default function ServicesSection() {
       title: 'WATSSUE',
       description: '작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요. 실시간 협업, 작업 추적, 자동화된 워크플로우를 통해 팀의 효율성을 극대화하세요.',
       cta: 'WATSSUE 더 알아보기',
-      image: '/placeholder.svg?height=400&width=400',
+      image: '/assets/ourservice1.svg',
     },
     {
       title: 'DEJANGBU',
       description: '최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요. 실시간 재무 추적, 예산 계획, 지출 분석을 통해 재무 의사 결정을 최적화하세요.',
       cta: 'DEJANGBU 더 알아보기',
-      image: '/placeholder.svg?height=400&width=400',
+      image: '/assets/our.svg',
     },
   ]
 
