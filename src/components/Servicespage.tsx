@@ -56,7 +56,7 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12"
+          className="text-4xl md:text-5xl font-bold text-black text-center mb-12 font-sans"
         >
           Our Services
         </motion.h2>
@@ -130,7 +130,7 @@ function ServiceCard({ title, description, cta, image, imagePosition, svgPositio
       className="w-full bg-blue-50 rounded-2xl overflow-hidden shadow-lg relative"
     >
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500">
         <svg
           className={`absolute ${svgPosition}-0 h-full w-1/2`}
           viewBox="0 0 100 100"
@@ -147,11 +147,11 @@ function ServiceCard({ title, description, cta, image, imagePosition, svgPositio
               strokeWidth="0.6"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{
-                scale: [0.8, 1.2, 0.8],
-                opacity: [0.4, 0.6, 0.4],
+                scale: [0.8, 1.1, 0.8],
+                opacity: [0.4, 0.3, 0.4],
               }}
               transition={{
-                duration: 3,
+                duration: 4,
                 delay: i * 0.2,
                 repeat: Infinity,
                 ease: "easeInOut",
