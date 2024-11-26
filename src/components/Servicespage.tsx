@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FaMobileAlt, FaUsers, FaChartBar, FaClipboardList } from 'react-icons/fa'
 import Link from 'next/link'
-import { pages } from 'next/dist/build/templates/app-page'
 
 export default function ServicesSection() {
   const services = [
