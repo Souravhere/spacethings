@@ -17,7 +17,7 @@ export default function ServicesSection() {
     {
       title: 'Daejangbu',
       description: '최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요. 실시간 재무 추적, 예산 계획, 지출 분석을 통해 재무 의사 결정을 최적화하세요.',
-      cta: 'DEJANGBU 더 알아보기',
+      cta: 'DAEJANGBU 더 알아보기',
       image: '/assets/our.svg',
       page:'/daejangbu',
     },
