@@ -12,6 +12,15 @@ import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 import SalesAnalysis from '@/components/SalesAnalysis'
 
 export default function dejangbupage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,28 +28,65 @@ export default function dejangbupage() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   }
+
+  const fadeInScale = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 pb-32 px-4">
-        <div className="max-w-[1500px] mx-auto">
+      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-white to-blue-200 text-white overflow-hidden">
+        {/* <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/hero-bg.jpg"
+            alt="Background"
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
+        </div> */}
+        <div className="max-w-[1500px] mx-auto px-4 py-20 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-center gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            <motion.div variants={itemVariants} className="lg:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans uppercase'>Platform</span>
-              </h1>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                통합정산 솔루션 <span className="text-blue-600 font-sans">&#34;대장부&#34;</span>
-              </h2>
+            <motion.div variants={itemVariants} className="space-y-8 sm:text-left text-center">
+              <motion.div 
+                variants={fadeInScale}
+                className="inline-block px-6 py-2 rounded-full border border-gray-400 text-black text-sm font-medium"
+              >
+                도 버는 사장님들만의 필수앱
+              </motion.div>
+              <motion.h1 
+                variants={itemVariants}
+                className="text-5xl md:text-6xl font-bold leading-tight"
+              >
+                <span className="text-blue-600">대장부</span>
+              </motion.h1>
+              <motion.div variants={itemVariants} className="space-y-6">
+                <p className="text-xl md:text-2xl text-gray-900">
+                  효율적인 매장 운영을 위한 매장관리 <span className="text-blue-400 font-sans">Platform</span>
+                </p>
+                <p className="text-lg md:text-xl text-gray-900">
+                  통합정산 솔루션 <span className="text-blue-400 font-sans">&#34;대장부&#34;</span>
+                </p>
+              </motion.div>
               <div className="flex gap-4 sm:justify-start justify-center">
                 <Link href="/contact">
                   <motion.button
@@ -55,36 +101,48 @@ export default function dejangbupage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="lg:w-1/2"
+              variants={fadeInScale}
+              className="relative"
             >
-              <Image
-                src="/assets/appshow.png"
-                width={1000}
-                height={1000}
-                alt="Dejangbu Multi-device Preview"
-                className="w-full h-auto"
-              />
+              <motion.div
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 2,
+                  ease: "easeInOut",
+                }}
+              >
+                <Image
+                  src="/assets/appshow.png"
+                  width={600}
+                  height={800}
+                  alt="Dejangbu App Interface"
+                  className="w-full h-auto drop-shadow-2xl"
+                  priority
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
       </section>
+
       <StoreOperationsDEJANGBU/>
       <StoreOperation/>
       <SalesAnalysis/>
-      {/* this is the Testimonial Section */}
+      
       <div className='w-full bg-gradient-to-b from-blue-50 to-white py-10'>
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
-            <span className="font-sans text-blue-600 uppercase">DAEJANGBU</span> 도입 후기
-          </h2>
-          <p className="text-gray-600 text-lg text-center">
-            <span className="font-sans">DEJANGBU</span>를 쓰고 계신 대표님들의 후기
-          </p>
-      <TestimonialsSection/>
+        <h2 className="text-3xl md:text-4xl font-bold text-center">
+          <span className="font-sans text-blue-600 uppercase">DAEJANGBU</span> 도입 후기
+        </h2>
+        <p className="text-gray-600 text-lg text-center">
+          <span className="font-sans">DEJANGBU</span>를 쓰고 계신 대표님들의 후기
+        </p>
+        <TestimonialsSection/>
       </div>
       <Appdownload/>
     </div>
   )
 }
+
