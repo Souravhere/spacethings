@@ -16,37 +16,6 @@ interface Particle {
   brightness: number
 }
 
-// interface HexagonProps {
-//   icon: React.ReactNode
-//   label: string
-//   color?: string
-//   className?: string
-//   delay?: number
-// }
-
-// const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay = 0 }: HexagonProps) => {
-//   const controls = useAnimation()
-
-//   useEffect(() => {
-//     controls.start({
-//       scale: [0, 1.1, 1],
-//       rotate: [0, 10, 0],
-//       transition: { delay, duration: 0.5, ease: "easeOut" }
-//     })
-//   }, [controls, delay])
-
-//   return (
-//     <motion.div className={`hexagon group ${className}`} animate={controls}>
-//       <div className={`hexagon-content ${color} group-hover:scale-105 transition-transform duration-300`}>
-//         <div className="flex flex-col items-center justify-center gap-1">
-//           {icon}
-//           <span className="text-xs font-medium">{label}</span>
-//         </div>
-//       </div>
-//     </motion.div>
-//   )
-// }
-
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
   const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
@@ -65,15 +34,6 @@ export default function HeroSection() {
     }))
     setFallingParticles(particles)
   }, [])
-
-  // useEffect(() => {
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     // Mouse position logic (if needed in the future)
-  //   }
-
-  //   window.addEventListener('mousemove', handleMouseMove)
-  //   return () => window.removeEventListener('mousemove', handleMouseMove)
-  // }, [])
 
   if (!mounted) return null
 
