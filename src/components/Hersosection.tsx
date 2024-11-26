@@ -1,10 +1,11 @@
 'use client'
 
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { FlipWords } from './ui/flip-words'
 import Link from 'next/link'
-import { Wifi, MapPin, MessageCircle, Radio, Bluetooth, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { ChevronRight } from 'lucide-react'
 
 interface Particle {
   x: number
@@ -15,36 +16,36 @@ interface Particle {
   brightness: number
 }
 
-interface HexagonProps {
-  icon: React.ReactNode
-  label: string
-  color?: string
-  className?: string
-  delay?: number
-}
+// interface HexagonProps {
+//   icon: React.ReactNode
+//   label: string
+//   color?: string
+//   className?: string
+//   delay?: number
+// }
 
-const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay = 0 }: HexagonProps) => {
-  const controls = useAnimation()
+// const Hexagon = ({ icon, label, color = "bg-blue-300/80", className = "", delay = 0 }: HexagonProps) => {
+//   const controls = useAnimation()
 
-  useEffect(() => {
-    controls.start({
-      scale: [0, 1.1, 1],
-      rotate: [0, 10, 0],
-      transition: { delay, duration: 0.5, ease: "easeOut" }
-    })
-  }, [controls, delay])
+//   useEffect(() => {
+//     controls.start({
+//       scale: [0, 1.1, 1],
+//       rotate: [0, 10, 0],
+//       transition: { delay, duration: 0.5, ease: "easeOut" }
+//     })
+//   }, [controls, delay])
 
-  return (
-    <motion.div className={`hexagon group ${className}`} animate={controls}>
-      <div className={`hexagon-content ${color} group-hover:scale-105 transition-transform duration-300`}>
-        <div className="flex flex-col items-center justify-center gap-1">
-          {icon}
-          <span className="text-xs font-medium">{label}</span>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
+//   return (
+//     <motion.div className={`hexagon group ${className}`} animate={controls}>
+//       <div className={`hexagon-content ${color} group-hover:scale-105 transition-transform duration-300`}>
+//         <div className="flex flex-col items-center justify-center gap-1">
+//           {icon}
+//           <span className="text-xs font-medium">{label}</span>
+//         </div>
+//       </div>
+//     </motion.div>
+//   )
+// }
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
@@ -185,94 +186,21 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Right Content - Hexagonal Grid */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative sm:mt-0 -mt-20"
-          >
-            <div className="honeycomb font-sans">
-              <div className="honeycomb-center absolute top-1/2 sm:left-[35%] left-[30%] transform -translate-x-1/2 -translate-y-1/2">
-                <Hexagon
-                  icon={<div className="text-white font-bold text-center">YAP<br/>BEACON</div>}
-                  label=""
-                  color="bg-gray-800"
-                  delay={0.2}
-                />
-              </div>
-              <div className="honeycomb-items">
-              <Hexagon 
-                icon={<Wifi className="w-6 h-6 text-white" />}
-                label="WiFi"
-                delay={0.4}
-                className="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <Hexagon
-                icon={<MapPin className="w-6 h-6 text-white" />}
-                label="GPS"
-                delay={0.6}
-                className="absolute top-1/4 left-3/4 transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <Hexagon
-                icon={<MapPin className="w-6 h-6 text-white" />}
-                label="Geo fence"
-                delay={0.8}
-                className="absolute top-3/4 left-3/4 transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <Hexagon
-                icon={<MessageCircle className="w-6 h-6 text-white" />}
-                label="Nearby"
-                color="bg-gray-400/80"
-                delay={1.0}
-                className="absolute top-full left-1/4 transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <Hexagon
-                icon={<Radio className="w-6 h-6 text-white" />}
-                label="Ultra sound"
-                color="bg-purple-400/80"
-                delay={1.2}
-                className="absolute top-3/4 left-[-25%] transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <Hexagon
-                icon={<Bluetooth className="w-6 h-6 text-white" />}
-                label="BLE"
-                color="bg-purple-400/80"
-                delay={1.4}
-                className="absolute top-1/4 left-[-25%] transform -translate-x-1/2 -translate-y-1/2"
-              />
-              </div>
-            </div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="relative sm:mt-0 -mt-20"
+>
+  <Image
+    src="/assets/Heroimage.svg"
+    alt="Logo"
+    width={1500}
+    height={1500}
+    className="w-full h-auto max-w-full object-contain sm:mt-0 mt-[70px]"
+  />
+</motion.div>
 
-            {/* Bottom Right Content */}
-            <motion.div 
-              className="absolute -bottom-20 right-0 text-right mb-4 mr-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.6 }}
-            >
-              <p className='font-sans font-semibold'>Modular Development</p>
-              <p className="text-sm text-gray-600 mb-1">실내/외 측위기술 모듈화</p>
-              <p className="text-sm text-gray-600 mb-1">최적의 조건으로 조합 사용 가능한</p>
-              <p className="text-sm text-gray-600">위치 인식 융합기술</p>
-            </motion.div>
-
-            {/* Legend */}
-            <motion.div 
-              className="absolute -bottom-20 left-0 flex flex-col gap-2 mb-4 ml-4 font-sans"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2, duration: 0.6 }}
-            >
-              <div className="flex items-center gap-2 font-sans">
-                <div className="w-3 h-3 rounded-full bg-blue-300"></div>
-                <span className="text-sm text-gray-600">Soft Beacon</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-                <span className="text-sm text-gray-600">Hybrid Beacon</span>
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>
