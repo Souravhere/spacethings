@@ -48,7 +48,7 @@ export default function Footer() {
               우리의 혁신적인 솔루션으로 여러분들은 스마트 기기를 사용해
               실시간으로 작업을 관리하고 협업을 원활하게 진행할 수 있습니다.
             </p>
-          </motion.div>
+          </motion.div> 
 
           {/* Services */}
           <motion.div variants={itemVariants} className="space-y-4">

@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FaMobileAlt, FaUsers, FaChartBar, FaClipboardList } from 'react-icons/fa'
 import Link from 'next/link'
+import { pages } from 'next/dist/build/templates/app-page'
 
 export default function ServicesSection() {
   const services = [
@@ -12,12 +13,14 @@ export default function ServicesSection() {
       description: '작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요. 실시간 협업, 작업 추적, 자동화된 워크플로우를 통해 팀의 효율성을 극대화하세요.',
       cta: 'WATSSUE 더 알아보기',
       image: '/assets/ourservice1.svg',
+      page:'/watssue',
     },
     {
-      title: 'DEJANGBU',
+      title: 'Daejangbu',
       description: '최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요. 실시간 재무 추적, 예산 계획, 지출 분석을 통해 재무 의사 결정을 최적화하세요.',
       cta: 'DEJANGBU 더 알아보기',
       image: '/assets/our.svg',
+      page:'/daejangbu',
     },
   ]
 
@@ -106,9 +109,10 @@ interface ServiceCardProps {
   imagePosition: 'left' | 'right'
   svgPosition: 'left' | 'right'
   index: number
+  page:string
 }
 
-function ServiceCard({ title, description, cta, image, imagePosition, svgPosition, index }: ServiceCardProps) {
+function ServiceCard({ title, description, page, cta, image, imagePosition, svgPosition, index }: ServiceCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -172,12 +176,12 @@ function ServiceCard({ title, description, cta, image, imagePosition, svgPositio
           />
         </div>
         <div className="w-full md:w-1/2 p-6 md:p-8">
-          <h3 className="text-2xl font-bold text-white mb-4 font-sans">{title}</h3>
+          <h3 className="text-2xl font-bold text-white mb-4 font-sans uppercase">{title}</h3>
           <p className="text-blue-100 mb-6 leading-relaxed">
             {description}
           </p>
           <Link
-            href=""
+            href={page}
             // variant="secondary"
             className="bg-white px-3 py-2 rounded-lg font-sans text-blue-600 hover:bg-blue-100 font-semibold"
           >
