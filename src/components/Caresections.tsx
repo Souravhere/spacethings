@@ -19,23 +19,22 @@ export default function CareSection() {
   const features = [
     {
       number: "1",
-      title: "혁신적인 편리함 제공, ",
-      titleHighlight: "자동 출퇴근 체크 서비스",
+      title: <span>혁신적인 편리함을 제공하는 <span className='text-blue-600'>자동 출퇴근 체크</span> 서비스</span>,
       points: [
-        "모바일 단말기 통계만으로 근무자 도착 시점에 간단하게 출근체크 완료",
-        "자동 출근 기능을 활용한 직원 참여 체크하는 편리한 감수",
-        "일별 취근 기능을 통해여 실정된 월근시간에 자동으로 퇴근체크 완료"
+        "모바일 단말기 휴대만으로 근무지 도착 시점에 간단하게 출근체크 완료",
+        "자동 출근 기능을 활용해 앱을 찾아 체크하는 불편함 감소",
+        "일괄 퇴근 기능을 활용해 설정된 퇴근시간에 자동으로 퇴근체크 완료"
       ],
       icon: <FiClock className="w-6 h-6" />
     },
     {
       number: "2",
-      title: "복잡한 업무를 누구나 쉽게, ",
-      titleHighlight: "계약서 & 급여률 관리",
+      title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
       points: [
-        "급여 정산 관련 불편함 해결",
-        "전자 계약을 통해 가입형 계약 관리",
-        "시급, 일급, 프리랜서형 근무 지원 및 건승 수당 (주휴, 야간, 연장) 자동 계산"
+        "급여 정산 관리 불일치 해결",
+        "전자 계약을 통해 간편한 계약 관리",
+        "각종수당( 주휴, 야간, 연장, 휴일)자동 계산 ",
+        "시급,일급,아르바이트,프리랜서 별 근무 지원"
       ],
       icon: <FiDollarSign className="w-6 h-6" />
     }
@@ -136,7 +135,6 @@ export default function CareSection() {
                   <h3 className="text-xl font-semibold mb-2">
                     <span className="text-amber-500 mr-2">{feature.number}</span>
                     <span className="break-keep">{feature.title}</span>
-                    <span className="text-blue-600 break-keep">{feature.titleHighlight}</span>
                   </h3>
                   <ul className="space-y-2">
                     {feature.points.map((point, i) => (
