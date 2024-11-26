@@ -39,7 +39,7 @@ export default function dejangbupage() {
                 효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans uppercase'>Platform</span>
               </h1>
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                통합정산 솔루션 <span className="text-blue-600 font-sans">"대장부"</span>
+                통합정산 솔루션 <span className="text-blue-600 font-sans">&#34;대장부&#34;</span>
               </h2>
               <div className="flex gap-4 sm:justify-start justify-center">
                 <Link href="/contact">
