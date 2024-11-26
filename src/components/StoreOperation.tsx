@@ -105,10 +105,10 @@ export default function StoreOperation() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#002B87]">매장 운영·관리</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600">매장 운영·관리</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             주문, 매출, 배달 데이터를 분석, 활용하여<br />
-            스마트한 매장관리 IT 솔루션을 제공하는 <span className="text-[#4A90E2]">푸드테크</span> 기술입니다.
+            스마트한 매장관리 IT 솔루션을 제공하는 <span className="text-blue-400">푸드테크</span> 기술입니다.
           </p>
         </motion.div>
 
