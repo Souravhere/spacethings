@@ -121,7 +121,7 @@ const Loader: React.FC = () => {
           </div>
           {/* Text Animation with sequential stroke and fill */}
           <svg className="w-full h-auto max-w-lg font-sans relative z-10" viewBox="0 0 400 200">
-            {/* DEJANGBU text */}
+            {/* DAEJANGBU text */}
             <motion.text
               x="50%"
               y="40%"
@@ -136,7 +136,7 @@ const Loader: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              DEJANGBU
+              DAEJANGBU
             </motion.text>
             <motion.text
               x="50%"
@@ -150,7 +150,7 @@ const Loader: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              DEJANGBU
+              DAEJANGBU
             </motion.text>
 
             {/* WATSSUE text */}
