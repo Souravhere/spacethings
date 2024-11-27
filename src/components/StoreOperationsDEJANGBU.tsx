@@ -94,7 +94,7 @@ export default function StoreOperationsDEJANGBU() {
           복잡한 매장 운영과 비용
         </motion.h1>
         <motion.p
-          className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto"
+          className="text-lg text-gray-700 mb-5 text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -102,13 +102,17 @@ export default function StoreOperationsDEJANGBU() {
           매장의 매출, 정산, 주문, 직원, 고객 등 다양한 접점에서 발생하는 모든 운영을 관리하기에는
           <span className="text-blue-600 font-semibold"> 많은 시간과 비용</span>이 발생 합니다.
         </motion.p>
-        <motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
         <Image
                   src="/assets/DEJANGBU.svg"
                   width={600}
                   height={800}
                   alt="Dejangbu App Interface"
-                  className="w-full h-auto drop-shadow-2xl"
+                  className="w-full h-auto py-5"
                   priority
                 />
         </motion.div>
