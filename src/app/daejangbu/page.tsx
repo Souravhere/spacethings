@@ -81,10 +81,10 @@ export default function dejangbupage() {
               </motion.h1>
               <motion.div variants={itemVariants} className="space-y-6">
                 <p className="text-xl md:text-2xl text-gray-900">
-                  효율적인 매장 운영을 위한 매장관리 <span className="text-blue-400 font-sans">Platform</span>
+                효율적인 매장 운영을 위한 매장관리 <span className="text-blue-400 font-sans">Platform</span>
                 </p>
                 <p className="text-lg md:text-xl text-gray-900">
-                  통합정산 솔루션 <span className="text-blue-400 font-sans">&#34;대장부&#34;</span>
+                통합정산 솔루션 <span className="text-blue-400 font-sans">&#34;대장부&#34;</span>
                 </p>
               </motion.div>
               <div className="flex gap-4 sm:justify-start justify-center">
