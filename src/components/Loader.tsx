@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 
 const Loader: React.FC = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false)
@@ -12,19 +11,19 @@ const Loader: React.FC = () => {
     setIsMounted(true)
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 4000)
+    }, 3000) // Increased duration to accommodate the full animation sequence
 
     return () => clearTimeout(timer)
   }, [])
 
-  // Text animation variants
-  const strokeVariants = {
-    hidden: { pathLength: 0 },
-    visible: {
-      pathLength: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeInOut"
+  const pathVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: { 
+      pathLength: 1, 
+      opacity: 1,
+      transition: { 
+        pathLength: { duration: 2, ease: "easeInOut" },
+        opacity: { duration: 0.5 }
       }
     }
   }
@@ -33,157 +32,141 @@ const Loader: React.FC = () => {
     hidden: { fillOpacity: 0 },
     visible: {
       fillOpacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 1.5,
-        ease: "easeInOut"
-      }
+      transition: { duration: 1, delay: 2, ease: "easeInOut" }
     }
   }
 
-  // Image animation variants
-  const imageVariants = {
-    hidden: (direction: number) => ({
-      x: direction * 100 + 'vw',
-      rotate: direction * 0,
-      opacity: 0
-    }),
-    visible: (direction: number) => ({
-      x: direction * 20 + 'vw',
-      rotate: direction * -45,
+  const gradientVariants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
-      transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        rotate: { duration: 1, ease: "easeOut" },
-        opacity: { duration: 0.5, ease: "easeIn" }
-      }
-    }),
-    exit: {
-      y: -50,
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut"
+      transition: { duration: 1, delay: 1 }
+    }
+  }
+
+  const glowVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: [0, 0.5, 0],
+      scale: 1.2,
+      transition: { 
+        opacity: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+        scale: { duration: 2, repeat: Infinity, repeatType: "reverse" }
       }
     }
   }
 
-  // Don't render until mounted on client
+  const containerVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.5 } },
+    exit: { 
+      opacity: 0, 
+      transition: { duration: 1, delay: 6, ease: "easeInOut" }
+    }
+  }
+
   if (!isMounted) return null
 
   return (
     <AnimatePresence>
       {loading && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-blue-100 overflow-hidden"
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden"
         >
-          <div className='sm:flex hidden'>
-                      {/* Left Image */}
           <motion.div
-            className="absolute left-0 top-[10%] -translate-y-1/3 sm:w-[350px] w-[270px] h-fit overflow-hidden"
-            variants={imageVariants}
-            custom={-1}
+            className="absolute inset-0 bg-blue-300 filter blur-3xl"
+            variants={glowVariants}
             initial="hidden"
             animate="visible"
-            exit="exit"
-          >
-            <Image
-              src="/assets/careimage.png"
-              alt="Left decorative image"
-              width={400}
-              height={300}
-              className="w-full h-full object-cover object-left rounded-xl"
-            />
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            className="absolute right-0 top-[10%] -translate-y-1/2 sm:w-[350px] w-[270px] h-fit overflow-hidden"
-            variants={imageVariants}
-            custom={1}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <Image
-              src="/assets/dataimage.png"
-              alt="Right decorative image"
-              width={400}
-              height={300}
-              className="w-full h-full object-cover object-right rounded-xl"
-            />
-          </motion.div>
-
-          </div>
-          {/* Text Animation with sequential stroke and fill */}
-          <svg className="w-full h-auto max-w-lg font-sans relative z-10" viewBox="0 0 400 200">
-            {/* DAEJANGBU text */}
-            <motion.text
-              x="50%"
-              y="40%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="none"
-              stroke="#3B82F6"
-              strokeWidth="2"
-              fontSize="48"
-              fontWeight="bold"
-              variants={strokeVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              DAEJANGBU
-            </motion.text>
-            <motion.text
-              x="50%"
-              y="40%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#3B82F6"
-              fontSize="48"
-              fontWeight="bold"
-              variants={fillVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              DAEJANGBU
-            </motion.text>
-
-            {/* WATSSUE text */}
-            <motion.text
-              x="50%"
-              y="70%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="none"
-              stroke="#3B82F6"
-              strokeWidth="2"
-              fontSize="48"
-              fontWeight="bold"
-              variants={strokeVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              WATSSUE
-            </motion.text>
-            <motion.text
-              x="50%"
-              y="70%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#3B82F6"
-              fontSize="48"
-              fontWeight="bold"
-              variants={fillVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              WATSSUE
-            </motion.text>
+          />
+          <svg width="350" height="329" viewBox="0 0 350 329" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <motion.linearGradient
+                id="paint_gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+                variants={gradientVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <stop offset="0%" stopColor="#553289" />
+                <stop offset="100%" stopColor="#1F2077" />
+              </motion.linearGradient>
+            </defs>
+            <g>
+              <motion.path
+                d="M144.307 222.568H25.5918L78.8089 78.7066C85.0037 62.4788 90.6235 57.4207 103.955 55.8994H312.144C340.582 69.8323 337.129 80.0512 337.875 93.9116H119.16L82.9025 188.649H159.511L144.307 222.568Z"
+                stroke="#553289"
+                strokeWidth="4"
+                variants={pathVariants}
+                initial="hidden"
+                animate="visible"
+              />
+              <motion.path
+                d="M144.307 222.568H25.5918L78.8089 78.7066C85.0037 62.4788 90.6235 57.4207 103.955 55.8994H312.144C340.582 69.8323 337.129 80.0512 337.875 93.9116H119.16L82.9025 188.649H159.511L144.307 222.568Z"
+                fill="url(#paint_gradient)"
+                variants={fillVariants}
+                initial="hidden"
+                animate="visible"
+              />
+            </g>
+            <g>
+              <motion.path
+                d="M124.423 158.24L137.289 123.152H292.845C312.336 129.269 315.843 137.692 313.898 158.24H248.401L193.429 292.744H147.815L203.371 158.24H124.423Z"
+                stroke="#553289"
+                strokeWidth="4"
+                variants={pathVariants}
+                initial="hidden"
+                animate="visible"
+              />
+              <motion.path
+                d="M124.423 158.24L137.289 123.152H292.845C312.336 129.269 315.843 137.692 313.898 158.24H248.401L193.429 292.744H147.815L203.371 158.24H124.423Z"
+                fill="url(#paint_gradient)"
+                variants={fillVariants}
+                initial="hidden"
+                animate="visible"
+              />
+            </g>
+            <g>
+              <motion.path
+                d="M16.2357 250.638H130.856L113.897 293.913H34.9491C20.8118 287.004 4.2843 277.672 16.2357 250.638Z"
+                stroke="#553289"
+                strokeWidth="4"
+                variants={pathVariants}
+                initial="hidden"
+                animate="visible"
+              />
+              <motion.path
+                d="M16.2357 250.638H130.856L113.897 293.913H34.9491C20.8118 287.004 4.2843 277.672 16.2357 250.638Z"
+                fill="url(#paint_gradient)"
+                variants={fillVariants}
+                initial="hidden"
+                animate="visible"
+              />
+            </g>
+            <g>
+              <motion.path
+                d="M222.67 292.744L261.267 197.421C272.362 187.668 282.26 186.427 302.787 187.48L271.208 271.691C258.166 301.674 243.931 292.999 222.67 292.744Z"
+                stroke="#553289"
+                strokeWidth="4"
+                variants={pathVariants}
+                initial="hidden"
+                animate="visible"
+              />
+              <motion.path
+                d="M222.67 292.744L261.267 197.421C272.362 187.668 282.26 186.427 302.787 187.48L271.208 271.691C258.166 301.674 243.931 292.999 222.67 292.744Z"
+                fill="url(#paint_gradient)"
+                variants={fillVariants}
+                initial="hidden"
+                animate="visible"
+              />
+            </g>
           </svg>
         </motion.div>
       )}
@@ -192,4 +175,3 @@ const Loader: React.FC = () => {
 }
 
 export default Loader
-
