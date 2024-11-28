@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import StoreOperation from '@/components/StoreOperation'
 import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 import SalesAnalysis from '@/components/SalesAnalysis'
+import { Iphone15Pro } from '@/components/Mockup'
 
 export default function dejangbupage() {
   const containerVariants = {
@@ -49,7 +50,7 @@ export default function dejangbupage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-white to-blue-200 text-white overflow-hidden">
+      <section className="relative min-h-screen sm:max-h-screen flex items-center bg-gradient-to-b from-white to-blue-200 text-white overflow-hidden">
 
         <div className="max-w-[1500px] mx-auto px-4 py-20 relative z-10">
           <motion.div
@@ -90,9 +91,9 @@ export default function dejangbupage() {
 
             <motion.div
               variants={fadeInScale}
-              className="relative sm:h-[500px]"
+              className="relative flex items-center justify-center sm:mt-[80%] mt-0"
             >
-              <motion.div
+                {/* <motion.div
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
                 transition={{
@@ -110,8 +111,10 @@ export default function dejangbupage() {
                   className="w-full h-auto drop-shadow-2xl"
                   priority
                 />
-              </motion.div>
-            </motion.div>
+              </motion.div>*/}
+
+            <Iphone15Pro className="size-full sm:h-[700px] h-[550px] w-[350px]" />
+            </motion.div> 
           </motion.div>
         </div>
       </section>
