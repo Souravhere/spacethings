@@ -114,15 +114,23 @@ export default function StoreOperationsDEJANGBU() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="text-blue-600 font-sans">DEJANGBU</span> 왜 필요할까?
-          </h2>
-          <h3 className="text-3xl font-bold mb-4">
-            복잡한 매장 운영&비용 어떻게 관리하고 계세요?
-          </h3>
-          <p className="text-lg text-gray-600">
-            매출, 정산, 주문, 직원, 고객 관리 등 <span className="text-blue-600">매장 운영을 따로 관리</span>하기엔 <span className="text-blue-600">많은 시간</span>과 <span className="text-blue-600">비용</span>이 발생합니다
-          </p>
+          <motion.h1
+          className="text-4xl sm:text-5xl font-bold text-blue-700 mb-8 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          복잡한 매장 운영과 비용
+        </motion.h1>
+        <motion.p
+          className="text-lg text-gray-700 mb-5 text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          매장의 매출, 정산, 주문, 직원, 고객 등 다양한 접점에서 발생하는 모든 운영을 관리하기에는
+          <span className="text-blue-600 font-semibold"> 많은 시간과 비용</span>이 발생 합니다.
+        </motion.p>
         </motion.div>
 
         {/* Image with scroll-triggered animation */}
