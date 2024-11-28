@@ -90,7 +90,7 @@ export default function dejangbupage() {
 
             <motion.div
               variants={fadeInScale}
-              className="relative"
+              className="relative sm:h-[500px]"
             >
               <motion.div
                 initial={{ y: 20 }}
@@ -103,9 +103,9 @@ export default function dejangbupage() {
                 }}
               >
                 <Image
-                  src="/assets/appshow.png"
+                  src="/assets/dejangubpage.jpg"
                   width={600}
-                  height={800}
+                  height={500}
                   alt="Dejangbu App Interface"
                   className="w-full h-auto drop-shadow-2xl"
                   priority
