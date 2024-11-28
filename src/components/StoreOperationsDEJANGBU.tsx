@@ -124,19 +124,28 @@ export default function StoreOperationsDEJANGBU() {
             매출, 정산, 주문, 직원, 고객 관리 등 <span className="text-blue-600">매장 운영을 따로 관리</span>하기엔 <span className="text-blue-600">많은 시간</span>과 <span className="text-blue-600">비용</span>이 발생합니다
           </p>
         </motion.div>
-        <motion.div>
-        <Image
-                  src="/assets/DEJANGBU.svg"
-                  width={600}
-                  height={800}
-                  alt="Dejangbu App Interface"
-                  className="w-full h-auto py-5"
-                  priority
-                />
+
+        {/* Image with scroll-triggered animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10"
+        >
+          <Image
+            src="/assets/DEJANGBU.svg"
+            width={600}
+            height={800}
+            alt="Dejangbu App Interface"
+            className="w-full h-auto py-5"
+            priority
+          />
         </motion.div>
+
+        {/* Categories */}
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 font-sans"
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1 }
