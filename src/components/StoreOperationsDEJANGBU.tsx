@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaStore, FaUsers, FaCashRegister, FaTruck, FaUtensils, FaBoxOpen } from 'react-icons/fa'
+import { FaStore, FaUsers, FaCashRegister } from 'react-icons/fa'
 import Image from 'next/image'
 
 const categories = [
