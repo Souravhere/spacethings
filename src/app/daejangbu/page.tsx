@@ -50,15 +50,7 @@ export default function dejangbupage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-b from-white to-blue-200 text-white overflow-hidden">
-        {/* <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/hero-bg.jpg"
-            alt="Background"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div> */}
+
         <div className="max-w-[1500px] mx-auto px-4 py-20 relative z-10">
           <motion.div
             variants={containerVariants}
@@ -67,12 +59,7 @@ export default function dejangbupage() {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={itemVariants} className="space-y-8 sm:text-left text-center">
-              {/* <motion.div 
-                variants={fadeInScale}
-                className="inline-block px-6 py-2 rounded-full border border-gray-400 text-black text-sm font-medium"
-              >
-                도 버는 사장님들만의 필수앱
-              </motion.div> */}
+
               <motion.h1 
                 variants={itemVariants}
                 className="text-5xl md:text-6xl font-bold leading-tight"
