@@ -67,12 +67,12 @@ export default function dejangbupage() {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={itemVariants} className="space-y-8 sm:text-left text-center">
-              <motion.div 
+              {/* <motion.div 
                 variants={fadeInScale}
                 className="inline-block px-6 py-2 rounded-full border border-gray-400 text-black text-sm font-medium"
               >
                 도 버는 사장님들만의 필수앱
-              </motion.div>
+              </motion.div> */}
               <motion.h1 
                 variants={itemVariants}
                 className="text-5xl md:text-6xl font-bold leading-tight"
@@ -84,7 +84,8 @@ export default function dejangbupage() {
                 효율적인 매장 운영을 위한 매장관리 <span className="text-blue-400 font-sans">Platform</span>
                 </p>
                 <p className="text-lg md:text-xl text-gray-900">
-                통합정산 솔루션 <span className="text-blue-400 font-sans">&#34;대장부&#34;</span>
+                통합정산 솔루션 
+                {/* <span className="text-blue-400 font-sans">&#34;대장부&#34;</span> */}
                 </p>
               </motion.div>
               <div className="flex gap-4 sm:justify-start justify-center">
