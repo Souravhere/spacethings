@@ -11,7 +11,7 @@ const Loader: React.FC = () => {
     setIsMounted(true)
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 3000) // Increased duration to accommodate the full animation sequence
+    }, 4000) // Adjusted duration for smoother overall animation
 
     return () => clearTimeout(timer)
   }, [])
@@ -22,7 +22,7 @@ const Loader: React.FC = () => {
       pathLength: 1, 
       opacity: 1,
       transition: { 
-        pathLength: { duration: 2, ease: "easeInOut" },
+        pathLength: { duration: 1.5, ease: "easeInOut" },
         opacity: { duration: 0.5 }
       }
     }
@@ -32,7 +32,7 @@ const Loader: React.FC = () => {
     hidden: { fillOpacity: 0 },
     visible: {
       fillOpacity: 1,
-      transition: { duration: 1, delay: 2, ease: "easeInOut" }
+      transition: { duration: 1, delay: 1.5, ease: "easeInOut" }
     }
   }
 
@@ -40,7 +40,7 @@ const Loader: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 1, delay: 1 }
+      transition: { duration: 1, delay: 0.5 }
     }
   }
 
@@ -50,8 +50,8 @@ const Loader: React.FC = () => {
       opacity: [0, 0.5, 0],
       scale: 1.2,
       transition: { 
-        opacity: { duration: 2, repeat: Infinity, repeatType: "reverse" },
-        scale: { duration: 2, repeat: Infinity, repeatType: "reverse" }
+        opacity: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+        scale: { duration: 3, repeat: Infinity, repeatType: "reverse" }
       }
     }
   }
@@ -61,7 +61,8 @@ const Loader: React.FC = () => {
     animate: { opacity: 1, transition: { duration: 0.5 } },
     exit: { 
       opacity: 0, 
-      transition: { duration: 1, delay: 6, ease: "easeInOut" }
+      scale: 0.95,
+      transition: { duration: 0.8, ease: "easeInOut" }
     }
   }
 
@@ -95,78 +96,38 @@ const Loader: React.FC = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <stop offset="0%" stopColor="#553289" />
-                <stop offset="100%" stopColor="#1F2077" />
+                <stop offset="0%" stopColor="#553289">
+                  <animate attributeName="stop-color" values="#553289; #1F2077; #553289" dur="4s" repeatCount="indefinite" />
+                </stop>
+                <stop offset="100%" stopColor="#1F2077">
+                  <animate attributeName="stop-color" values="#1F2077; #553289; #1F2077" dur="4s" repeatCount="indefinite" />
+                </stop>
               </motion.linearGradient>
             </defs>
-            <g>
-              <motion.path
-                d="M144.307 222.568H25.5918L78.8089 78.7066C85.0037 62.4788 90.6235 57.4207 103.955 55.8994H312.144C340.582 69.8323 337.129 80.0512 337.875 93.9116H119.16L82.9025 188.649H159.511L144.307 222.568Z"
-                stroke="#553289"
-                strokeWidth="4"
-                variants={pathVariants}
-                initial="hidden"
-                animate="visible"
-              />
-              <motion.path
-                d="M144.307 222.568H25.5918L78.8089 78.7066C85.0037 62.4788 90.6235 57.4207 103.955 55.8994H312.144C340.582 69.8323 337.129 80.0512 337.875 93.9116H119.16L82.9025 188.649H159.511L144.307 222.568Z"
-                fill="url(#paint_gradient)"
-                variants={fillVariants}
-                initial="hidden"
-                animate="visible"
-              />
-            </g>
-            <g>
-              <motion.path
-                d="M124.423 158.24L137.289 123.152H292.845C312.336 129.269 315.843 137.692 313.898 158.24H248.401L193.429 292.744H147.815L203.371 158.24H124.423Z"
-                stroke="#553289"
-                strokeWidth="4"
-                variants={pathVariants}
-                initial="hidden"
-                animate="visible"
-              />
-              <motion.path
-                d="M124.423 158.24L137.289 123.152H292.845C312.336 129.269 315.843 137.692 313.898 158.24H248.401L193.429 292.744H147.815L203.371 158.24H124.423Z"
-                fill="url(#paint_gradient)"
-                variants={fillVariants}
-                initial="hidden"
-                animate="visible"
-              />
-            </g>
-            <g>
-              <motion.path
-                d="M16.2357 250.638H130.856L113.897 293.913H34.9491C20.8118 287.004 4.2843 277.672 16.2357 250.638Z"
-                stroke="#553289"
-                strokeWidth="4"
-                variants={pathVariants}
-                initial="hidden"
-                animate="visible"
-              />
-              <motion.path
-                d="M16.2357 250.638H130.856L113.897 293.913H34.9491C20.8118 287.004 4.2843 277.672 16.2357 250.638Z"
-                fill="url(#paint_gradient)"
-                variants={fillVariants}
-                initial="hidden"
-                animate="visible"
-              />
-            </g>
-            <g>
-              <motion.path
-                d="M222.67 292.744L261.267 197.421C272.362 187.668 282.26 186.427 302.787 187.48L271.208 271.691C258.166 301.674 243.931 292.999 222.67 292.744Z"
-                stroke="#553289"
-                strokeWidth="4"
-                variants={pathVariants}
-                initial="hidden"
-                animate="visible"
-              />
-              <motion.path
-                d="M222.67 292.744L261.267 197.421C272.362 187.668 282.26 186.427 302.787 187.48L271.208 271.691C258.166 301.674 243.931 292.999 222.67 292.744Z"
-                fill="url(#paint_gradient)"
-                variants={fillVariants}
-                initial="hidden"
-                animate="visible"
-              />
-            </g>
+            {['M144.307 222.568H25.5918L78.8089 78.7066C85.0037 62.4788 90.6235 57.4207 103.955 55.8994H312.144C340.582 69.8323 337.129 80.0512 337.875 93.9116H119.16L82.9025 188.649H159.511L144.307 222.568Z',
+              'M124.423 158.24L137.289 123.152H292.845C312.336 129.269 315.843 137.692 313.898 158.24H248.401L193.429 292.744H147.815L203.371 158.24H124.423Z',
+              'M16.2357 250.638H130.856L113.897 293.913H34.9491C20.8118 287.004 4.2843 277.672 16.2357 250.638Z',
+              'M222.67 292.744L261.267 197.421C272.362 187.668 282.26 186.427 302.787 187.48L271.208 271.691C258.166 301.674 243.931 292.999 222.67 292.744Z'].map((path, index) => (
+              <g key={index}>
+                <motion.path
+                  d={path}
+                  stroke="#553289"
+                  strokeWidth="4"
+                  variants={pathVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index * 0.2}
+                />
+                <motion.path
+                  d={path}
+                  fill="url(#paint_gradient)"
+                  variants={fillVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index * 0.2}
+                />
+              </g>
+            ))}
           </svg>
         </motion.div>
       )}
@@ -175,3 +136,4 @@ const Loader: React.FC = () => {
 }
 
 export default Loader
+
