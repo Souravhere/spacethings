@@ -18,7 +18,6 @@ export default function CareSection() {
 
   const features = [
     {
-      number: "1",
       title: <span>혁신적인 편리함을 제공하는 <span className='text-blue-600'>자동 출퇴근 체크</span> 서비스</span>,
       points: [
         "모바일 단말기 휴대만으로 근무지 도착 시점에 간단하게 출근체크 완료",
@@ -28,7 +27,6 @@ export default function CareSection() {
       icon: <FiClock className="w-6 h-6" />
     },
     {
-      number: "2",
       title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
       points: [
         "급여 정산 관리 불일치 해결",
@@ -123,7 +121,6 @@ export default function CareSection() {
         >
           {features.map((feature) => (
             <motion.div
-              key={feature.number}
               variants={itemVariants}
               className="bg-white shadow-md rounded-lg p-6"
             >
@@ -133,7 +130,6 @@ export default function CareSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    <span className="text-amber-500 mr-2">{feature.number}</span>
                     <span className="break-keep">{feature.title}</span>
                   </h3>
                   <ul className="space-y-2">
