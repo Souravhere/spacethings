@@ -54,7 +54,9 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-lg font-semibold text-blue-600">서비스</h3>
             <ul className="space-y-2">
+              {/* replace the "/daejangbu" with the daejangbu with the website link */}
               <li><Link href="/daejangbu" className="hover:text-blue-600 transition-colors font-sans uppercase">daejangbu</Link></li>
+              {/* replace the "/watssue" with the watssue with the website link */}
               <li><Link href="/watssue" className="hover:text-blue-600 transition-colors font-sans">WATSSUE</Link></li>
             </ul>
           </motion.div>
