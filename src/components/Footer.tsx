@@ -89,6 +89,7 @@ export default function Footer() {
           <div className="flex space-x-4 mt-4 md:mt-0">
 
             <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            {/* replace the # with the telegram link */}
                 <PiTelegramLogo />
             </Link>
             <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
