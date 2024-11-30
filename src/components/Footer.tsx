@@ -93,9 +93,11 @@ export default function Footer() {
                 <PiTelegramLogo />
             </Link>
             <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            {/* replace the # with the Instagram link */}
                 <FaInstagram />
             </Link>
             <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            {/* replace the # with the Linkedin link */}
                 <FaLinkedinIn />
             </Link>
           </div>
