@@ -12,7 +12,7 @@ export default function ServicesSection() {
       description: '작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요. 실시간 협업, 작업 추적, 자동화된 워크플로우를 통해 팀의 효율성을 극대화하세요.',
       cta: 'WATSSUE 더 알아보기',
       image: '/assets/ourservice1.svg',
-      // here is the page url will added for the "daejangbu" website
+      // here is the page url will added for the "watssue" website
       page:'/watssue',
     },
     {
