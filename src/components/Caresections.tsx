@@ -88,7 +88,7 @@ export default function CareSection() {
         >
           <motion.div variants={itemVariants} className="w-full md:w-1/4">
             <Image
-              src='/assets/dataimage.png'
+              src='/assets/all-care-1.png'
               alt="Care Image 1"
               width={300}
               height={400}
@@ -97,7 +97,7 @@ export default function CareSection() {
           </motion.div>
           <motion.div variants={itemVariants} className="w-full md:w-1/4">
             <Image
-              src='/assets/Appdownload.jpg'
+              src='/assets/all-care-2.png'
               alt="Care Image 2"
               width={400}
               height={500}
@@ -106,7 +106,7 @@ export default function CareSection() {
           </motion.div>
           <motion.div variants={itemVariants} className="w-full md:w-1/4">
             <Image
-              src='/assets/careimage.png'
+              src='/assets/all-care-3.png'
               alt="Care Image 3"
               width={300}
               height={400}
