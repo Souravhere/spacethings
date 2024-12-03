@@ -14,6 +14,8 @@ export default function ServicesSection() {
       image: '/assets/ourservice1.svg',
       // here is the page url will added for the "watssue" website
       page:'/watssue',
+      bgfrom: "from-blue-300",
+      bgto: "to-blue-500",
     },
     {
       title: 'Daejangbu',
@@ -22,6 +24,8 @@ export default function ServicesSection() {
       image: '/assets/our.svg',
       // here is the page url will added for the "daejangbu" website
       page:'/daejangbu',
+      bgfrom:"from-blue-700",
+      bgto:"to-blue-950"
     },
   ]
 
@@ -29,7 +33,7 @@ export default function ServicesSection() {
     { icon: <FaMobileAlt className="text-purple-500 text-3xl" />, title: '사용자 편의성', description: '누구도 어렵지 않게 사용' },
     { icon: <FaUsers className="text-indigo-500 text-3xl" />, title: '합리적 비용', description: '비용 부담은 적고 알찬 기능만' },
     { icon: <FaChartBar className="text-red-500 text-3xl" />, title: '유연한 기능', description: '필요한 추가 기능은 언제든 협의' },
-    { icon: <FaClipboardList className="text-yellow-500 text-3xl" />, title: '높은 효율성', description: '최적의 서비스로 업무 효율성 극대화' },
+    { icon: <FaClipboardList className="text-yellow-500 bg-blue text-3xl" />, title: '높은 효율성', description: '최적의 서비스로 업무 효율성 극대화' },
   ]
 
   const containerVariants = {
@@ -111,9 +115,11 @@ interface ServiceCardProps {
   svgPosition: 'left' | 'right'
   index: number
   page:string
+  bgfrom:string
+  bgto:string
 }
 
-function ServiceCard({ title, description, page, cta, image, imagePosition, svgPosition, index }: ServiceCardProps) {
+function ServiceCard({ title, description, page, cta, image, imagePosition, svgPosition, index, bgfrom, bgto }: ServiceCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -135,7 +141,7 @@ function ServiceCard({ title, description, page, cta, image, imagePosition, svgP
       className="w-full bg-blue-50 rounded-2xl overflow-hidden shadow-lg relative"
     >
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500">
+      <div className={`absolute inset-0 bg-transparent bg-gradient-to-r ${bgfrom} ${bgto}`}>
         <svg
           className={`absolute ${svgPosition}-0 h-full w-1/2`}
           viewBox="0 0 100 100"
