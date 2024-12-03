@@ -45,7 +45,7 @@ export default function AnalyticsDashboard() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl p-6"
           >
-            
+            {/* here image will added */}
           </motion.div>
 
           {/* Center Panel - Today's Stats */}
@@ -56,7 +56,7 @@ export default function AnalyticsDashboard() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="w-full lg:w-1/3 bg-blue-600 rounded-2xl shadow-xl p-6"
           >
-
+            {/* here image will added  */}
           </motion.div>
 
           {/* Right Panel - Analytics */}
@@ -67,7 +67,7 @@ export default function AnalyticsDashboard() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl p-6"
           >
-
+            {/* here image will added  */}
           </motion.div>
         </div>
       </div>
