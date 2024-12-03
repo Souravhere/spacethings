@@ -2,6 +2,7 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function AnalyticsDashboard() {
   const [leftRef, leftInView] = useInView({ threshold: 0.2, triggerOnce: true })
@@ -42,9 +43,16 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, x: -50 }}
             animate={leftInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl p-6"
+            className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl"
           >
             {/* here image will added */}
+            <Image
+              src='/assets/all-care-1.png'
+              alt="Care Image 1"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-md object-cover w-full h-fit"
+            />
           </motion.div>
 
           {/* Center Panel - Today's Stats */}
@@ -53,9 +61,16 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, y: 50 }}
             animate={centerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full lg:w-1/3 bg-blue-600 rounded-2xl shadow-xl p-6"
+            className="w-full lg:w-1/3 bg-blue-600 rounded-2xl shadow-xl"
           >
             {/* here image will added  */}
+            <Image
+              src='/assets/all-care-1.png'
+              alt="Care Image 1"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-md object-cover w-full h-fit"
+            />
           </motion.div>
 
           {/* Right Panel - Analytics */}
@@ -64,9 +79,16 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, x: 50 }}
             animate={rightInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl p-6"
+            className="w-full lg:w-1/3 bg-white rounded-2xl shadow-xl"
           >
             {/* here image will added  */}
+            <Image
+              src='/assets/all-care-1.png'
+              alt="Care Image 1"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-md object-cover w-full h-fit"
+            />
           </motion.div>
         </div>
       </div>
