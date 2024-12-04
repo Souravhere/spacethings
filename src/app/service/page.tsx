@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white sm:pt-10 pt-5">
+    <main className="min-h-screen bg-white sm:pt-10 pt-5">
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2
