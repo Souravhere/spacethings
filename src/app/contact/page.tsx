@@ -39,12 +39,6 @@ const ContactPage = () => {
         variants={fadeInUp}
       >
         <h1 className="text-4xl font-extrabold mb-4">문의하기</h1>
-        <p className="text-lg mb-4">
-          <span className="font-sans">Space Things</span> 와 함께 더 나은 미래를 만들어 보세요. 우리는 항상 귀하의 성공을 돕기 위해 준비되어 있습니다.
-        </p>
-        <p className="text-sm text-blue-200">
-          아래 양식을 통해 문의 내용을 보내주시면 신속히 답변드리겠습니다.
-        </p>
       </motion.div>
 
       <motion.section
@@ -58,9 +52,9 @@ const ContactPage = () => {
           variants={fadeInUp}
         >
           <div className="text-center mb-4">
-            <h2 className="text-2xl font-semibold text-blue-700">연락처 정보</h2>
+            <h2 className="text-2xl font-semibold text-blue-700">도입 문의</h2>
             <p className="text-gray-600">
-              회사와 프로젝트에 대해 알려주세요. 어떤 도움이 필요하신지 궁금합니다!
+            아래의 양식을 입력해 제출해주시면, 귀사에 적합한 안내를 도와드립니다.
             </p>
           </div>
 
@@ -121,9 +115,9 @@ const ContactPage = () => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border rounded focus:outline-none font-sans focus:ring-2 focus:ring-blue-500"
             >
-              <option value="DEJANGBU">DEJANGBU</option>
+              <option value="DEJANGBU">DAEJANGBU</option>
               <option value="WATSSUE">WATSSUE</option>
             </select>
           </div>
