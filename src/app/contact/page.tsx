@@ -7,7 +7,7 @@ const ContactPage = () => {
     name: "",
     email: "",
     companyName: "",
-    service: "DEJANGBU",
+    service: "DAEJANGBU",
     message: "",
   });
 
