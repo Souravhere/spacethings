@@ -39,17 +39,14 @@ export default function ServicesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white sm:pt-10 pt-5">
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <h2
             className="text-4xl md:text-5xl font-bold text-black text-center mb-12 font-sans"
           >
             Our Services
-          </motion.h2>
+          </h2>
           <div className="space-y-8 mb-16">
             {services.map((service, index) => (
               <ServiceCard
@@ -61,17 +58,6 @@ export default function ServicesPage() {
               />
             ))}
           </div>
-
-          <motion.h2
-            className="text-4xl font-bold text-center text-blue-600 mb-12 font-sans"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <span className="text-black">Why</span> Space Things
-          </motion.h2>
-
         </div>
       </section>
     </main>
@@ -99,16 +85,15 @@ function ServiceCard({ title, description, page, cta, image, imagePosition, svgP
       y: 0,
       transition: {
         duration: 0.6,
-        delay: index * 0.2
+        // delay: index * 0.2
       }
     }
   }
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      initial="visible"
+      viewport={{ once: true, margin: "0px" }}
       variants={cardVariants}
       className="w-full bg-blue-50 rounded-2xl overflow-hidden shadow-lg relative"
     >
