@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { FlipWords } from './ui/flip-words'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
@@ -20,7 +19,6 @@ export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
   const [fallingParticles, setFallingParticles] = useState<Particle[]>([])
 
-  const words = ["Easy", "Everyone", "Empowering", "Growth", "Innovation"]
 
   useEffect(() => {
     setMounted(true)
@@ -97,7 +95,6 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                <FlipWords words={words} />
               </motion.span>
             </h1>
             <motion.p 
