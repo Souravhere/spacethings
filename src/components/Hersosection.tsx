@@ -80,15 +80,27 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 sm:text-left text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
-                Space Things
+                핵심 역량
               </motion.span>
+              <motion.p 
+              className="text-base text-gray-700 text-left font-semibold tracking-normal font-sans" 
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              - Location-based integrated O2O Commerce Platform <br />
+              - Hybrid Beacon(Ultrasound+BLE)<br />
+              - Mobile Wallet / Commerce / AD-Marketing Platform<br />
+              - Mobile Interface Module / Mobile CRM Module<br />
+              - Bus Communication Infra & Platform
+            </motion.p>
               <motion.span 
                 className="block mt-2 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent" 
                 initial={{ opacity: 0, y: 20 }} 
@@ -111,7 +123,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              고정밀 실내측위 단말인 Hybrid Beacon 과 이를 이용한 측위 기술을 개발하여
+              고정밀 실내측위 단말인 <span className='font-sans'>Hybrid Beacon</span> 과 이를 이용한 측위 기술을 개발하여
               유통, 문화, 교통, 안전, 스마트 시티 등 다양한 분야에 측위 시스템을 제공하고 있으며, 
               B2C 모델의 모바일 오더에서 부터 B2B 모델의 시스템 공급까지  
               다양하고 혁신적인 서비스를 고객에게 제공하고 있습니다.
