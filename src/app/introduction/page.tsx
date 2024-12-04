@@ -3,9 +3,10 @@ import ServicesPage from "@/components/Servicespage";
 import { motion } from "framer-motion";
 import { FaMobileAlt, FaChartLine, FaRegLightbulb, FaUserFriends } from "react-icons/fa";
 import { IoIosAnalytics, IoMdRocket } from "react-icons/io";
+import Link from "next/link";
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
@@ -40,7 +41,7 @@ export default function IntroductionPage() {
 
       {/* Key Solutions Section */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -78,7 +79,8 @@ export default function IntroductionPage() {
         />
       </motion.div>
 
-      {/* Customer Experience Section */}
+      <div className="bg-blue-600 py-5 mt-9 rounded-lg px-3">
+        {/* Customer Experience Section */}
       <motion.div
         className="text-center my-16"
         initial="hidden"
@@ -86,7 +88,7 @@ export default function IntroductionPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <p className="text-gray-700 mt-4">
+        <p className="text-gray-100 text-2xl">
         &#34;지금 바로 <span className="font-sans">SPACE THINGS</span> 솔루션을 경험해보세요!&#34;
         </p>
       </motion.div>
@@ -99,10 +101,11 @@ export default function IntroductionPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <a href="/contact" className="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
+        <Link href="/contact" className="bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-00 transition duration-300">
           지금 문의하기
-        </a>
+        </Link>
       </motion.div>
+      </div>
       <div className="mt-8">
       <ServicesPage/>
       </div>
