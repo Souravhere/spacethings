@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaUserShield } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import Link from "next/link";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -69,6 +70,7 @@ export default function CustomerSupportPage() {
       </motion.div>
 
       {/* Customer Feedback Section */}
+      <div className="bg-blue-600 py-5 mt-9 rounded-lg">
       <motion.div
         className="text-center my-16"
         initial="hidden"
@@ -76,9 +78,9 @@ export default function CustomerSupportPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <h2 className="text-3xl font-semibold text-gray-900">고객의 목소리</h2>
-        <p className="text-gray-700 mt-4">
-        &#34;Space Things의 고객 지원은 언제나 친절하고, 빠르게 응답하여 문제가 해결됩니다.&#34;
+        <h2 className="text-3xl font-semibold text-white">고객 문의하기</h2>
+        <p className="text-gray-200 mt-4">
+        &#34;<span className="font-sans">SPACE THINGS</span>는 언제나 고객을 위해 기다리고 있습니다. &#34;
         </p>
       </motion.div>
 
@@ -90,10 +92,11 @@ export default function CustomerSupportPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <a href="/contact" className="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
-          지원 요청하기
-        </a>
+        <Link href="/contact" className="bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-100 transition duration-300">
+        문의하기
+        </Link>
       </motion.div>
+      </div>
     </div>
   );
 }
