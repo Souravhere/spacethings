@@ -66,7 +66,7 @@ interface ServiceCardProps {
   bgto:string
 }
 
-function ServiceCard({ title, description, page, cta, image, imagePosition, svgPosition, index, bgfrom, bgto }: ServiceCardProps) {
+function ServiceCard({ title, description, page, cta, image, imagePosition, svgPosition, bgfrom, bgto }: ServiceCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
