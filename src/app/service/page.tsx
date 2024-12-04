@@ -73,44 +73,7 @@ const serviceData: ServiceInfo[] = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white py-16 px-4 mt-10 sm:px-6 lg:px-8">
-      <motion.div
-        className="max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      >
-        <motion.h1
-          className="text-4xl font-bold text-center text-gray-800 mb-10"
-          variants={itemVariants}
-        >
-          우리의 <span className="text-blue-600">서비스</span>를 만나보세요
-        </motion.h1>
-
-        <motion.p
-          className="text-lg text-center text-gray-600 mb-16"
-          variants={itemVariants}
-        >
-          Space Things는 혁신적인 솔루션과 고품질 서비스를 통해 비즈니스 성장을 지원합니다.
-          고객의 요구에 맞춘 다양한 기능을 제공하여 운영 효율성을 극대화하고, 안전하고 안정적인 서비스를 제공합니다.
-        </motion.p>
-
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={containerVariants}
-        >
-          {serviceData.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
+    <div></div>
   );
 }
 
@@ -120,16 +83,4 @@ type ServiceCardProps = {
   description: string;
 };
 
-function ServiceCard({ icon, title, description }: ServiceCardProps) {
-  return (
-    <motion.div
-      className="bg-white rounded-lg shadow-lg p-6 text-center"
-      variants={itemVariants}
-      whileHover={{ scale: 1.05 }}
-    >
-      <div className="flex justify-center mb-4">{icon}</div>
-      <h3 className="text-2xl font-semibold text-gray-800 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </motion.div>
-  );
-}
+
