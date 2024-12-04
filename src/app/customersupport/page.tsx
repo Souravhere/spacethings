@@ -70,7 +70,7 @@ export default function CustomerSupportPage() {
       </motion.div>
 
       {/* Customer Feedback Section */}
-      <div className="bg-blue-600 py-5 mt-9 rounded-lg">
+      <div className="bg-blue-600 py-5 mt-9 rounded-lg px-3">
       <motion.div
         className="text-center my-16"
         initial="hidden"
