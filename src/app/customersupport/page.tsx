@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaHeadset, FaRegClock, FaUserShield } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaUserShield } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 const sectionVariants = {
@@ -40,7 +40,7 @@ export default function CustomerSupportPage() {
 
       {/* Support Options Section */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -55,16 +55,6 @@ export default function CustomerSupportPage() {
           icon={<FaEnvelope className="text-purple-500 text-4xl" />}
           title="이메일 지원"
           description="문의 사항은 support@spacethings.co.kr 로 이메일을 보내주세요."
-        />
-        <SupportOption
-          icon={<FaHeadset className="text-green-500 text-4xl" />}
-          title="라이브 채팅"
-          description="실시간 채팅으로 빠르게 문제를 해결해 드립니다. 운영 시간: 9AM - 10PM"
-        />
-        <SupportOption
-          icon={<FaRegClock className="text-red-500 text-4xl" />}
-          title="24/7 지원"
-          description="어디서든 언제든지 고객 지원 센터를 통해 도움을 받을 수 있습니다."
         />
         <SupportOption
           icon={<AiOutlineQuestionCircle className="text-orange-500 text-4xl" />}
