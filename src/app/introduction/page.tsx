@@ -35,21 +35,7 @@ export default function IntroductionPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <h1 className="text-4xl font-bold text-gray-900">소개</h1>
-        <p className="mt-4 text-lg text-gray-600">비지니스 혁신을 위한 선택, Space Things</p>
-      </motion.div>
-
-      {/* Introduction Section */}
-      <motion.div
-        className="max-w-4xl mx-auto text-center mb-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <p className="text-xl text-gray-700">
-        &#34;Space Things는 최첨단 기술과 사용하기 쉬운 솔루션으로 비지니스 운영의 새로운 패러다임을 제시합니다.&#34;
-        </p>
+        <h1 className="text-4xl font-bold text-gray-900">도입 문의</h1>
       </motion.div>
 
       {/* Key Solutions Section */}
@@ -100,9 +86,8 @@ export default function IntroductionPage() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <h2 className="text-3xl font-semibold text-gray-900">고객 경험</h2>
         <p className="text-gray-700 mt-4">
-        &#34;Space Things 솔루션을 통해 고객과의 연결이 더욱 강화되었습니다.&#34;
+        &#34;지금 바로 <span className="font-sans">SPACE THINGS</span> 솔루션을 경험해보세요!&#34;
         </p>
       </motion.div>
 
