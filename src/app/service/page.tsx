@@ -27,17 +27,6 @@ export default function ServicesPage() {
   ]
 
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white sm:pt-10 pt-5">
       <section className="py-16 px-4 bg-white">
@@ -154,10 +143,4 @@ function ServiceCard({ title, description, page, cta, image, imagePosition, svgP
       </div>
     </motion.div>
   )
-}
-
-interface FeatureCardProps {
-  icon: React.ReactNode
-  title: string
-  description: string
 }
