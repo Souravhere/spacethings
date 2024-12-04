@@ -80,7 +80,17 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 sm:text-left text-center"
           >
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-blue-600">
+              <motion.span 
+                className="block font-sans" 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                Our Company
+              </motion.span>
+            </h1>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-800">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
@@ -89,6 +99,7 @@ export default function HeroSection() {
               >
                 핵심 역량
               </motion.span>
+            </h1>
               <motion.p 
               className="text-base text-gray-700 text-left font-semibold tracking-normal font-sans" 
               initial={{ opacity: 0, y: 20 }} 
@@ -101,14 +112,6 @@ export default function HeroSection() {
               - Mobile Interface Module / Mobile CRM Module<br />
               - Bus Communication Infra & Platform
             </motion.p>
-              <motion.span 
-                className="block mt-2 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent" 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ delay: 0.6, duration: 0.6 }}
-              >
-              </motion.span>
-            </h1>
             <motion.p 
               className="text-xl font-semibold uppercase tracking-wider text-gray-500 font-sans" 
               initial={{ opacity: 0, y: 20 }} 
