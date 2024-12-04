@@ -77,10 +77,4 @@ export default function ServicesPage() {
   );
 }
 
-type ServiceCardProps = {
-  icon: JSX.Element;
-  title: string;
-  description: string;
-};
-
 
