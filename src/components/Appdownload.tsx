@@ -1,75 +1,39 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
+import React, { useRef } from 'react'
 
 export default function AppDownload() {
-  return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
-      {/* Perspective Grid Background */}
-      <div className="absolute inset-0 overflow-hidden perspective-[1000px]">
-        <motion.svg
-          className="absolute w-full h-full origin-center"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 1000"
-          preserveAspectRatio="xMidYMid slice"
-          initial={{ rotateX: 60, scale: 1.5, y: '10%' }}
-          animate={{ rotateX: 60, scale: 1.5, y: '10%' }}
-        >
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }}
-            transition={{ duration: 1 }}
-            stroke="currentColor"
-            className="text-white"
-          >
-            {/* Horizontal perspective lines */}
-            {[...Array(20)].map((_, i) => (
-              <motion.line
-                key={`h-${i}`}
-                x1="0"
-                y1={i * 50}
-                x2="1000"
-                y2={i * 50}
-                strokeWidth="0.5"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: i * 0.05 }}
-              />
-            ))}
-            
-            {/* Vertical perspective lines */}
-            {[...Array(20)].map((_, i) => (
-              <motion.line
-                key={`v-${i}`}
-                x1={i * 50}
-                y1="0"
-                x2={i * 50}
-                y2="1000"
-                strokeWidth="0.5"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: i * 0.05 }}
-              />
-            ))}
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  })
 
-            {/* Diagonal lines for added depth */}
-            {[...Array(40)].map((_, i) => (
-              <motion.line
-                key={`d-${i}`}
-                x1={i * 25}
-                y1="0"
-                x2={(i * 25) + 500}
-                y2="1000"
-                strokeWidth="0.25"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2, delay: 0.5 + i * 0.02 }}
-              />
-            ))}
-          </motion.g>
-        </motion.svg>
-      </div>
+  const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const opacityBg = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 0.5, 0.3])
+
+  return (
+    <section ref={sectionRef} className="relative sm:min-h-[60vh] h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
+      {/* Animated Square Mesh Background */}
+      <motion.div 
+        className="absolute inset-0 overflow-hidden"
+        style={{ y: yBg, opacity: opacityBg }}
+      >
+        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+          <defs>
+            <pattern id="smallGrid" width="2" height="2" patternUnits="userSpaceOnUse">
+              <path d="M 2 0 L 0 0 0 2" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5"/>
+            </pattern>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <rect width="10" height="10" fill="url(#smallGrid)"/>
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </motion.div>
 
       <div className="relative z-10 mx-auto text-center">
         <motion.div
