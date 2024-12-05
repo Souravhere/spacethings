@@ -159,7 +159,7 @@ const ContactPage = () => {
           저희 서비스와 함께 하는 동안 어려움이 있으신가요? 언제든지 도움을 드릴 준비가 되어 있습니다.
         </p>
         <p className="text-sm mb-4 text-blue-300">
-          Space Things의 고객 지원팀은 항상 신속하고 신뢰성 있는 답변을 제공해 드리기 위해 최선을 다하고 있습니다.
+          <span className="font-sans">Space Things</span>의 고객 지원팀은 항상 신속하고 신뢰성 있는 답변을 제공해 드리기 위해 최선을 다하고 있습니다.
         </p>
       </motion.div>
     </div>
