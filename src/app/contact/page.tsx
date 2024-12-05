@@ -52,7 +52,6 @@ const ContactPage = () => {
           variants={fadeInUp}
         >
           <div className="text-center mb-4">
-            <h2 className="text-2xl font-semibold text-blue-700">도입 문의</h2>
             <p className="text-gray-600">
             아래의 양식을 입력해 제출해주시면, 귀사에 적합한 안내를 도와드립니다.
             </p>
