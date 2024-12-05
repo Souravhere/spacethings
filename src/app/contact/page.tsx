@@ -152,7 +152,7 @@ const ContactPage = () => {
         className="bg-blue-600 text-white text-center py-16 mt-12 px-4"
         initial="hidden"
         animate="visible"
-        variants={fadeInUp}
+        variants={fadeInUp}       
       >
         <h2 className="text-3xl font-bold mb-4">고객 지원에 대한 자세한 안내</h2>
         <p className="text-lg mb-6 font-sans">
