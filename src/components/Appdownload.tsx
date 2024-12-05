@@ -15,7 +15,7 @@ export default function AppDownload() {
   const opacityBg = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 0.5, 0.3])
 
   return (
-    <section ref={sectionRef} className="relative sm:min-h-[60vh] h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
+    <section ref={sectionRef} className="relative sm:min-h-[50vh] h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
       {/* Animated Square Mesh Background */}
       <motion.div 
         className="absolute inset-0 overflow-hidden"
