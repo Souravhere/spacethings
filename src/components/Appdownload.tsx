@@ -112,7 +112,8 @@ export default function AppDownload() {
             type="submit"
             className="w-full px-8 py-3 bg-white text-blue-600 rounded-full text-lg font-semibold transition-colors"
           >
-            문의 보내기
+            문의 보내기 h 
+            {/* here is smbit loading will added so user will confromed that the data will submit */}
           </motion.button>
         </motion.form>
 
