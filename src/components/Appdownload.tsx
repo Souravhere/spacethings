@@ -23,6 +23,7 @@ export default function AppDownload() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
+      // here is the id of the form will be added
       const response = await fetch('https://formspree.io/f/xyzyvejr', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,7 +32,7 @@ export default function AppDownload() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '' }) // Clear form
+        setFormData({ name: '', email: '' })
       } else {
         setStatus('error')
       }
@@ -42,7 +43,7 @@ export default function AppDownload() {
 
   return (
     <section ref={sectionRef} className="relative sm:min-h-[50vh] h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4">
-      {/* Animated Square Mesh Background */}
+      {/* Animated Square Mesh Background need to be imprvoed  */}
       <motion.div 
         className="absolute inset-0 overflow-hidden"
         style={{ y: yBg, opacity: opacityBg }}
