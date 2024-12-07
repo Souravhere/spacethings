@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef, useState } from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function AppDownload() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -106,7 +107,7 @@ export default function AppDownload() {
               transition={{ duration: 0.5 }}
               className="text-green-500 text-6xl"
             >
-              ✔
+              <FaCheckCircle />
             </motion.div>
             <p className="text-white text-xl font-semibold">
               Your inquiry has been submitted! We will contact you soon.
@@ -145,7 +146,7 @@ export default function AppDownload() {
                 placeholder="이름"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 text-gray-800"
+                className="w-full px-4 py-2 rounded-md bg-gray-100 text-blue-600 font-sans"
                 required
               />
               <input
@@ -154,14 +155,14 @@ export default function AppDownload() {
                 placeholder="이메일"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 text-gray-800"
+                className="w-full px-4 py-2 rounded-md bg-gray-100 text-blue-600 font-sans"
                 required
               />
               <select
                 name="inquiryType"
                 value={formData.inquiryType}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 text-gray-800"
+                className="w-full px-4 py-2 rounded-md bg-gray-100 text-blue-600 font-sans"
                 required
               >
                 <option value="">문의 유형 선택</option>
@@ -176,7 +177,7 @@ export default function AppDownload() {
                   placeholder={`메시지 ${index + 1}`}
                   value={message}
                   onChange={(e) => handleMessageChange(index, e.target.value)}
-                  className="w-full px-4 py-2 rounded-md bg-gray-100 text-gray-800"
+                  className="w-full px-4 py-2 rounded-md bg-gray-100 text-blue-600 font-sans"
                   required
                 />
               ))}
@@ -191,7 +192,7 @@ export default function AppDownload() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full px-8 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold transition-colors"
+                className="w-full px-8 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold transition-colors font-sans"
                 disabled={isLoading}
               >
                 {isLoading ? 'Sending...' : '문의 보내기'}
