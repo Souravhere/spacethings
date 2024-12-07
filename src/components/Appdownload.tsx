@@ -103,7 +103,7 @@ export default function AppDownload() {
             placeholder="이름"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md bg-white text-blue-600"
+            className="w-full px-4 py-2 rounded-md bg-white text-blue-600 font-sans"
             required
           />
           <input
@@ -112,14 +112,14 @@ export default function AppDownload() {
             placeholder="이메일"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md bg-white text-blue-600"
+            className="w-full px-4 py-2 rounded-md bg-white text-blue-600 font-sans"
             required
           />
           <select
             name="inquiryType"
             value={formData.inquiryType}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md bg-white text-blue-600"
+            className="w-full px-4 py-2 rounded-md bg-white text-blue-600 font-sans"
             required
           >
             <option value="">문의 유형 선택</option>
@@ -134,7 +134,7 @@ export default function AppDownload() {
               placeholder={`메시지 ${index + 1}`}
               value={message}
               onChange={(e) => handleMessageChange(index, e.target.value)}
-              className="w-full px-4 py-2 rounded-md bg-white text-blue-600"
+              className="w-full px-4 py-2 rounded-md bg-white text-blue-600 font-sans"
               required
             />
           ))}
