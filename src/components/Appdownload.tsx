@@ -107,9 +107,9 @@ export default function AppDownload() {
               transition={{ duration: 0.5 }}
               className="text-green-500 text-6xl"
             >
-              <FaCheckCircle />
+              <FaCheckCircle size={55} />
             </motion.div>
-            <p className="text-white text-xl font-semibold">
+            <p className="text-white text-xl font-semibold font-sans">
               Your inquiry has been submitted! We will contact you soon.
             </p>
           </div>
