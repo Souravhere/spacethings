@@ -69,7 +69,7 @@ export default function AnalyticsDashboard() {
               alt="Care Image 1"
               width={300}
               height={400}
-              className="rounded-lg shadow-md object-cover w-full h-fit"
+              className="rounded-lg shadow-md object-cover w-full h-fit sm:scale-105 scale-100"
             />
           </motion.div>
 
