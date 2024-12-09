@@ -47,7 +47,7 @@ export default function AnalyticsDashboard() {
           >
             {/* here image will added */}
             <Image
-              src='/assets/Dashboard-1.png'
+              src='/assets/newdashboard.jpg'
               alt="Care Image 1"
               width={300}
               height={400}
@@ -65,7 +65,7 @@ export default function AnalyticsDashboard() {
           >
             {/* here image will added  */}
             <Image
-              src='/assets/Dashboard-2.png'
+              src='/assets/newdashboard-1.jpg'
               alt="Care Image 1"
               width={300}
               height={400}
@@ -83,7 +83,7 @@ export default function AnalyticsDashboard() {
           >
             {/* here image will added  */}
             <Image
-              src='/assets/Dashboard-3.png'
+              src='/assets/newdashboard.jpg'
               alt="Care Image 1"
               width={300}
               height={400}
