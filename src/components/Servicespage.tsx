@@ -87,7 +87,7 @@ export default function ServicesSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <span className="text-black">Why</span> Space Things
+          <span className="text-black">Why Choose</span> Space Things
         </motion.h2>
 
         <motion.div
