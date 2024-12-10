@@ -8,8 +8,8 @@ import Link from 'next/link'
 export default function ServicesSection() {
   const services = [
     {
-      title: 'WATSSUE',
-      description: '작업 흐름을 간소화하고 우리의 혁신적인 작업 관리 솔루션으로 생산성을 높이세요. 실시간 협업, 작업 추적, 자동화된 워크플로우를 통해 팀의 효율성을 극대화하세요.',
+      title: '왓슈',
+      description: '작업을 단순화하고 우리의 혁신적인 작업 솔루션을 관리하여 생산성을 높이세요. 파티의 협력,파티 활동 추적, 팀의 파티를 확장하세요',
       cta: 'WATSSUE 더 알아보기',
       image: '/assets/ourservice1.svg',
       // here is the page url will added for the "watssue" website
