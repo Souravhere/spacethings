@@ -18,9 +18,9 @@ export default function ServicesSection() {
       bgto: "to-blue-500",
     },
     {
-      title: 'Daejangbu',
-      description: '최첨단 회계 및 예산 관리 도구로 재무 관리를 혁신하세요. 실시간 재무 추적, 예산 계획, 지출 분석을 통해 재무 의사 결정을 최적화하세요.',
-      cta: 'DAEJANGBU 더 알아보기',
+      title: '대장부',
+      description: '첨단 금융 및 보안 도구를 관리하는 대신 혁신적인 방식으로 관리하세요.이에 따라 추적 계획, 지출 분석을 통해 의사 결정을 최적화하십시오.',
+      cta: '대장부 더 알아보기',
       image: '/assets/our.svg',
       // here is the page url will added for the "daejangbu" website
       page:'/daejangbu',
