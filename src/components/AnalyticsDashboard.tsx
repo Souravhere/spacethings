@@ -29,10 +29,10 @@ export default function AnalyticsDashboard() {
           className="text-center mb-16"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-            효율적인 매장 운영을 위한 매장관리 <span className='uppercase font-sans'>Platform</span>
+          매장 운영을 위한 효율적인 관리 플랫폼
           </h2>
-          <p className="text-blue-200 text-lg">통합정산 솔루션</p>
-          <p className="text-white text-2xl mt-2 font-bold">&#39;대장부&#39;</p>
+          <p className="text-blue-200 text-lg">통합정산솔루션</p>
+          <p className="text-white text-5xl mt-2 font-bold">&#39;대장부&#39;</p>
         </motion.div>
 
         {/* Dashboard Cards Container */}
@@ -83,7 +83,7 @@ export default function AnalyticsDashboard() {
           >
             {/* here image will added  */}
             <Image
-              src='/assets/newdashboard.jpg'
+              src='/assets/newdashboard-2.png'
               alt="Care Image 1"
               width={300}
               height={400}
