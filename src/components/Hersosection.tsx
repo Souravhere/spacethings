@@ -126,10 +126,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              고정밀 실내측위 단말인 <span className='font-sans'>Hybrid Beacon</span> 과 이를 이용한 측위 기술을 개발하여
-              유통, 문화, 교통, 안전, 스마트 시티 등 다양한 분야에 측위 시스템을 제공하고 있으며, 
-              B2C 모델의 모바일 오더에서 부터 B2B 모델의 시스템 공급까지  
-              다양하고 혁신적인 서비스를 고객에게 제공하고 있습니다.
+              고정밀 내부 측위 시스템을 제공하고 관리하는,<span className='font-sans'>B2C</span> 모델의 모바일 오더에서 <span className='font-sans'>B2B</span> 모델의 시스템 공급까지 확장하여 고정밀 내부 측면위 링크인 <span className='font-sans'>Hybrid Beacon</span>과 이를 기반으로 하는 측위 기술을 개발하여 배포, 문화, 교통, 보안, 스마트 시티 등 다양한 분야에 측위 시스템을 제공하고 있습니다.혁신적인 서비스를 고객에게 제공하고 있습니다.
             </motion.p>
             {/* Animated Contact Us Button */}
             <motion.div
