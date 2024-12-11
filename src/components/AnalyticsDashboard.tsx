@@ -83,7 +83,7 @@ export default function AnalyticsDashboard() {
           >
             {/* here image will added  */}
             <Image
-              src='/assets/newdashboard-2.png'
+              src='/assets/newdashboard-2.jpg'
               alt="Care Image 1"
               width={300}
               height={400}
