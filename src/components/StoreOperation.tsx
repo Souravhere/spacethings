@@ -5,18 +5,18 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 
 const sections = [
-  {
-    title: '포스',
-    subtitle: '운영관리',
-    color: 'text-[#4AE2C2]',
-    icon: '/icons/pos.svg',
-    items: [
-      '주문결제',
-      '주문 채널 관리',
-      '식자재 구매 연동',
-      '직원 관리'
-    ]
-  },
+  // {
+  //   title: '포스',
+  //   subtitle: '운영관리',
+  //   color: 'text-[#4AE2C2]',
+  //   icon: '/icons/pos.svg',
+  //   items: [
+  //     '주문결제',
+  //     '주문 채널 관리',
+  //     '식자재 구매 연동',
+  //     '직원 관리'
+  //   ]
+  // },
   {
     title: '배달',
     subtitle: '배달관리',
@@ -27,7 +27,7 @@ const sections = [
       '채널 매출 내역',
       '배달 앱 정산 내역',
       '수수료',
-    //   '배달 비',
+      '배달 비',
     //   '기간 매출 내역' this will commented because of long content lenght 
     ]
   },
@@ -41,7 +41,7 @@ const sections = [
       '카드 매출 내역',
       '배달 앱 매출 내역',
       '기타 매출 내역',
-    //   '상품 판매 내역'
+      '상품 판매 내역'
     ]
   },
   {
@@ -117,13 +117,13 @@ export default function StoreOperation() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-6 gap-2"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-6 gap-2"
         >
           {sections.map((section) => (
             <motion.div
               key={section.subtitle}
               variants={itemVariants}
-              className="bg-white border-2 border-[#002B87] rounded-lg p-6 flex flex-col"
+              className="bg-white border-2 border-blue-600 rounded-lg p-6 flex flex-col"
             >
               <div className="mb-6">
                 <div className="w-16 h-16 mb-4 mx-auto">
