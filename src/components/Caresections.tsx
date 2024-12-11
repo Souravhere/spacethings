@@ -30,25 +30,23 @@ export default function CareSection() {
     },
     {
       number: "2",
-      title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
+      title: <span className='text-blue-600'>합리적인 비용</span>,
       points: [
-        "급여 정산 관리 불일치 해결",
-        "전자 계약을 통해 간편한 계약 관리",
-        "각종수당( 주휴, 야간, 연장, 휴일)자동 계산 ",
-        "시급,일급,아르바이트,프리랜서 별 근무 지원"
+        "고가의 장비 없는 저렴한 도입 비용",
+        "사내 필수 근태관리 기능 지원",
+        "부담 없는 유지, 보수 비용",
       ],
       icon: <FiDollarSign className="w-6 h-6" />
     },
     {
       number: "3",
-      title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
+      title: <span className='text-blue-600'>똑똑한 스케줄링</span>,
       points: [
-        "급여 정산 관리 불일치 해결",
-        "전자 계약을 통해 간편한 계약 관리",
-        "각종수당( 주휴, 야간, 연장, 휴일)자동 계산 ",
-        "시급,일급,아르바이트,프리랜서 별 근무 지원"
+        "근로기준법에 최적화된 근무시간 관리",
+        "유연하게 활용 가능한 스케줄링 기능",
+        "근무지 이동이 잦은 현장근무 적용 가능",
       ],
-      icon: <FiDollarSign className="w-6 h-6" />
+      icon: <FiClock className="w-6 h-6" />
     }
   ]
 
@@ -130,7 +128,7 @@ export default function CareSection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {features.map((feature) => (
             <motion.div
