@@ -4,6 +4,7 @@ import { motion, useInView, useAnimation } from 'framer-motion'
 import { FiDollarSign, FiClock } from 'react-icons/fi'
 import Image from 'next/image'
 import { useRef, useEffect } from 'react'
+import { IoPhonePortraitOutline } from "react-icons/io5";
 
 export default function CareSection() {
   const sectionRef = useRef(null)
@@ -19,16 +20,27 @@ export default function CareSection() {
   const features = [
     {
       number: "1",
-      title: <span>혁신적인 편리함을 제공하는 <span className='text-blue-600'>자동 출퇴근 체크</span> 서비스</span>,
+      title: <span className='text-blue-600'>편리한기능</span>,
       points: [
-        "모바일 단말기 휴대만으로 근무지 도착 시점에 간단하게 출근체크 완료",
-        "자동 출근 기능을 활용해 앱을 찾아 체크하는 불편함 감소",
-        "일괄 퇴근 기능을 활용해 설정된 퇴근시간에 자동으로 퇴근체크 완료"
+        "휴대폰으로 언제 어디서나 간편하게",
+        "근무지에 도착만해도 자동 출근",
+        "앱 설치 한번에 모든 설정 완료"
       ],
-      icon: <FiClock className="w-6 h-6" />
+      icon: <IoPhonePortraitOutline className="w-6 h-6" />
     },
     {
       number: "2",
+      title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
+      points: [
+        "급여 정산 관리 불일치 해결",
+        "전자 계약을 통해 간편한 계약 관리",
+        "각종수당( 주휴, 야간, 연장, 휴일)자동 계산 ",
+        "시급,일급,아르바이트,프리랜서 별 근무 지원"
+      ],
+      icon: <FiDollarSign className="w-6 h-6" />
+    },
+    {
+      number: "3",
       title: <span>복잡한 <span className='text-blue-600'>계약서 / 급여</span> 를 누구나 쉽게 관리</span>,
       points: [
         "급여 정산 관리 불일치 해결",
@@ -72,11 +84,10 @@ export default function CareSection() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className='font-sans'>SMB</span>용 모바일{" "}
-            <span className="text-blue-600 font-sans">ALL-CARE</span> 서비스
+          왓슈 <span className='font-sans text-blue-600'>[WATSSUE]</span> 로 하면 근태관리가 쉬워집니다.
           </h2>
           <p className="text-gray-600 text-base md:text-lg">
-            손쉬운 방법의 근태, 급여 관리 ALL-CARE 솔루션
+          모바일 근태관리 서비스
           </p>
         </motion.div>
 
