@@ -26,12 +26,12 @@ function ALLCARE() {
   }, [controls, inView])
 
   const features = [
-    { icon: <FiClock className="w-12 h-12" />, title: "근태관리", description: "근태&근무 시간 관리", bg:"bg-[#00a4e6]" },
-    { icon: <FiBell className="w-12 h-12" />, title: "공지사항", description: "단체 공지사항전달", bg:"bg-[#45caff]" },
-    { icon: <FiFileText className="w-12 h-12" />, title: "전자계약", description: "쉽고 용이한계약 관리", bg:"bg-[#00e6de]" },
-    { icon: <FiCheckSquare className="w-12 h-12" />, title: "체크리스트", description: "항목별 진행상황체크 및 공유", bg:"bg-[#4c8ae6]" },
-    { icon: <FiDollarSign className="w-12 h-12" />, title: "급여정산", description: "쉽고 빠른급여 확인", bg:"bg-[#7eacf1]" },
-    { icon: <FiCalendar className="w-12 h-12" />, title: "스케줄 관리", description: "외부/연장 근무 등스케줄 관리", bg:"bg-[#b0c3ff]" }
+    { icon: <FiClock className="w-12 h-12" />, title: "정확한 근태 관리", description: "Beacon + GPS 정교한  출.퇴근 체크", bg:"bg-[#00a4e6]" },
+    { icon: <FiBell className="w-12 h-12" />, title: "공지사항", description: "실시간 소통 매체로의 역할 수행", bg:"bg-[#45caff]" },
+    { icon: <FiFileText className="w-12 h-12" />, title: "전자계약", description: "간편한 직원과의 계약 체결", bg:"bg-[#00e6de]" },
+    { icon: <FiCheckSquare className="w-12 h-12" />, title: "체크리스트", description: "업무진행 현황 등다양한 목적의 체크리스트 생성/관리", bg:"bg-[#4c8ae6]" },
+    { icon: <FiDollarSign className="w-12 h-12" />, title: "급여관리", description: "시급, 주급, 월급 / 연봉 계산", bg:"bg-[#7eacf1]" },
+    { icon: <FiCalendar className="w-12 h-12" />, title: "인사관리", description: "휴가, 외근 등 인사관리", bg:"bg-[#b0c3ff]" }
   ]
 
   const containerVariants = {
