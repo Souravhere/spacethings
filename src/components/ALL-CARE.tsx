@@ -68,10 +68,10 @@ function ALLCARE() {
           }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans">
-            ALL-CARE <span className='text-blue-600'>WATSSUE</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans text-blue-600">
+            WATSSUE
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600">업무 환경 개선 어플</p>
+          <p className="text-lg sm:text-xl text-gray-600">왓슈를 시작하면 쉽고 편한 근태관리가 가능해집니다.</p>
         </motion.div>
 
         <motion.div
