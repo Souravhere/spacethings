@@ -9,7 +9,6 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import StoreOperation from '@/components/StoreOperation'
 import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 import SalesAnalysis from '@/components/SalesAnalysis'
-// import { Iphone15Pro } from '@/components/Mockup'
 import Image from 'next/image'
 
 export default function dejangbupage() {
@@ -99,27 +98,7 @@ export default function dejangbupage() {
                 height={1000}
                 width={1000}
               />
-                {/* <motion.div
-                initial={{ y: 20 }}
-                animate={{ y: 0 }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 2,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src="/assets/dejangubpage.jpg"
-                  width={600}
-                  height={500}
-                  alt="Dejangbu App Interface"
-                  className="w-full h-auto drop-shadow-2xl"
-                  priority
-                />
-              </motion.div>*/}
 
-            {/* <Iphone15Pro className="size-full sm:h-[700px] h-[550px] w-[350px]" /> */}
             </motion.div> 
           </motion.div>
         </div>
