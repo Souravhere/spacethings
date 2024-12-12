@@ -9,7 +9,8 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import StoreOperation from '@/components/StoreOperation'
 import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 import SalesAnalysis from '@/components/SalesAnalysis'
-import { Iphone15Pro } from '@/components/Mockup'
+// import { Iphone15Pro } from '@/components/Mockup'
+import Image from 'next/image'
 
 export default function dejangbupage() {
   const containerVariants = {
@@ -90,8 +91,14 @@ export default function dejangbupage() {
 
             <motion.div
               variants={fadeInScale}
-              className="relative flex items-center justify-center sm:mt-[80%] mt-0"
+              className="relative flex items-center justify-center mt-0"
             >
+              <Image
+                src='/assets/daejangbu.png'
+                alt=''
+                height={1000}
+                width={1000}
+              />
                 {/* <motion.div
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
@@ -112,7 +119,7 @@ export default function dejangbupage() {
                 />
               </motion.div>*/}
 
-            <Iphone15Pro className="size-full sm:h-[700px] h-[550px] w-[350px]" />
+            {/* <Iphone15Pro className="size-full sm:h-[700px] h-[550px] w-[350px]" /> */}
             </motion.div> 
           </motion.div>
         </div>
