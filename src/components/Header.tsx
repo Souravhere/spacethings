@@ -68,11 +68,11 @@ export default function UpdatedFloatingNavbar() {
             {/* Right: CONTACT Button */}
             <Link href="/contact" className="hidden md:block">
               <motion.div
-                className="bg-[#005ce6] text-white px-6 font-sans py-2 rounded-full text-sm font-medium"
+                className="bg-[#005ce6] text-white px-6 font-sans py-2 text-xl rounded-full font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                CONTACT
+                연락하다
               </motion.div>
             </Link>
 
@@ -104,7 +104,7 @@ export default function UpdatedFloatingNavbar() {
                     </NavLink>
                   ))}
                   <Link href="/contact" className="text-center bg-[#005ce6] text-white mx-4 my-2 px-6 py-3 rounded-full hover:bg-[#005ce6]/90 font-sans transition-colors">
-                    CONTACT
+                    연락하다
                   </Link>
                 </div>
               </motion.nav>
@@ -129,7 +129,7 @@ function NavLink({ href, isActive, children, mobile = false }: NavLinkProps) {
       href={href}
       className={`${
         mobile ? 'block py-3 px-4 text-center text-xl' : 'inline-block'
-      } relative font-medium transition-colors hover:text-gray-900 text-sm ${
+      } relative font-medium transition-colors hover:text-gray-900 text-lg ${
         isActive ? 'text-gray-900' : 'text-gray-600'
       }`}
     >
