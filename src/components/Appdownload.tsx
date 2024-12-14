@@ -42,7 +42,8 @@ export default function AppDownload() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('https://formspree.io/f/xyzyvejr', {
+      // const response = await fetch('https://formspree.io/f/xyzyvejr', {
+      const response = await fetch('https://formspree.io/f/mzzbqnrz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -170,7 +171,7 @@ export default function AppDownload() {
                 <option value="기술 지원">기술 지원</option>
                 <option value="일반 문의">일반 문의</option>
               </select>
-              {formData.messages.map((message, index) => (
+              {/* {formData.messages.map((message, index) => (
                 <input
                   key={index}
                   type="text"
@@ -187,7 +188,7 @@ export default function AppDownload() {
                 className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
               >
                 메시지 추가
-              </button>
+              </button> */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
