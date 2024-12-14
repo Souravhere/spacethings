@@ -124,7 +124,6 @@ export default function AppDownload() {
             >
               혁신의 기회, 지금 바로 사용해보세요
             </motion.h2>
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
