@@ -1,11 +1,10 @@
 'use client'
 
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { FiClock } from 'react-icons/fi'
 import Image from 'next/image'
 import { useRef, useEffect } from 'react'
 import { IoPhonePortraitOutline } from "react-icons/io5";
-import { FaCoins } from "react-icons/fa";
+import { LuCalendarClock } from "react-icons/lu";
 
 export default function CareSection() {
   const sectionRef = useRef(null)
@@ -27,7 +26,7 @@ export default function CareSection() {
         "근무지에 도착만해도 자동 출근",
         "앱 설치 한번에 모든 설정 완료"
       ],
-      icon: <IoPhonePortraitOutline className="w-6 h-6" />
+      icon: <IoPhonePortraitOutline size={40} />
     },
     {
       number: "2",
@@ -37,7 +36,8 @@ export default function CareSection() {
         "사내 필수 근태관리 기능 지원",
         "부담 없는 유지, 보수 비용",
       ],
-      icon: <FaCoins className="w-6 h-6" />
+      // icon: <FaCoins size={40} />
+      icon: <span className='font-sans font-semibold border border-black px-2 py-1 rounded-full text-3xl'>₩</span>
     },
     {
       number: "3",
@@ -47,7 +47,7 @@ export default function CareSection() {
         "유연하게 활용 가능한 스케줄링 기능",
         "근무지 이동이 잦은 현장근무 적용 가능",
       ],
-      icon: <FiClock className="w-6 h-6" />
+      icon: <LuCalendarClock  size={40} />
     }
   ]
 
@@ -137,8 +137,8 @@ export default function CareSection() {
               variants={itemVariants}
               className="bg-white shadow-md rounded-lg p-6"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600">
+              <div className=" gap-4">
+                <div className="p-3 rounded-full  text-black">
                   {feature.icon}
                 </div>
                 <div>
