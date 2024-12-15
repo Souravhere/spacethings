@@ -18,7 +18,6 @@ export default function AppDownload() {
     name: '',
     email: '',
     inquiryType: '',
-    messages: [''],
   });
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -26,16 +25,6 @@ export default function AppDownload() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleMessageChange = (index: number, value: string) => {
-    const updatedMessages = [...formData.messages];
-    updatedMessages[index] = value;
-    setFormData((prev) => ({ ...prev, messages: updatedMessages }));
-  };
-
-  const addMessageField = () => {
-    setFormData((prev) => ({ ...prev, messages: [...prev.messages, ''] }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -51,7 +40,7 @@ export default function AppDownload() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', inquiryType: '', messages: [''] });
+        setFormData({ name: '', email: '', inquiryType: '' });
       } else {
         setStatus('error');
       }
@@ -170,24 +159,6 @@ export default function AppDownload() {
                 <option value="기술 지원">기술 지원</option>
                 <option value="일반 문의">일반 문의</option>
               </select>
-              {/* {formData.messages.map((message, index) => (
-                <input
-                  key={index}
-                  type="text"
-                  placeholder={`메시지 ${index + 1}`}
-                  value={message}
-                  onChange={(e) => handleMessageChange(index, e.target.value)}
-                  className="w-full px-4 py-2 rounded-md bg-gray-100 text-blue-600 font-sans"
-                  required
-                />
-              ))}
-              <button
-                type="button"
-                onClick={addMessageField}
-                className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
-              >
-                메시지 추가
-              </button> */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
