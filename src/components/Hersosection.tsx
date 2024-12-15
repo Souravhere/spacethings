@@ -80,7 +80,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 sm:text-left text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-blue-600">
+            <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-blue-600">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 Our Company
               </motion.span>
             </h1>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-800">
+            <h1 className="text-3xl md:text-6xl font-bold tracking-tight text-gray-800">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
@@ -101,7 +101,7 @@ export default function HeroSection() {
               </motion.span>
             </h1>
               <motion.p 
-              className="text-base text-gray-700 text-left font-semibold tracking-normal font-sans" 
+              className="text-lg text-gray-700 text-left font-semibold tracking-normal font-sans" 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.8, duration: 0.6 }}
@@ -113,7 +113,7 @@ export default function HeroSection() {
               - Bus Communication Infra & Platform
             </motion.p>
             <motion.p 
-              className="text-xl font-semibold uppercase tracking-wider text-gray-500 font-sans" 
+              className="text-2xl font-semibold uppercase tracking-wider text-black font-sans" 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 1, duration: 0.6 }}
@@ -121,7 +121,7 @@ export default function HeroSection() {
               ABOUT SPACE THINGS
             </motion.p>
             <motion.p 
-              className="text-base text-gray-700" 
+              className="text-lg text-gray-700" 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.8, duration: 0.6 }}
@@ -136,7 +136,7 @@ export default function HeroSection() {
             >
               <Link href="/contact" passHref>
                 <motion.span
-                  className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+                  className="inline-flex items-center px-6 py-3 text-2xl font-semibold text-white bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
