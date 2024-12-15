@@ -214,8 +214,8 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
       transition={{ duration: 0.3 }}
     >
       <div className="mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-blue-600">{title}</h3>
+      <p className="text-gray-500">{description}</p>
     </motion.div>
   )
 }
