@@ -9,7 +9,7 @@ export default function ServicesSection() {
   const services = [
     {
       title: '왓슈',
-      description: '작업을 단순화하고 우리의 혁신적인 작업 솔루션을 관리하여 생산성을 높이세요. 파티의 협력,파티 활동 추적, 팀의 파티를 확장하세요',
+      description: '효율적인 근태 관리 플랫폼',
       cta: 'WATSSUE 더 알아보기',
       image: '/assets/ourservice1.svg',
       // here is the page url will added for the "watssue" website
@@ -19,7 +19,7 @@ export default function ServicesSection() {
     },
     {
       title: '대장부',
-      description: '첨단 금융 및 보안 도구를 관리하는 대신 혁신적인 방식으로 관리하세요.이에 따라 추적 계획, 지출 분석을 통해 의사 결정을 최적화하십시오.',
+      description: '매장 운영을 위한 효율적인 관리 플랫폼',
       cta: '대장부 더 알아보기',
       image: '/assets/our.svg',
       // here is the page url will added for the "daejangbu" website
@@ -183,8 +183,8 @@ function ServiceCard({ title, description, page, cta, image, imagePosition, svgP
           />
         </div>
         <div className="w-full md:w-1/2 p-6 md:p-8">
-          <h3 className="text-2xl font-bold text-white mb-4 font-sans uppercase">{title}</h3>
-          <p className="text-blue-100 mb-6 leading-relaxed">
+          <h3 className="text-4xl font-bold text-white mb-4 font-sans uppercase">{title}</h3>
+          <p className="text-blue-100 mb-6 leading-relaxed text-xl">
             {description}
           </p>
           <Link
