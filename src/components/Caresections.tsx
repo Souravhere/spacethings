@@ -1,10 +1,11 @@
 'use client'
 
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { FiDollarSign, FiClock } from 'react-icons/fi'
+import { FiClock } from 'react-icons/fi'
 import Image from 'next/image'
 import { useRef, useEffect } from 'react'
 import { IoPhonePortraitOutline } from "react-icons/io5";
+import { FaCoins } from "react-icons/fa";
 
 export default function CareSection() {
   const sectionRef = useRef(null)
@@ -36,7 +37,7 @@ export default function CareSection() {
         "사내 필수 근태관리 기능 지원",
         "부담 없는 유지, 보수 비용",
       ],
-      icon: <FiDollarSign className="w-6 h-6" />
+      icon: <FaCoins className="w-6 h-6" />
     },
     {
       number: "3",
