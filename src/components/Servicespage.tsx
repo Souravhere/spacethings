@@ -30,10 +30,10 @@ export default function ServicesSection() {
   ]
 
   const features = [
-    { icon: <FaMobileAlt className="text-purple-500 text-3xl" />, title: '사용자 편의성', description: '누구도 어렵지 않게 사용' },
-    { icon: <FaUsers className="text-indigo-500 text-3xl" />, title: '합리적 비용', description: '비용 부담은 적고 알찬 기능만' },
-    { icon: <FaChartBar className="text-red-500 text-3xl" />, title: '유연한 기능', description: '필요한 추가 기능은 언제든 협의' },
-    { icon: <FaClipboardList className="text-yellow-500 bg-blue text-3xl" />, title: '높은 효율성', description: '최적의 서비스로 업무 효율성 극대화' },
+    { icon: <FaMobileAlt className="text-black text-3xl" />, title: '사용자 편의성', description: '누구도 어렵지 않게 사용' },
+    { icon: <FaUsers className="text-black text-3xl" />, title: '합리적 비용', description: '비용 부담은 적고 알찬 기능만' },
+    { icon: <FaChartBar className="text-black text-3xl" />, title: '유연한 기능', description: '필요한 추가 기능은 언제든 협의' },
+    { icon: <FaClipboardList className="text-black bg-blue text-3xl" />, title: '높은 효율성', description: '최적의 서비스로 업무 효율성 극대화' },
   ]
 
   const containerVariants = {
