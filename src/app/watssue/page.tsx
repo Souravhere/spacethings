@@ -31,65 +31,122 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+      <section className="relative py-24 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          {/* Left Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/4 hidden lg:block"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 text-center lg:text-left"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [0, -2, 0, 2, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-8">
-              손 쉬운 방법의 근태, 급여 관리
-              <span className='font-sans text-blue-600'>ALL CARE</span>솔루션<br />
-                <span className="text-blue-600 font-sans py-4 ">WATSSUE</span>
-              </h1>
-              <div className="flex justify-center lg:justify-start gap-4">
-                <Link href="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    도입문의
-                  </motion.button>
-                </Link>
-              </div>
+              <Image
+                src="/assets/careimage.png"
+                width={300}
+                height={600}
+                alt="Watssue App Interface Left"
+                className="w-full h-auto"
+              />
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 relative"
-            >
-              <div className="relative">
-                <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-600 rounded-full opacity-20 blur-3xl" />
-                <motion.div
-                  animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 2, 0, -2, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Image
-                    src="/assets/careimage.png"
-                    width={300}
-                    height={600}
-                    alt="Watssue App Interface"
-                    className="relative z-10 mx-auto"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
 
+          {/* Center Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/2 text-center"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              손 쉬운 방법의 근태, 급여 관리
+              <br />
+              <span className='font-sans text-blue-600'>ALL CARE</span> 솔루션
+              <br />
+              <span className="text-blue-600 font-sans py-4 ">WATSSUE</span>
+            </h1>
+            <div className="flex justify-center gap-4">
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors text-lg"
+                >
+                  도입문의
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/4 hidden lg:block"
+          >
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+                rotate: [0, 2, 0, -2, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/assets/dataimage.png"
+                width={300}
+                height={600}
+                alt="Watssue App Interface Right"
+                className="w-full h-auto"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-1/2 -left-1/2 w-full h-full bg-blue-200 rounded-full opacity-10"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-purple-200 rounded-full opacity-10"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </div>
+    </section>
       {/* Features Grid Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
