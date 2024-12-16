@@ -39,12 +39,11 @@ export default function Component() {
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/4 hidden lg:block"
+            className="lg:w-1/4 hidden sm:mt-[5%] mt-5 lg:block"
           >
             <motion.div
               animate={{
-                y: [0, -10, 0],
-                rotate: [0, -2, 0, 2, 0],
+                y: [0, 10, 0],
               }}
               transition={{
                 duration: 6,
@@ -53,11 +52,11 @@ export default function Component() {
               }}
             >
               <Image
-                src="/assets/careimage.png"
+                src="/assets/all-care-2.png"
                 width={300}
                 height={600}
                 alt="Watssue App Interface Left"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-md"
               />
             </motion.div>
           </motion.div>
@@ -71,11 +70,12 @@ export default function Component() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               손 쉬운 방법의 근태, 급여 관리
+              </h1>
               <br />
-              <span className='font-sans text-blue-600'>ALL CARE</span> 솔루션
+              <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight'><span className='font-sans text-blue-600 py-6'>ALL CARE</span> 솔루션</h2>
               <br />
-              <span className="text-blue-600 font-sans py-4 ">WATSSUE</span>
-            </h1>
+              <h3 className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-blue-600 font-sans py-4 '>WATSSUE</h3>
+            
             <div className="flex justify-center gap-4">
               <Link href="/contact">
                 <motion.button
@@ -94,12 +94,11 @@ export default function Component() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/4  lg:block"
+            className="lg:w-1/4 hidden sm:mt-[5%] mt-5 lg:block"
           >
             <motion.div
               animate={{
                 y: [0, -10, 0],
-                rotate: [0, 2, 0, -2, 0],
               }}
               transition={{
                 duration: 6,
@@ -108,11 +107,11 @@ export default function Component() {
               }}
             >
               <Image
-                src="/assets/dataimage.png"
+                src="/assets/all-care-1.png"
                 width={300}
                 height={600}
                 alt="Watssue App Interface Right"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-md"
               />
             </motion.div>
           </motion.div>
@@ -120,7 +119,7 @@ export default function Component() {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="hidden top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
           className="absolute -top-1/2 -left-1/2 w-full h-full bg-blue-200 rounded-full opacity-10"
           animate={{
