@@ -94,7 +94,7 @@ export default function Component() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/4 hidden lg:block"
+            className="lg:w-1/4  lg:block"
           >
             <motion.div
               animate={{
