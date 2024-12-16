@@ -31,8 +31,8 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <section className=" relative py-24 px-4 overflow-hidden">
+      <div className="max-w-[1520px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Image */}
           <motion.div
