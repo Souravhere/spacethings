@@ -101,7 +101,7 @@ export default function dejangbupage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 relative"
           >
-            <div className="relative sm:w-[400px] w-[320px] sm:h-[740px] h-[640px] mx-auto">
+            <div className="relative  w-[320px] h-[640px] mx-auto">
               {/* Phone Frame */}
               <div className="absolute inset-0 bg-black rounded-[40px] p-3 shadow-2xl">
                 <div className="absolute top-0 left-1/2 transform z-10 -translate-x-1/2 w-28 h-8 bg-black rounded-b-2xl" />
