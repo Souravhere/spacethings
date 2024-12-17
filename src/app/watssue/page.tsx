@@ -12,7 +12,7 @@ import {
   FiDollarSign, 
   FiCalendar,
 } from 'react-icons/fi'
-
+import { MdKeyboardArrowRight } from "react-icons/md";
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -73,36 +73,37 @@ export default function WATSSUELandingPage() {
               <span className="text-blue-600 font-sans">ALL CARE</span> 솔루션
             </h2>
 
-            <div className="relative inline-block">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-blue-700">
-                WATSSUE
-              </h3>
-              <motion.svg
-                width="351"
-                height="22"
-                viewBox="0 0 351 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute -bottom-10 -left-8 w-[120%] h-[120%]"
-              >
-                <motion.path
-                  d="M2 8.49034C48.4105 5.781 62.0699 4.65087 110.237 3.33231C165.228 1.82696 220.258 1.73668 275.262 2.37317C283.446 2.46788 291.63 2.6252 299.813 2.77814C304.994 2.87497 320.531 2.88946 315.355 3.11917C311.216 3.3028 307.071 3.29231 302.93 3.37494C262.889 4.1738 240.657 4.52883 197.169 5.78344C171.25 6.53119 112.16 8.21662 81.3314 10.366C47.0007 12.7595 150.16 10.5525 184.573 10.7923C234.114 11.1374 283.993 11.7342 333.351 16.5897C343.797 17.6173 342.738 17.3677 349 20"
-                  stroke="#5591FF"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={controls}
-                />
-              </motion.svg>
+            <div className="flex justify-center md:justify-start">
+              <div className="relative inline-block text-left">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-blue-700">
+                  WATSSUE
+                </h3>
+                <motion.svg
+                  width="351"
+                  height="22"
+                  viewBox="0 0 351 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute -bottom-10 -left-8 w-[120%] h-[120%]"
+                >
+                  <motion.path
+                    d="M2 8.49034C48.4105 5.781 62.0699 4.65087 110.237 3.33231C165.228 1.82696 220.258 1.73668 275.262 2.37317C283.446 2.46788 291.63 2.6252 299.813 2.77814C304.994 2.87497 320.531 2.88946 315.355 3.11917C311.216 3.3028 307.071 3.29231 302.93 3.37494C262.889 4.1738 240.657 4.52883 197.169 5.78344C171.25 6.53119 112.16 8.21662 81.3314 10.366C47.0007 12.7595 150.16 10.5525 184.573 10.7923C234.114 11.1374 283.993 11.7342 333.351 16.5897C343.797 17.6173 342.738 17.3677 349 20"
+                    stroke="#5591FF"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={controls}
+                  />
+                </motion.svg>
+              </div>
             </div>
-
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-blue-600 block sm:mt-10 text-white rounded-full font-semibold text-xl shadow-lg hover:bg-blue-700 transition-colors sm:mx-0 mx-auto"
+                className="px-10 py-4 bg-blue-600 block sm:mt-10 mt-12 text-white rounded-full font-semibold text-xl shadow-lg hover:bg-blue-700 transition-colors sm:mx-0 mx-auto group"
               >
-                도입문의
+                도입문의 <MdKeyboardArrowRight size={30} className='inline-block items-center group-hover:translate-x-3 duration-500'/>
               </motion.button>
             </Link>
           </motion.div>
