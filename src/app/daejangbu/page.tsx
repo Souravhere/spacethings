@@ -21,8 +21,9 @@ export default function Dejangbupage() {
 
   const slides = [
     '/assets/daej-newheroimage.jpg',
-    '/assets/all-care-2.png',
-    '/assets/all-care-3.png'
+    '/assets/newdashboard.jpg',
+    '/assets/newdashboard-1.jpg',
+    '/assets/newdashboard-2.jpg'
   ]
 
   useEffect(() => {
