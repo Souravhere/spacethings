@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef, useState } from 'react';
-import { FaCheckCircle, FaUser, FaEnvelope, FaQuestionCircle } from "react-icons/fa";
+import { FaCheckCircle, FaUser, FaEnvelope, FaQuestionCircle, FaComment } from "react-icons/fa";
 
 export default function AppDownload() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -19,11 +19,12 @@ export default function AppDownload() {
     name: '',
     email: '',
     inquiryType: '',
+    message: '',
   });
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -40,7 +41,7 @@ export default function AppDownload() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', inquiryType: '' });
+        setFormData({ name: '', email: '', inquiryType: '', message: '' });
       } else {
         setStatus('error');
       }
@@ -54,7 +55,7 @@ export default function AppDownload() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-purple-700 py-20 px-4"
     >
       <motion.div
         className="absolute inset-0 overflow-hidden"
@@ -66,12 +67,12 @@ export default function AppDownload() {
           viewBox="0 0 100 100"
         >
           <defs>
-            <pattern id="smallGrid" width="4" height="4" patternUnits="userSpaceOnUse">
-              <path d="M 4 0 L 0 0 0 4" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5"/>
+            <pattern id="smallGrid" width="2" height="2" patternUnits="userSpaceOnUse">
+              <path d="M 2 0 L 0 0 0 2" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5"/>
             </pattern>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <rect width="20" height="20" fill="url(#smallGrid)"/>
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <rect width="10" height="10" fill="url(#smallGrid)"/>
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
             </pattern>
             <filter id="glow">
               <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
@@ -132,7 +133,7 @@ export default function AppDownload() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               onSubmit={handleSubmit}
-              className="space-y-6 bg-white p-8 md:p-10 rounded-2xl shadow-2xl max-w-7xl mx-auto"
+              className="space-y-6 bg-white p-8 md:p-10 rounded-2xl shadow-2xl max-w-2xl mx-auto"
             >
               <div className="relative">
                 <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500" />
@@ -173,11 +174,23 @@ export default function AppDownload() {
                   <option value="일반 문의">일반 문의</option>
                 </select>
               </div>
+              <div className="relative">
+                <FaComment className="absolute left-3 top-5 transform -translate-y-1/2 text-blue-500" />
+                <textarea
+                  name="message"
+                  placeholder="메시지"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-10 py-3 rounded-lg bg-gray-100 text-blue-600 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                  required
+                  rows={4}
+                ></textarea>
+              </div>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-lg text-xl font-bold transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-blue-600 hover:bg-blue-700 duration-500 text-white rounded-lg text-xl font-bold transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isLoading}
               >
                 {isLoading ? 'Sending...' : '문의 보내기'}
