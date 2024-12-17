@@ -33,7 +33,7 @@ export default function AppDownload() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('https://formspree.io/f/mzzbqnrz', {
+      const response = await fetch('https://formspree.io/f/xbljvywd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
