@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -10,96 +9,130 @@ import StoreOperation from '@/components/StoreOperation'
 import StoreOperationsDEJANGBU from '@/components/StoreOperationsDEJANGBU'
 import SalesAnalysis from '@/components/SalesAnalysis'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function dejangbupage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  }
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const controls = useAnimation()
 
-  const fadeInScale = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  }
 
+  const slides = [
+    '/assets/all-care-1.png',
+    '/assets/all-care-2.png',
+    '/assets/all-care-3.png'
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length)
+    }, 2000)
+
+    return () => clearInterval(timer)
+  }, [slides.length])
+
+  useEffect(() => {
+    controls.start({
+      pathLength: 1,
+      transition: { duration: 2, ease: "easeInOut" }
+    })
+  }, [controls])
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen sm:max-h-screen flex items-center bg-gradient-to-b from-white to-blue-200 text-white overflow-hidden">
-
-        <div className="max-w-[1500px] mx-auto px-4 py-20 relative z-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid lg:grid-cols-2 gap-12 items-center"
+      <section className="min-h-screen bg-gradient-to-br from-blue-200 via-blue-100 to-white p-4 md:p-8 lg:p-12">
+        <div className="max-w-[1520px] mx-auto flex flex-col lg:flex-row items-center mt-[8%] justify-between gap-12">
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/2 space-y-5 sm:mt-0 mt-12"
           >
-            <motion.div variants={itemVariants} className="space-y-8 sm:text-left text-center">
+            <h1 className="text-4xl md:text-4xl lg:text-6xl sm:text-left text-center font-bold leading-tight">
+              <span className="text-black">효율적인 매장 운영을 위한 매장관리 <span className='text-blue-600 font-sans'>Platform</span></span>
+            </h1>
+            
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-0 sm:text-left text-center">
+              <span className="text-blue-600 font-sans">통합정산</span> 솔루션
+            </h2>
 
-              <motion.h1 
-                variants={itemVariants}
-                className="text-5xl md:text-6xl font-bold leading-tight"
-              >
-                <span className="text-blue-600">대장부</span>
-              </motion.h1>
-              <motion.div variants={itemVariants} className="space-y-6">
-                <p className="text-xl md:text-2xl text-gray-900">
-                효율적인 매장 운영을 위한 매장관리 <span className="text-blue-400 font-sans">Platform</span>
-                </p>
-                <p className="text-lg md:text-xl text-gray-900">
-                통합정산 솔루션 
-                {/* <span className="text-blue-400 font-sans">&#34;대장부&#34;</span> */}
-                </p>
-              </motion.div>
-              <div className="flex gap-4 sm:justify-start justify-center">
-                <Link href="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    도입문의
-                  </motion.button>
-                </Link>
+            <div className="flex justify-center md:justify-start">
+              <div className="relative inline-block text-left">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-blue-700">
+                대장부
+                </h3>
+                <motion.svg
+                  width="351"
+                  height="22"
+                  viewBox="0 0 351 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute -bottom-11 -left-5 w-[120%] h-[120%]"
+                >
+                  <motion.path
+                    d="M2 8.49034C48.4105 5.781 62.0699 4.65087 110.237 3.33231C165.228 1.82696 220.258 1.73668 275.262 2.37317C283.446 2.46788 291.63 2.6252 299.813 2.77814C304.994 2.87497 320.531 2.88946 315.355 3.11917C311.216 3.3028 307.071 3.29231 302.93 3.37494C262.889 4.1738 240.657 4.52883 197.169 5.78344C171.25 6.53119 112.16 8.21662 81.3314 10.366C47.0007 12.7595 150.16 10.5525 184.573 10.7923C234.114 11.1374 283.993 11.7342 333.351 16.5897C343.797 17.6173 342.738 17.3677 349 20"
+                    stroke="#5591FF"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={controls}
+                  />
+                </motion.svg>
               </div>
-            </motion.div>
+            </div>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-blue-600 block sm:mt-10 mt-12 text-white rounded-full font-semibold text-xl shadow-lg hover:bg-blue-700 transition-colors sm:mx-0 mx-auto group"
+              >
+                도입문의 <MdKeyboardArrowRight size={30} className='inline-block items-center group-hover:translate-x-3 duration-500'/>
+              </motion.button>
+            </Link>
+          </motion.div>
 
-            <motion.div
-              variants={fadeInScale}
-              className="relative flex items-center justify-center mt-0"
-            >
-              <Image
-                src='/assets/daejangbu.png'
-                alt=''
-                height={1000}
-                width={1000}
-              />
-
-            </motion.div> 
+          {/* Right Content - Phone Mockup Slider */}
+          <motion.div 
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:w-1/2 relative"
+          >
+            <div className="relative sm:w-[400px] w-[320px] sm:h-[740px] h-[640px] mx-auto">
+              {/* Phone Frame */}
+              <div className="absolute inset-0 bg-black rounded-[40px] p-3 shadow-2xl">
+                <div className="absolute top-0 left-1/2 transform z-10 -translate-x-1/2 w-28 h-8 bg-black rounded-b-2xl" />
+                <div className="w-full h-full bg-white rounded-[32px] overflow-hidden">
+                  {/* Slides */}
+                  <div className="relative w-full h-full">
+                    {slides.map((slide, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ 
+                          opacity: currentSlide === index ? 1 : 0,
+                          x: currentSlide === index ? 0 : 100
+                        }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.5 }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={slide}
+                          alt={`Slide ${index + 1}`}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-[32px]"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
