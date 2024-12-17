@@ -55,7 +55,7 @@ export default function AppDownload() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-purple-700 py-20 px-4"
+      className="relative h-fit flex items-center justify-center overflow-hidden bg-blue-600 py-20 px-4"
     >
       <motion.div
         className="absolute inset-0 overflow-hidden"
@@ -64,7 +64,7 @@ export default function AppDownload() {
         <svg
           className="absolute w-[200%] h-[200%] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
+          viewBox="0 0 200 200"
         >
           <defs>
             <pattern id="smallGrid" width="2" height="2" patternUnits="userSpaceOnUse">
@@ -86,7 +86,7 @@ export default function AppDownload() {
         </svg>
       </motion.div>
 
-      <div className="relative z-10 mx-auto text-center space-y-12 max-w-4xl w-full">
+      <div className="relative z-10 mx-auto text-center space-y-12 w-full">
         {status === 'success' ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
