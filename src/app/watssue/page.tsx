@@ -63,13 +63,13 @@ export default function WATSSUELandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/2 space-y-12 sm:mt-0 mt-12"
+            className="lg:w-1/2 space-y-5 sm:mt-0 mt-12"
           >
             <h1 className="text-4xl md:text-4xl lg:text-6xl sm:text-left text-center font-bold leading-tight">
               <span className="text-black">손 쉬운 방법의 근태, <span className='text-blue-600'>급여 관리</span></span>
             </h1>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold sm:text-left text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-0 sm:text-left text-center">
               <span className="text-blue-600 font-sans">ALL CARE</span> 솔루션
             </h2>
 
