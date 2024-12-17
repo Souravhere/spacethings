@@ -63,7 +63,7 @@ export default function EnhancedContactForm() {
 
   const inputClasses = "w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-gray-800 placeholder-gray-400 font-sans";
   const labelClasses = "block text-sm font-medium text-gray-700 mb-2";
-  const iconClasses = "absolute left-4 top-12 text-blue-600 text-lg";
+  const iconClasses = "absolute left-4 top-12 text-blue-600 text-lg z-10";
 
   const inputVariants = {
     focus: { scale: 1.02, boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)" }
@@ -224,7 +224,7 @@ export default function EnhancedContactForm() {
               <motion.div className="relative" whileHover="focus">
                 <label htmlFor="message" className={labelClasses}>문의 내용</label>
                 <motion.span
-                  className="absolute left-4 top-[2.7rem] text-blue-500 text-lg"
+                  className="absolute left-4 top-[2.7rem] text-blue-500 text-lg z-10"
                   initial={{ opacity: 0.5 }}
                   whileHover={{ opacity: 1, scale: 1.1 }}
                 >
