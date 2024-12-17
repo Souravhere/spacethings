@@ -189,7 +189,7 @@ export default function WATSSUELandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="md:w-1/2"
@@ -245,8 +245,8 @@ export default function WATSSUELandingPage() {
     </motion.div>
 
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
       className="flex flex-col md:flex-row items-center gap-12"
     >
@@ -274,8 +274,8 @@ export default function WATSSUELandingPage() {
     </motion.div>
 
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
       className="flex flex-col md:flex-row-reverse items-center gap-12"
     >
@@ -303,8 +303,8 @@ export default function WATSSUELandingPage() {
     </motion.div>
 
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
       className="flex flex-col md:flex-row items-center gap-12"
     >
