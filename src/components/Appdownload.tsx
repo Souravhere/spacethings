@@ -133,7 +133,7 @@ export default function AppDownload() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               onSubmit={handleSubmit}
-              className="space-y-6 bg-white p-8 md:p-10 rounded-2xl shadow-2xl max-w-2xl mx-auto"
+              className="space-y-6 bg-white p-8 md:p-10 rounded-2xl shadow-2xl max-w-7xl mx-auto"
             >
               <div className="relative">
                 <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500" />
