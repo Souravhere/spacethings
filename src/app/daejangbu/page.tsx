@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-export default function dejangbupage() {
+export default function Dejangbupage() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const controls = useAnimation()
