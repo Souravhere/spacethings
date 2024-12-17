@@ -20,7 +20,7 @@ export default function dejangbupage() {
 
 
   const slides = [
-    '/assets/all-care-1.png',
+    '/assets/daej-newheroimage.jpg',
     '/assets/all-care-2.png',
     '/assets/all-care-3.png'
   ]
