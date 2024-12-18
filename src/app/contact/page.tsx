@@ -240,6 +240,7 @@ export default function EnhancedContactForm() {
                   placeholder="문의하실 내용을 입력하세요"
                   rows={5}
                   className={`${inputClasses} pt-3`}
+                
                 />
               </motion.div>
 
