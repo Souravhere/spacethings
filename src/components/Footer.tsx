@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa"
-import { PiTelegramLogo } from "react-icons/pi";
 import Image from "next/image"
 
 const footerVariants = {
