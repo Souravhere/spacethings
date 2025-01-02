@@ -99,21 +99,11 @@ export default function Footer() {
           className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-sm text-gray-600 font-sans">&copy; {new Date().getFullYear()} © Space-Things Company . All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-
-            <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-            {/* replace the # with the telegram link */}
-                <PiTelegramLogo />
-            </Link>
-            <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-            {/* replace the # with the Instagram link */}
-                <FaInstagram />
-            </Link>
-            <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-            {/* replace the # with the Linkedin link */}
-                <FaLinkedinIn />
-            </Link>
-          </div>
+            <div className="flex space-x-4 mt-4 md:mt-0">
+            <p className="text-sm text-gray-600 font-sans">
+              사업자 번호: <a href="tel:+216-86-02946" className="hover:text-blue-600 transition-colors">216-86-02946</a> | <Link href="/service" className="hover:text-blue-600 transition-colors">사업자 정보 확인</Link> | 연락처: <a href="tel:+82269495901" className="hover:text-blue-600 transition-colors">02-6949-5901</a> (평일 09~18) | <a href="mailto:cs_work@spatialdata.co.kr" className="hover:text-blue-600 transition-colors">cs_work@spatialdata.co.kr</a>
+            </p>
+            </div>
         </motion.div>
       </div>
     </motion.footer>
