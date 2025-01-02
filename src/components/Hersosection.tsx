@@ -80,7 +80,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 sm:text-left text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-blue-600">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-blue-600">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 Our Company
               </motion.span>
             </h1>
-            <h1 className="text-3xl md:text-6xl font-bold tracking-tight text-gray-800">
+            <h1 className="text-2xl md:text-5xl font-bold tracking-tight text-gray-800">
               <motion.span 
                 className="block font-sans" 
                 initial={{ opacity: 0, y: 20 }} 
