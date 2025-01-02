@@ -98,7 +98,7 @@ export default function Footer() {
           variants={itemVariants}
           className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-sm text-gray-600 font-sans">&copy; 2024 Space Things. All rights reserved.</p>
+          <p className="text-sm text-gray-600 font-sans">&copy; {new Date().getFullYear()} © Space-Things Company . All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
 
             <Link href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
