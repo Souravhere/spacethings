@@ -110,16 +110,19 @@ export default function HeroSection() {
               - Hybrid Beacon(Ultrasound+BLE)<br />
               - Mobile Wallet / Commerce / AD-Marketing Platform<br />
               - Mobile Interface Module / Mobile CRM Module<br />
-              - Bus Communication Infra & Platform
             </motion.p>
-            <motion.p 
-              className="text-2xl font-semibold uppercase tracking-wider text-black font-sans" 
-              initial={{ opacity: 0, y: 20 }} 
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
-              transition={{ delay: 1, duration: 0.6 }}
-            >
-              ABOUT SPACE THINGS
-            </motion.p>
+               transition={{ delay: 1, duration: 0.6 }}
+              >
+                 <Image
+                  src="/icons/logo.png"
+                  height={200}
+                  width={400}
+                  className='sm:-ml-8 ml-0'
+                  alt="About Space Things" />
+            </motion.div>
             <motion.p 
               className="text-lg text-gray-700" 
               initial={{ opacity: 0, y: 20 }} 
