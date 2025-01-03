@@ -79,7 +79,7 @@ export default function Footer() {
             </ul>
           </motion.div>
         </div>
-        {/* Map Section */}
+        {/* Map Section and map will be added or the google maps */}
         <motion.div variants={itemVariants} className="mt-12">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.472998409562!2d126.98841209999999!3d37.5674783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca318c4bb596d%3A0xf38a86b029a0bb12!2sSignature%20Tower!5e0!3m2!1sen!2sin!4v1735888032378!5m2!1sen!2sin"
