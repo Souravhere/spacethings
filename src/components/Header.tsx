@@ -108,8 +108,13 @@ export default function UpdatedFloatingNavbar() {
                       {item.name}
                     </NavLink>
                   ))}
-                  <Link href="/contact" className="text-center bg-blue-600 font-semibold text-white mx-4 my-2 px-6 py-3 rounded-full hover:bg-blue-700 font-sans transition-colors">
-                  CONTACT
+                  <Link href="/contact" >
+                  <Image
+                src='/assets/contact.png'
+                alt='contact button'
+                width={150}
+                height={70}
+                />
                   </Link>
                 </div>
               </motion.nav>
