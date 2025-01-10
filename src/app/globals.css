@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles/globals.css */
-@font-face {
+/* @font-face {
   font-family: 'NotoSerifKR';
   src: url('/fonts/NotoSerifKR-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 body {
-  font-family: 'NotoSerifKR', sans-serif;
+  /* font-family: 'NotoSerifKR', sans-serif; */
+  font-family: sans-serif;
 }
 
 @layer base {
