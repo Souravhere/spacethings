@@ -67,13 +67,18 @@ export default function UpdatedFloatingNavbar() {
 
             {/* Right: CONTACT Button */}
             <Link href="/contact" className="hidden md:block">
-              <motion.div
+              {/* <motion.div
                 className="bg-blue-600 font-semibold text-white px-6 font-sans py-2 text-xl rounded-full hover:bg-blue-700"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                
               >
                 CONTACT
-              </motion.div>
+              </motion.div> */}
+              <Image
+                src='/assets/contact.png'
+                alt='contact button'
+                width={150}
+                height={70}
+                />
             </Link>
 
             {/* Mobile Menu Button */}
