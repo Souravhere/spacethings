@@ -11,9 +11,9 @@ export default function Home() {
       <>
         <Hersosection/>
         <ServicesPage/>
-        <AnalyticsDashboard/>
-        <StoreOperation/>
         <Caresection/>
+        <StoreOperation/>
+        <AnalyticsDashboard/>
         <ALLCARE/>
         <Appdownload/>
       </>
